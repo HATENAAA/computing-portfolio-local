@@ -1,0 +1,98 @@
+{
+  "source": "https://github.com/steffensbola/furg-fire-dataset/tree/6aff09d7baa27425f31d1df685284c26cbffe7af",
+  "license": "CC0-1.0",
+  "videos": [
+    {
+      "group": "Car1",
+      "split": "validation",
+      "video_sha256": "52c000a9257ad1e3e84ea29f5be0d7d5e2b1a4c3ed41d86a243640868b2fc92a",
+      "xml_sha256": "cd78fa014b62bff6ea417c032dc98a7d2e96d5b66d49f822bb9b0f4b87a0f9a4"
+    },
+    {
+      "group": "non_fire_patrolbot_onboard",
+      "split": "validation",
+      "video_sha256": "b3e59cf1d8f4916727bc459a0b7c09d5ddfde4b8f0440b9586944abfda7d890c",
+      "xml_sha256": "63f1aa497a4fb925fb754fb5bc8033be05301ef9a0c58994f18016a89b66af9b"
+    },
+    {
+      "group": "house6",
+      "split": "test",
+      "video_sha256": "65e392c1ce5eaf29da879403c43aa47bad481526f1315d1a7eced4a3e9e60357",
+      "xml_sha256": "89ad6b5a04b52817aed0cc37e0f365c4fda03837d6359c8d4c23741da4213551"
+    },
+    {
+      "group": "cleaner",
+      "split": "test",
+      "video_sha256": "9534a0a4f3564ffbe2ad6166af30591a4364d94880a7de3c09249ad3700dbdb6",
+      "xml_sha256": "610f4806ad6203d468990cc178760545f11190556cd63e517fba2114f533c19b"
+    }
+  ],
+  "examples": [
+    {
+      "title": "车辆起火",
+      "file": "Car1-00269.jpg",
+      "frame": 269,
+      "group": "Car1",
+      "boxes": [
+        [
+          3,
+          96,
+          433,
+          377
+        ]
+      ]
+    },
+    {
+      "title": "巡检机器人",
+      "file": "non_fire_patrolbot_onboard-00145.jpg",
+      "frame": 145,
+      "group": "non_fire_patrolbot_onboard",
+      "boxes": []
+    },
+    {
+      "title": "建筑起火",
+      "file": "house6-00384.jpg",
+      "frame": 384,
+      "group": "house6",
+      "boxes": [
+        [
+          173,
+          68,
+          28,
+          50
+        ],
+        [
+          219,
+          92,
+          18,
+          26
+        ],
+        [
+          206,
+          43,
+          14,
+          24
+        ],
+        [
+          133,
+          86,
+          18,
+          25
+        ],
+        [
+          157,
+          152,
+          13,
+          41
+        ]
+      ]
+    },
+    {
+      "title": "室内清洁",
+      "file": "cleaner-01534.jpg",
+      "frame": 1534,
+      "group": "cleaner",
+      "boxes": []
+    }
+  ]
+}

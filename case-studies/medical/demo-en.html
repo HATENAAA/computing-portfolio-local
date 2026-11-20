@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Health screening appointments and reports</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/review.css">
+  <script defer src="../../assets/medical-demo.js"></script>
+</head>
+<body class="medical" data-project="medical">
+<main>
+  <section class="hero">
+    <h1>Health screening appointments and reports</h1>
+    <nav aria-label="Demo sections">
+      <a href="#sample-appointment">Book an appointment</a>
+      <a href="#appointments">My appointments</a>
+      <a href="#doctor-demo">Doctor view</a>
+      <a href="#report">Report centre</a>
+    </nav>
+  </section>
+  <article class="evidence" id="sample-appointment">
+    <h2>Book an appointment</h2>
+    
+    <p class="medical-demo-note">Offline demo with fictional records. Changes apply to this page and reset on refresh.</p>
+
+    <div class="flow medical-flow">
+      <form id="booking">
+        <div data-book="0"><label><b>1 / 4 · Institution</b><br><select id="clinic"><option value="a">Harbour Clinic</option><option value="b">Riverside Clinic</option></select></label></div><div data-book="1"><label><b>2 / 4 · Package</b><br><select id="package"><option value="basic">Basic screening</option><option value="extended">Extended screening</option></select></label></div><div data-book="2"><label><b>3 / 4 · Appointment slot</b><br><select id="slot"><option value="full">Tuesday morning · full</option><option value="wed">Wednesday morning</option><option value="thu">Thursday afternoon</option></select></label></div>
+        <div data-book="3"><h3>4 / 4 · Confirm selection</h3><output id="booking-summary"></output></div>
+        <p id="booking-message" role="status"></p>
+        <div class="actions" id="booking-actions" hidden>
+          <button id="back" type="button">Back</button>
+          <button class="primary" id="advance" type="button">Continue</button>
+          <a id="booking-orders" href="#appointments" hidden>View my appointments</a>
+        </div>
+      </form>
+    </div>
+
+    <section class="medical-module" id="appointments">
+      <h3>My appointments</h3>
+      <p>Review the booking, then cancel it or continue to the doctor view.</p>
+      <div id="medical-orders"></div>
+      <p id="medical-orders-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="doctor-demo">
+      <h3>Doctor view · offline simulation</h3>
+      <p>Select a pending order and save a preset fictional result. The original backend has order lookup and report-writing endpoints.</p>
+      <div class="actions" id="medical-doctor-actions" hidden>
+        <label>Pending order <select id="medical-doctor-order"><option value="">No pending orders</option></select></label>
+        <button type="button" id="medical-save-report">Save sample report</button>
+        <a href="#report" id="medical-doctor-report" hidden>View the saved report</a>
+      </div>
+      <p id="medical-doctor-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="report">
+      <h3>Report centre</h3>
+      <p>Completed sample reports include an overview and individual check items.</p>
+      <details id="medical-report-details">
+        <summary>Open a fictional report</summary>
+        <label>Report order <select id="medical-report-order"><option value="DEMO-01">DEMO-01</option></select></label>
+        <p id="medical-report-caption"></p>
+        <div class="actions medical-report-tabs" aria-label="Report views" hidden>
+          <button type="button" data-medical-report-tab="overview" aria-pressed="true">Overview</button>
+          <button type="button" data-medical-report-tab="details" aria-pressed="false">Check items</button>
+        </div>
+        <div id="medical-report-content" aria-live="polite"></div>
+      </details>
+    </section>
+  </article>
+</main>
+</body>
+</html>

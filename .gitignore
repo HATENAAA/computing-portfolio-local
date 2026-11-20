@@ -1,0 +1,10 @@
+
+.tools/
+.setup-backup*/
+安装日志.txt
+
+.video-review-backup*/
+
+medical-platform/backend/data/
+medical-platform/backend/target/
+case-studies/medical/source/node_modules/

@@ -1,0 +1,8 @@
+from html import escape
+import json
+
+def render_review(report,rows):
+    esc=lambda v:escape(str(v),quote=True)
+    events=''.join('<tr><td>'+str(i+1)+'</td><td>'+f"{e['start']:.2f}"+'</td><td>'+f"{e['confirmed_at']:.2f}"+'</td><td>'+f"{e['end']:.2f}"+'</td></tr>' for i,e in enumerate(report['events']))
+    frames=''.join('<figure><img src="'+esc(f['file'])+'"><figcaption>'+f"{f['time_s']:.2f} s · 局部变化 {f.get('native_motion_ratio',0):.1%}"+'</figcaption></figure>' for f in report['review_frames'])
+    return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="/static/industrial.css"><style>main{max-width:1100px;margin:35px auto;padding:0 22px}table{width:100%;border-collapse:collapse;background:#fff}td,th{text-align:left;padding:14px;border-bottom:1px solid #d9c8bf}.frames{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}figure{margin:0;background:#fff}img{width:100%}figcaption{padding:12px}p{line-height:1.9}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><main><h1>视频事件复核</h1><p>'+esc(report['source'])+' · C++ 区域与运动内核 · '+str(report['sampled_frames'])+' 个采样帧 · '+str(len(report['events']))+' 个候选事件</p><p>按候选区域提取颜色、局部纹理和内部变化；'+str(report['confirmation_window'])+' 个采样帧中至少 '+str(report['on_frames'])+' 次命中后形成事件。候选需要人工复核。</p><p><a href="video-report.json">完整 JSON</a> · <a href="timeline.csv">逐帧 CSV</a></p><table><tr><th>事件</th><th>开始秒</th><th>确认秒</th><th>结束秒</th></tr>'+events+'</table><h2>代表帧</h2><div class="frames">'+frames+'</div><h2>筛选统计</h2><pre>'+esc(json.dumps(report['diagnostics'],ensure_ascii=False,indent=2))+'</pre><p>图中橙框为通过单帧区域条件的候选，灰框为其他暖色区域。统计不是火灾确认或数据集准确率；明亮运动物体仍可能误报。</p></main></html>'

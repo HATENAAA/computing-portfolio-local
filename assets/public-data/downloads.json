@@ -1,0 +1,20 @@
+[
+  {
+    "file": "mitdb-100.hea",
+    "url": "https://physionet.org/files/mitdb/1.0.0/100.hea",
+    "bytes": 143,
+    "sha256": "60ebc904c7bf3e04d142638d3fd5c903e8dc9f10f1ea3264e07926aa089ee75e"
+  },
+  {
+    "file": "mitdb-100.dat",
+    "url": "https://physionet.org/files/mitdb/1.0.0/100.dat",
+    "bytes": 1950000,
+    "sha256": "b2ea3c250e56e48f4b7b90697832b8ecd1afa1e0bb31f2dcfea4ed6e1075a639"
+  },
+  {
+    "file": "reef-points.csv",
+    "url": "https://zenodo.org/records/19937366/files/points.csv?download=1",
+    "bytes": 6501273,
+    "sha256": "3fa22e153417818e794d88d0507df7e2af1a80a08067764bb8cefa1fb01777cd"
+  }
+]

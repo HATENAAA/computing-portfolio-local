@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>医生端 · 熙心健康体检</title>
+  <link rel="stylesheet" href="/doctor.css">
+  <script defer src="/doctor.js"></script>
+</head>
+<body>
+<main>
+  <header><h1>熙心健康体检 · 医生端</h1><a href="/">打开用户端</a></header>
+  <p class="context">教学运行环境 · 使用虚构账号与记录</p>
+  <form id="login">
+    <h2>医生登录</h2>
+    <label>医生编号<input name="docCode" autocomplete="username" required maxlength="20"></label>
+    <label>密码<input name="password" type="password" autocomplete="current-password" required></label>
+    <div class="actions"><button type="submit">登录</button><button type="button" id="demo">使用示例账号</button></div>
+  </form>
+  <section id="workspace" hidden>
+    <div class="heading"><h2>体检预约与报告</h2><button type="button" id="logout">退出登录</button></div>
+    <p id="doctor-name"></p>
+    <form id="filters" aria-label="筛选体检预约">
+      <label>手机号<input name="phone" type="search" inputmode="numeric" maxlength="11"></label>
+      <label>姓名<input name="patient" type="search" maxlength="20"></label>
+      <label>性别<select name="sex"><option value="">全部</option><option value="1">男</option><option value="0">女</option><option value="2">未指定</option></select></label>
+      <label>套餐<select name="package"><option value="">全部</option></select></label>
+      <label>体检日期<input name="date" type="date"></label>
+      <label>报告状态<select name="state"><option value="">全部</option><option value="1">待检</option><option value="2">已归档</option></select></label>
+      <div class="actions"><button type="submit">查询</button><button class="secondary" type="reset">重置</button><button type="button" id="refresh">刷新预约</button></div>
+    </form>
+    <p id="queue-count" role="status"></p>
+    <div class="queue-wrap"><table><thead><tr><th scope="col">订单</th><th scope="col">体检人</th><th scope="col">体检日期</th><th scope="col">机构 / 套餐</th><th scope="col">报告状态</th><th scope="col">操作</th></tr></thead><tbody id="queue"></tbody></table></div>
+    <section id="archive" tabindex="-1" hidden aria-labelledby="archive-title">
+      <div class="heading"><h2 id="archive-title">归档报告</h2><button type="button" id="close-archive">关闭报告</button></div>
+      <h3 id="archive-summary"></h3>
+      <p id="archive-content"></p>
+      <div class="queue-wrap"><table><thead><tr><th scope="col">检查项</th><th scope="col">结果</th><th scope="col">标记</th></tr></thead><tbody id="archive-readings"></tbody></table></div>
+    </section>
+    <form id="report" hidden>
+      <h2 id="report-title">录入报告</h2>
+      <div id="readings"></div>
+      <label>总检标题<input name="title" maxlength="40" required></label>
+      <label>总检结论<textarea name="content" rows="3" maxlength="400" required></textarea></label>
+      <button type="submit">发布报告</button>
+    </form>
+  </section>
+  <p id="notice" role="status" aria-live="polite"></p>
+</main>
+</body>
+</html>

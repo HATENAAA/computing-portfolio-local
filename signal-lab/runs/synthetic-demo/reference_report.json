@@ -1,0 +1,82 @@
+{
+  "mode": "synthetic-reference",
+  "scope": "SciPy reference calculations only; no physical acquisition and no LabVIEW VI executed",
+  "filters": [
+    {
+      "scope": "CSV numerical analysis; does not execute or certify a LabVIEW VI",
+      "input_sha256": "e410f849eff3404e99e12cfc4c17b6b35b39c86ed8c1f6a28fa074a81246c9c7",
+      "samples": 3072,
+      "sampling_hz": 1024.0,
+      "nyquist_hz": 512.0,
+      "bin_width_hz": 0.3333333333333333,
+      "window": "Hann, DC removed, coherent gain corrected",
+      "discarded_samples": 1024,
+      "tones": [
+        {
+          "requested_hz": 50.0,
+          "bin_hz": 50.0,
+          "input_amplitude": 0.9999999971145743,
+          "filtered_amplitude": 0.9983944694043224,
+          "gain_db": -0.013956643431694853
+        },
+        {
+          "requested_hz": 200.0,
+          "bin_hz": 200.0,
+          "input_amplitude": 0.5000000009982584,
+          "filtered_amplitude": 0.02045308593789303,
+          "gain_db": -27.76422324136192
+        }
+      ],
+      "mode": "synthetic-reference",
+      "filter": "butterworth",
+      "order": 4,
+      "cutoff_hz": 100,
+      "theoretical_gain_db": [
+        -0.013956698715426642,
+        -27.764222766738182
+      ],
+      "maximum_gain_error_db": 4.746237358688177e-07
+    },
+    {
+      "scope": "CSV numerical analysis; does not execute or certify a LabVIEW VI",
+      "input_sha256": "3c2b7972f331778b6d11cb58e01f15cc43453dd7791645ea0ae6ed18d7665fec",
+      "samples": 3072,
+      "sampling_hz": 1024.0,
+      "nyquist_hz": 512.0,
+      "bin_width_hz": 0.3333333333333333,
+      "window": "Hann, DC removed, coherent gain corrected",
+      "discarded_samples": 1024,
+      "tones": [
+        {
+          "requested_hz": 50.0,
+          "bin_hz": 50.0,
+          "input_amplitude": 0.9999999971145743,
+          "filtered_amplitude": 0.9745938088630021,
+          "gain_db": -0.2235270112364927
+        },
+        {
+          "requested_hz": 200.0,
+          "bin_hz": 200.0,
+          "input_amplitude": 0.5000000009982584,
+          "filtered_amplitude": 0.0062634631193370875,
+          "gain_db": -38.04310961317286
+        }
+      ],
+      "mode": "synthetic-reference",
+      "filter": "chebyshev",
+      "order": 4,
+      "cutoff_hz": 100,
+      "theoretical_gain_db": [
+        -0.2235270645830323,
+        -38.04310970602809
+      ],
+      "maximum_gain_error_db": 9.28552310597297e-08
+    }
+  ],
+  "aliasing": {
+    "input_hz": 750,
+    "sampling_hz": 1024,
+    "expected_alias_hz": 274,
+    "observed_peak_hz": 274.0
+  }
+}

@@ -1,0 +1,37 @@
+:root {font:15px/1.6 system-ui,"PingFang SC",sans-serif;color:#1e3042;background:#edf3f8}
+* {box-sizing:border-box}
+[hidden] {display:none!important}
+body {margin:0}
+main {max-width:950px;margin:auto;padding:clamp(16px,4vw,48px)}
+header,.heading,.actions {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+header {padding-bottom:10px;border-bottom:1px solid #bdcbd7}
+h1 {font-size:clamp(22px,4vw,35px);margin:0}
+h2 {font-size:20px;margin:0}
+a {color:#185181}
+.context,#doctor-name {color:#4e6377}
+form, #workspace {background:#fff;border:1px solid #c5d4e2;padding:16px;border-radius:6px}
+#login {max-width:420px}
+#report {margin-top:13px}
+label {display:grid;gap:4px;margin:10px 0}
+input:not([type=checkbox]), textarea, select {width:100%;border:1px solid #9fb4c7;border-radius:4px;padding:7px;font:inherit}
+.actions {justify-content:flex-start}
+button {background:#265e88;padding:8px 12px;border:1px solid #265e88;border-radius:4px;color:#fff;font:inherit;cursor:pointer}
+button[type=button], button.secondary {color:#234e73;background:#edf4fb}
+button:disabled {opacity:.5;cursor:wait}
+:focus-visible {outline:2px solid #215e98;outline-offset:3px}
+.queue-wrap {overflow:auto}
+table {border-collapse:collapse;width:100%}
+th,td {padding:8px;text-align:left;border-bottom:1px solid #d6e0e9}
+th {background:#edf4fa}
+.reading {display:grid;grid-template-columns:minmax(0,1fr) minmax(90px, auto);align-items:end;gap:9px}
+.reading .flag {display:flex;align-items:center;min-height:38px}
+#notice {min-height:1.5em}
+
+#filters { display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr)); gap:12px; background:#f6f9fc; }
+#filters label { margin:0; }
+#filters .actions { grid-column:1/-1; }
+#archive { margin-top:16px; padding:16px; background:#f6f9fc; border:1px solid #c5d4e2; border-radius:6px; }
+#archive-content { white-space:pre-wrap; overflow-wrap:anywhere; }
+#queue-count { margin:12px 0 6px; color:#4e6377; }
+.patient-phone { display:block; font-size:.87rem; color:#4e6377; white-space:nowrap; }
+td:last-child button { white-space:nowrap; }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>卫星测深回归分析</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<div class="survey-title"><h1>卫星测深回归分析</h1><p>用四个反射率波段估算水深，在整组留出的样本上比较线性回归与支持向量回归（SVR）。</p></div>
+<nav class="work-views" aria-label="分析任务"><button data-view="evaluation" aria-pressed="true">比较模型</button>
+<button data-view="forecast" aria-pressed="false">预测新样本</button><button data-view="observations" aria-pressed="false">查看光子轨迹</button></nav>
+<section id="evaluation"><p id="status" role="status">正在计算内置样例…</p>
+<div class="layout"><aside><h2>回归输入</h2>
+<label for="train-source">样本来源</label><select id="train-source"><option value="demo">内置合成样例</option><option value="custom">我的标注 CSV</option></select>
+<div id="demo-input"><p>120 个样本分属 8 组。整组留出后，可检查模型对未参与拟合的样本预测得如何。</p><button class="secondary" id="demo">重新计算样例</button></div>
+<div id="custom-input" hidden><label for="file">选择标注 CSV</label><input id="file" type="file" accept=".csv,text/csv">
+<label for="units">波段单位</label><select id="units"><option value="reflectance">反射率（0–1）</option><option value="dn">DN（除以 10000，偏移 0）</option></select>
+<details><summary>粘贴或编辑 CSV</summary><textarea id="csv" aria-label="训练 CSV 内容" rows="7"></textarea></details>
+<p>至少 10 行、3 个独立组。水深单位为米，光子与影像日期相差最多一天。</p><button id="example" class="template-link secondary">下载带数据的 CSV 模板</button><br><button id="train">计算我的样本</button></div></aside>
+<div><div id="empty" hidden><p>评价完成后可查看散点图和逐样本误差。</p></div><div id="result" hidden>
+<section class="plot"><h2 id="plot-title">留出组预测</h2><p>横轴为参考水深，纵轴为模型预测。点离虚线越远，误差越大。</p>
+<p class="legend"><span>● 线性回归</span><span>○ SVR</span></p><svg id="chart" viewBox="0 0 660 390" role="img" aria-label="参考水深与预测散点图"></svg>
+<label for="sample-pick">核对留出样本（残差 = 预测 − 参考）</label><select id="sample-pick"></select><output id="sample-residual" aria-live="polite"></output></section>
+<h2>模型误差</h2><div class="table-wrap"><table><thead><tr><th>模型</th><th>RMSE / m</th><th>平均绝对误差 / m</th><th>R²</th></tr></thead><tbody id="metrics"></tbody></table></div>
+<div id="downloads" class="downloads"></div><details><summary>分组、样本与模型文件</summary><div class="readouts"><div><small>输入来源</small><b id="source"></b></div><div><small>样本 / 独立组</small><b id="samples"></b></div><div><small>训练 / 测试组</small><b id="groups"></b></div></div><p id="split"></p><div id="artifacts" class="downloads"></div></details></div></div></div></section>
+<section id="forecast" hidden><h2>用当前模型估算水深</h2><p id="model-source"></p><div class="layout"><aside>
+<label for="predict-source">预测输入</label><select id="predict-source"><option value="example">三条示例反射率</option><option value="file">我的波段 CSV</option></select>
+<div id="predict-upload" hidden><label for="predict-file">选择 CSV（B2、B3、B4、B8）</label><input id="predict-file" type="file" accept=".csv,text/csv">
+<label for="predict-units">波段单位</label><select id="predict-units"><option value="reflectance">反射率（0–1）</option><option value="dn">DN（除以 10000，偏移 0）</option></select></div>
+<label for="model">模型</label><select id="model"><option value="svr">支持向量回归（SVR）</option><option value="linear">线性回归</option></select>
+<button id="predict" disabled>计算预测水深</button></aside><div><p id="prediction" role="status"></p><div id="pred-preview" class="table-wrap"></div></div></div></section>
+<section id="observations" hidden><h2>珊瑚礁沿轨光子高度</h2><p>选择一段轨迹，沿轨查看光子相对平均海平面的高度。</p><label for="beam">波束与轨迹段</label><select id="beam"></select>
+<section class="plot"><h2 id="profile-title"></h2><p id="profile-summary"></p><svg id="profile" viewBox="0 0 660 270" role="img" aria-label="沿轨距离与平均海平面相对高度"></svg>
+<label for="point">沿轨查看观测点</label><input type="range" id="point" min="0" value="0"><output id="point-readout"></output></section>
+<p class="note">每段按沿轨距离排序，按行号等间隔抽取最多 320 条记录绘图。高度范围和中位数使用该段全部记录。点表缺少配对的光学波段，因此这组观测只用于剖面分析。</p>
+<p class="note">来源：Li, Fengyu，Zenodo v1，CC BY 4.0。<a href="https://zenodo.org/records/19937366">原始数据及许可 ↗</a></p></section>
+</main><script src="/plot-data.js"></script><script src="/app.js"></script></body></html>

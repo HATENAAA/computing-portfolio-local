@@ -1,0 +1,6 @@
+{
+  "file": "service/CalendarService.java",
+  "first": 45,
+  "last": 63,
+  "code": "        List<CalendarResponseDto> calendar = new ArrayList<>();\n        SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\");\n\n        for (Date date : dates) {\n            Calendar calendarDate = Calendar.getInstance();\n            calendarDate.setTime(date);\n            int dayOfWeek = calendarDate.get(Calendar.DAY_OF_WEEK); // 星期天为1，星期一为2，依此类推\n            int index = (dayOfWeek - 1) % 7; // 将星期日映射为0，星期六映射为6\n            int totalAppointments = Integer.parseInt(rules[index]);\n            int bookedAppointments = ordersRepository.countByHospitalIdAndOrderDate(hospitalId, new java.sql.Date(date.getTime()));\n            int remainingAppointments = totalAppointments - bookedAppointments;\n\n            CalendarResponseDto dto = new CalendarResponseDto();\n            dto.setYmd(sdf.format(date)); // 只设置日期部分\n            dto.setTotal(totalAppointments);\n            dto.setExisting(bookedAppointments);\n            dto.setRemainder(remainingAppointments);\n\n            calendar.add(dto);"
+}

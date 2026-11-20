@@ -1,0 +1,28 @@
+Shanghai historic sites pedestrian atlas
+
+Basemap, position references and pedestrian graph: © OpenStreetMap contributors.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+
+OSM API source: https://api.openstreetmap.org/api/0.6/map?bbox=west,south,east,north
+Input bounding boxes (WGS84):
+121.466,31.212,121.479,31.224
+121.446,31.208,121.466,31.228
+121.446,31.228,121.478,31.240
+121.466,31.207,121.482,31.229
+121.476,31.227,121.497,31.246
+121.472,31.244,121.494,31.269
+121.427,31.216,121.451,31.239
+121.434,31.191,121.466,31.211
+121.433,31.168,121.463,31.194
+121.453,31.237,121.480,31.257
+121.476,31.265,121.502,31.281
+
+The pedestrian network uses shared OSM node IDs. Paths with pedestrian or
+general access restrictions are filtered according to their mapped tags.
+Venue positions are from the linked OSM features, and the dashed approach
+connects each mapped position to its nearest point on the walking network.
+Estimated walking times use 4.5 km/h. Government sources for venue names and
+addresses are linked in city-places.json and in the place panel.
+
+Leaflet is distributed under its accompanying BSD licence.

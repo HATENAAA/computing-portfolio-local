@@ -1,0 +1,14 @@
+manufacturing-platform/backend/src/test/java/com/hystu/springboot_/WorkflowTests.java
+
+@Test void reconciliationChecksAllLedgerRowsAndActiveReservations()throws Exception{
+   long m=material("RECON",0);postAs("/inventory/materials/"+m+"/receipts","{\"quantity\":10,\"requestId\":\"reconcile-opening-001\"}","alice").andExpect(status().isOk());bom(m);long id=accepted();
+   postAs("/inventory/orders/"+id+"/reserve","{\"version\":1}","alice").andExpect(status().isOk());
+   mvc.perform(get("/inventory/reconciliation").with(user("alice")))
+     .andExpect(status().isOk()).andExpect(jsonPath("$.consistent").value(true))
+     .andExpect(jsonPath("$.materials[0].activeReserved").value(2));
+   db.update("UPDATE materials SET onHand=onHand+1 WHERE id=?",m);
+   mvc.perform(get("/inventory/reconciliation").with(user("alice")))
+     .andExpect(jsonPath("$.consistent").value(false))
+     .andExpect(jsonPath("$.materials[0].issues[0]").value("STOCK_LEDGER_MISMATCH"));
+   assertEquals(11L,db.queryForObject("SELECT onHand FROM materials WHERE id=?",Long.class,m));
+ }

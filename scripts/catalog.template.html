@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>王嘉玮 · 技术作品集</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <link rel="stylesheet" href="assets/project-identities.css">
+  <link rel="stylesheet" href="assets/catalog.css">
+  <script defer src="assets/portfolio.js"></script>
+</head>
+<body data-catalog>
+<a class="skip-link" href="#work" data-en="Skip to projects">跳至项目</a>
+<main id="top">
+  <header class="site-header">
+    <a class="site-name" href="#top" data-en="Jiawei Wang">王嘉玮</a>
+    <nav aria-label="主导航" data-en-aria-label="Main navigation">
+      <a href="#work" data-en="Projects">全部项目</a>
+      <a href="#local-projects" data-en="Local setup">本地运行</a>
+      <a href="https://github.com/HATENAAA">GitHub ↗</a>
+      <a href="?lang=en" data-language hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+  <section class="catalog-hero" aria-labelledby="portfolio-title">
+    <div class="hero-copy">
+      <h1 id="portfolio-title" data-en="Technical portfolio">技术作品集</h1>
+      <p data-en="Projects in computer vision, interactive systems, signal analysis and geospatial data. Each project includes my role, the implementation and a demo or documented results.">收录计算机视觉、交互系统、信号分析和空间数据项目。每个项目都有个人贡献、实现过程及演示或实验结果。</p>
+    </div>
+    <div class="edition-panel" id="local-projects">
+      <div data-static-only>
+        <h2 data-en="Static portfolio">静态展示版</h2>
+        <p data-en="Screenshots and results come from actual project runs and documented experiments. Deploy the applications locally to use their full functionality.">截图与结果来自项目实际运行和实验记录。完整应用可在本地部署后运行。</p>
+        <div class="edition-actions">
+          <a class="entry-action" href="https://github.com/HATENAAA/computing-portfolio-local" data-en="Local portfolio repository ↗">本地作品集仓库 ↗</a>
+          <a href="projects/guide.html" data-en-href="projects/guide-en.html" data-en="Setup guide">部署指南</a>
+        </div>
+      </div>
+      <div data-local-only hidden>
+        <h2 data-en="Run local projects">运行本地项目</h2>
+        <p data-en="Choose an application. Running services open in a new tab.">选择一个应用，已启动的服务会在新标签页打开。</p>
+        <div class="edition-actions">
+          <details class="run-menu">
+            <summary class="entry-action" data-en="Choose a project">选择并运行项目</summary>
+            <div class="local-launchers" aria-label="本地应用" data-en-aria-label="Local applications">
+{{LOCAL_LAUNCHERS}}
+            </div>
+          </details>
+          <a href="projects/guide.html" data-en-href="projects/guide-en.html" data-en="Setup guide">部署指南</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="work-index" id="work" aria-labelledby="work-title">
+    <div class="index-title">
+      <h2 id="work-title" data-en="All projects">全部项目</h2>
+      <p id="project-count" role="status">{{PROJECT_COUNT}}</p>
+    </div>
+    <div class="project-tools" hidden>
+      <div class="filters" role="group" aria-label="按项目领域筛选" data-en-aria-label="Filter projects by field">
+        <button type="button" data-filter="all" aria-pressed="true" data-en="All">全部</button>
+        <button type="button" data-filter="vision" aria-pressed="false" data-en="Vision and imaging">视觉与重建</button>
+        <button type="button" data-filter="systems" aria-pressed="false" data-en="Interactive systems">交互与系统</button>
+        <button type="button" data-filter="geospatial" aria-pressed="false" data-en="Geospatial">地图与空间数据</button>
+        <button type="button" data-filter="signal" aria-pressed="false" data-en="Signals and instruments">信号与仪器</button>
+      </div>
+      <label class="project-search"><span data-en="Search projects">搜索项目</span>
+        <input id="project-query" type="search" autocomplete="off" placeholder="项目名称或技术" data-en-placeholder="Project name or technology" aria-controls="project-grid">
+      </label>
+    </div>
+    <p id="empty-projects" hidden data-en="No projects match. Try another keyword or field.">没有匹配的项目，请更换关键词或领域。</p>
+    <div class="projects" id="project-grid">
+{{PROJECT_CARDS}}
+    </div>
+  </section>
+  <footer>
+    <nav aria-label="页尾" data-en-aria-label="Footer">
+      <a href="#top" data-en="Back to top ↑">返回顶部 ↑</a>
+      <a href="projects/credits.html" data-en="Attribution and licences">方法引用与软件许可</a>
+    </nav>
+  </footer>
+</main>
+</body>
+</html>

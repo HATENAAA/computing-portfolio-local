@@ -1,0 +1,34 @@
+/* Project identities: intentional differences in type, composition and materials. */
+.project[data-id=hsi],body[data-project=hsi]{--accent:#6548a3;--accent-hover:#4d327e;--tint:#efebf7;--rule:#d7cfe4}
+.project[data-id=vrfitai],body[data-project=vrfitai]{--accent:#335f84;--accent-hover:#214762;--tint:#e9f1f8;--rule:#b9cddd}
+.project[data-id=manufacturing],body[data-project=manufacturing]{--accent:#176487;--accent-hover:#104762;--tint:#e6eef3;--rule:#bdcbd6}
+.project[data-id=firewatch],body[data-project=firewatch]{--accent:#a8461d;--accent-hover:#813416;--tint:#f9ece1;--rule:#dec9ba}
+.project[data-id=signal],body[data-project=signal]{--accent:#725c00;--accent-hover:#4e3e00;--tint:#f5f0d4;--rule:#d6cfaa}
+.project[data-id=city],body[data-project=city]{--accent:#983f47;--accent-hover:#70252f;--tint:#f7e9e6;--rule:#dac3ba}
+.project[data-id=bathymetry],body[data-project=bathymetry]{--accent:#096b94;--accent-hover:#084966;--tint:#e4f3f9;--rule:#bdd9e5}
+.project[data-id=medical],body[data-project=medical]{--accent:#176f9b;--accent-hover:#135475;--tint:#e7f2fa;--rule:#bdd4e4}
+body:not([data-project]) .intro{border-bottom:2px solid #24262a;padding:64px 0 50px}
+body:not([data-project]) .intro h1{font-family:Georgia,'Songti SC','SimSun',serif;font-size:clamp(34px,4vw,50px);font-weight:500;letter-spacing:-.04em}
+.project{border:0;border-top:4px solid var(--accent);background:transparent}
+.project .body{padding:22px 0 28px}.project .cover{background:var(--tint)}.project .cover img{border:0}.project .meta{color:var(--accent)}
+.project .evidence-count{color:var(--ink-3)}.project .button{background:transparent;color:var(--accent);border:0;border-bottom:1px solid var(--accent);padding:8px 0}.project .button:hover{background:var(--tint)}
+body[data-project] .detail>section:first-of-type{padding:44px 32px;margin-top:24px;background:var(--tint);border-top:4px solid var(--accent)}
+body[data-project] .detail>section:first-of-type h1{color:var(--accent);line-height:1.25}
+body[data-project=hsi] .detail>section:first-of-type h1{font-family:Georgia,'Songti SC',serif;font-weight:500;font-size:42px}
+body[data-project=city]{--paper:#f7f0e5;--surface:#fffaf2;--ink-1:#372c29;--ink-2:#53443e;--ink-3:#79645a}
+body[data-project=city] h1,body[data-project=city] h2{font-family:Georgia,'Songti SC',serif}
+body[data-project=city] .detail>section:first-of-type{border:1px solid #b99d8e;border-top:7px double #983f47;background:transparent}
+body[data-project=vrfitai] .detail>section:first-of-type{background:#0c1829;color:#d9e7f3;border-color:#b3d9e5;border-radius:20px;padding:48px}
+body[data-project=vrfitai] .detail>section:first-of-type :is(h1,.lead,.tags,.date,.eyebrow){color:#d9e7f3}
+body[data-project=vrfitai] .detail>section:first-of-type h1{font-size:56px;font-weight:800;letter-spacing:-2px}
+body[data-project=vrfitai] .detail>section:first-of-type .button{background:#b3d9e5;color:#18344c;border-color:#b3d9e5;border-radius:30px}
+body[data-project=signal] .detail>section:first-of-type{background:#171b1d;color:#e4ebe9;border-color:#f0d263}
+body[data-project=signal] .detail>section:first-of-type :is(h1,.lead,.tags,.date,.eyebrow){color:#e5e8dc}
+body[data-project=signal] .detail>section:first-of-type h1{font-family:ui-monospace,'PingFang SC',monospace}
+body[data-project=signal] .detail>section:first-of-type .button{background:#f0d263;color:#20241c;border-color:#f0d263}
+body[data-project=firewatch] .detail>section:first-of-type{border-left:10px solid #d86b30;border-top:0;background:#292320;color:#f4e9df}
+body[data-project=firewatch] .detail>section:first-of-type :is(h1,.lead,.tags,.date,.eyebrow){color:#f4e9df}
+body[data-project=manufacturing] .detail>section:first-of-type{border-left:156px solid #283943;border-top:0}
+body[data-project=bathymetry]{--paper:#f2f8fb}body[data-project=bathymetry] .detail>section:first-of-type{border-top:0;border-bottom:4px solid #096b94;background:#e0f1f8}
+body[data-project=medical] .detail>section:first-of-type{border-radius:24px;background:#e7f2fa;border:0;padding:44px}
+@media(max-width:750px){body[data-project] .detail>section:first-of-type{padding:28px 20px;margin-top:18px}body[data-project=manufacturing] .detail>section:first-of-type{border-left-width:6px}body[data-project] .detail>section:first-of-type h1{font-size:32px}body:not([data-project]) .intro{padding:34px 0}.project .body{padding:20px 0}}

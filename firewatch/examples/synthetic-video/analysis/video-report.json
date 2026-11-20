@@ -1,0 +1,176 @@
+{
+  "version": 2,
+  "source": "synthetic-compatible.webm",
+  "source_sha256": "af4923e5474cf9a79e85fa3d6256e6191dae97b79f4403275d79b55fbac8669e",
+  "fps": 10.0,
+  "sample_hz": 5,
+  "on_frames": 3,
+  "off_frames": 2,
+  "sampled_frames": 20,
+  "events": [
+    {
+      "start": 0.6,
+      "confirmed_at": 1.0,
+      "end": 2.8000000000000003
+    }
+  ],
+  "config": {
+    "brightness": 150,
+    "edge_ratio": 0.6,
+    "min_area_ratio": 0.002,
+    "min_component": 40
+  },
+  "diagnostics": {
+    "candidate_frames": 11,
+    "longest_candidate_run": 11,
+    "min_area_ratio": 0.0,
+    "max_area_ratio": 0.2777777777777778,
+    "max_edge_ratio": 1.0,
+    "reason_counts": {
+      "no_color_region": 9,
+      "area_below_threshold": 0,
+      "edge_below_threshold": 0,
+      "candidate": 11
+    }
+  },
+  "review_frames": [
+    {
+      "time_s": 0.0,
+      "candidate": false,
+      "area_ratio": 0.0,
+      "best_edge_ratio": 0.0,
+      "reason": "no_color_region",
+      "sobel_edge_ratio": 0.0,
+      "canny_edge_ratio": 0.0,
+      "laplacian_edge_ratio": 0.0,
+      "scharr_edge_ratio": 0.0,
+      "file": "review-00001.jpg"
+    },
+    {
+      "time_s": 0.4,
+      "candidate": false,
+      "area_ratio": 0.0,
+      "best_edge_ratio": 0.0,
+      "reason": "no_color_region",
+      "sobel_edge_ratio": 0.0,
+      "canny_edge_ratio": 0.0,
+      "laplacian_edge_ratio": 0.0,
+      "scharr_edge_ratio": 0.0,
+      "file": "review-00003.jpg"
+    },
+    {
+      "time_s": 0.6,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00004.jpg"
+    },
+    {
+      "time_s": 0.8,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00005.jpg"
+    },
+    {
+      "time_s": 1.2,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00007.jpg"
+    },
+    {
+      "time_s": 1.6,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00009.jpg"
+    },
+    {
+      "time_s": 2.0,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00011.jpg"
+    },
+    {
+      "time_s": 2.4,
+      "candidate": true,
+      "area_ratio": 0.2777777777777778,
+      "best_edge_ratio": 1.0,
+      "reason": "candidate",
+      "sobel_edge_ratio": 1.0,
+      "canny_edge_ratio": 1.0,
+      "laplacian_edge_ratio": 1.0,
+      "scharr_edge_ratio": 1.0,
+      "file": "review-00013.jpg"
+    },
+    {
+      "time_s": 2.8,
+      "candidate": false,
+      "area_ratio": 0.0,
+      "best_edge_ratio": 0.0,
+      "reason": "no_color_region",
+      "sobel_edge_ratio": 0.0,
+      "canny_edge_ratio": 0.0,
+      "laplacian_edge_ratio": 0.0,
+      "scharr_edge_ratio": 0.0,
+      "file": "review-00015.jpg"
+    },
+    {
+      "time_s": 3.2,
+      "candidate": false,
+      "area_ratio": 0.0,
+      "best_edge_ratio": 0.0,
+      "reason": "no_color_region",
+      "sobel_edge_ratio": 0.0,
+      "canny_edge_ratio": 0.0,
+      "laplacian_edge_ratio": 0.0,
+      "scharr_edge_ratio": 0.0,
+      "file": "review-00017.jpg"
+    },
+    {
+      "time_s": 3.6,
+      "candidate": false,
+      "area_ratio": 0.0,
+      "best_edge_ratio": 0.0,
+      "reason": "no_color_region",
+      "sobel_edge_ratio": 0.0,
+      "canny_edge_ratio": 0.0,
+      "laplacian_edge_ratio": 0.0,
+      "scharr_edge_ratio": 0.0,
+      "file": "review-00019.jpg"
+    }
+  ],
+  "duration_analyzed_s": 3.9,
+  "truncated": false,
+  "scope": "offline rule-candidate review, constant-frame-rate input; no real-time or fire accuracy claim",
+  "detector_sha256": "b903c6d5eebd6cf954c139b35803528523cdcb993f7d23a2e0dedeeed7cabfc5",
+  "temporal_sha256": "5d0805ba28c49d806e45156666b3a7d8de9e142938b2dbc769ad984bce854959",
+  "analysis_sha256": "0351d8c989366951723f01cff01e23f40ca7ded08852fefbda4cbe606f6be48a"
+}

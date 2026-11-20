@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>信号分析与虚拟仪器</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <section class="console" aria-labelledby="instrument-title">
+    <header class="scope-mast">
+      <h1 id="instrument-title">信号分析与虚拟仪器</h1>
+    </header>
+    <nav class="signal-presets" aria-label="选择实验">
+<button type="button" data-preset="filter">双频滤波</button><button type="button" data-preset="alias">采样混叠</button>
+<button type="button" data-preset="h1">测量系统频响</button><button type="button" data-preset="ecg">分析实录波形</button>
+<button type="button" data-preset="upload">导入 CSV</button></nav>
+
+    <div class="instrument-layout">
+      <div class="screen-column">
+        <section class="screen" aria-label="波形显示屏">
+          <div class="screen-header">
+            <span id="scope-mode">时域</span>
+            <div class="scope-legend" aria-label="显示的通道">
+              <span id="legend-input" class="ch1">CH1 · 输入</span>
+              <span id="legend-output" class="ch2">CH2 · 输出</span>
+            </div>
+          </div>
+          <div class="scope-plot">
+            <svg id="wave-chart" viewBox="0 0 900 365" role="img" aria-label="时域波形"></svg>
+            <p id="scope-empty">等待分析结果</p>
+          </div>
+          <div class="screen-status">
+            <span id="axis-note">等待分析结果</span>
+            <span id="scope-trigger" hidden></span>
+          </div>
+          <div class="readouts"><div><span>采样率</span><b id="read-fs">—</b><small>Hz</small></div><div><span>Nyquist 频率</span><b id="read-nyquist">—</b><small>Hz</small></div><div><span>FFT 分辨率</span><b id="read-bin">—</b><small>Hz / bin</small></div><div><span>输入频谱主峰</span><b id="read-peak">—</b><small>Hz</small></div></div>
+        </section>
+      </div>
+
+      <section class="control-bank" aria-label="示波器显示控制">
+        <fieldset>
+          <legend>通道</legend>
+          <div class="channel-keys">
+            <button type="button" class="channel-key ch1" id="channel-input" aria-pressed="true">
+              <b>CH1</b><span>输入</span>
+            </button>
+            <button type="button" class="channel-key ch2" id="channel-output" aria-pressed="true">
+              <b>CH2</b><span>输出</span>
+            </button>
+          </div>
+        </fieldset>
+        <div class="dial-bank">
+          <fieldset class="dial-control">
+            <legend><label for="scale-voltage">垂直刻度</label></legend>
+            <div class="dial-row">
+              <button type="button" data-dial="scale-voltage" data-step="-1" aria-label="减小幅度每格">−</button>
+              <div class="dial">
+                <span class="dial-cap" aria-hidden="true"></span>
+                <input id="scale-voltage" type="range" min="0" max="10" value="0">
+              </div>
+              <button type="button" data-dial="scale-voltage" data-step="1" aria-label="增大幅度每格">＋</button>
+            </div>
+            <output id="vertical-value" for="scale-voltage">自动</output>
+          </fieldset>
+          <fieldset class="dial-control">
+            <legend><label for="scale-time">时基</label></legend>
+            <div class="dial-row">
+              <button type="button" data-dial="scale-time" data-step="-1" aria-label="缩短时间每格">−</button>
+              <div class="dial">
+                <span class="dial-cap" aria-hidden="true"></span>
+                <input id="scale-time" type="range" min="0" max="10" value="5">
+              </div>
+              <button type="button" data-dial="scale-time" data-step="1" aria-label="延长时间每格">＋</button>
+            </div>
+            <output id="time-value" for="scale-time">10 ms/格</output>
+          </fieldset>
+        </div>
+        <fieldset>
+          <legend>触发</legend>
+          <label class="control-row">CH1 零电平
+            <select id="trigger-edge">
+              <option value="off">关闭</option>
+              <option value="rising">上升沿</option>
+              <option value="falling">下降沿</option>
+            </select>
+          </label>
+        </fieldset>
+        <div class="display-options">
+          <label for="view-mode">显示模式</label>
+          <select id="view-mode">
+            <option value="time">时域</option>
+            <option value="xy">X–Y 轨迹</option>
+          </select>
+          <button type="button" id="auto-scale">自动设置</button>
+        </div>
+      </section>
+    </div>
+    <div class="session-controls">
+      <section id="finding" aria-labelledby="task-title"><div><h2 id="task-title">双频滤波</h2><p id="finding-text" aria-live="polite">正在计算默认的双频信号…</p></div></section>
+<p id="sample-credit" hidden>实录波形取自 Moody 与 Mark 的 MIT-BIH 心律失常数据库 1.0.0，记录 100 的 MLII 导联，前 10 秒，单位 mV。<a href="/mitdb-100-10s.csv" download>下载原始片段 CSV</a> · <a href="https://physionet.org/content/mitdb/1.0.0/">PhysioNet 数据与许可 ↗</a></p>
+<div id="import-panel" hidden><label>采样记录 CSV<input id="csv" type="file" accept=".csv,text/csv"></label><p>至少 128 行等间隔数据，首行包含 time_s 和 input。有 filtered 列时保留原输出；只有输入时应用所选滤波器。</p><a href="/mitdb-100-10s.csv" download>下载可导入示例</a></div>
+<div id="alias-preview" hidden><label>改变正弦输入频率 <input type="range" id="tune-frequency" min="1" max="1024" value="750"></label><output id="tune-value"></output></div><div id="message" role="status"></div>
+      <details class="parameter-panel">
+        <summary>信号源与分析参数</summary>
+        <form id="controls" class="controls"><section class="param-group"><h3 class="panel-label">信号源与采样</h3><label>波形<select id="waveform"><option value="multitone">双频正弦</option><option value="sine">正弦波</option><option value="square">方波</option><option value="triangle">三角波</option><option value="sawtooth">锯齿波</option><option value="chirp">线性扫频</option><option value="noise">白噪声</option></select></label>
+    <div class="two"><label>采样率 / Hz<input id="sampling_hz" type="number" min="32" max="48000" value="1024" required></label><label>样本数<input id="samples" type="number" min="128" max="32768" step="1" value="4096" required></label></div>
+    <div class="two"><label>频率1 / Hz<input id="frequency" type="number" min="0.01" max="100000" step="any" value="50" required></label><label>频率2 / Hz<input id="second_frequency" type="number" min="0.01" max="100000" step="any" value="200" required></label></div>
+    <label>叠加噪声标准差<input id="noise_std" type="number" min="0" max="2" step="0.01" value="0"></label>
+    </section>
+    <section class="param-group"><h3 class="panel-label">滤波与分析</h3>
+    <div class="two"><label>滤波器<select id="filter"><option value="butterworth">Butterworth</option><option value="chebyshev">Chebyshev I</option></select></label><label>类型<select id="band"><option value="lowpass">低通</option><option value="highpass">高通</option><option value="bandpass">带通</option></select></label></div>
+    <div class="two"><label>阶数<input id="order" type="number" min="1" max="10" value="4" required></label><label>纹波 / dB<input id="ripple_db" type="number" min="0.1" max="3" step="0.1" value="1" required></label></div>
+    <div class="two"><label>截止频率 / Hz<input id="cutoff_hz" type="number" min="0.01" step="any" value="100" required></label><label>带通上限 / Hz<input id="high_hz" type="number" min="0.01" step="any" value="300" required></label></div><label>丢弃起始瞬态 / 点<input id="discard" type="number" min="0" step="1" value="1024" required></label>
+    <div class="two"><label>Welch窗长<input id="segment_length" type="number" min="32" max="32768" value="512"></label><label>重叠比例<input id="overlap" type="number" min="0" max="0.9" step="0.05" value="0.5"></label></div></section><div class="param-actions"><button type="submit" id="run">应用参数并计算</button></div></form>
+      </details>
+    </div>
+  </section>
+  <div class="analysis-bay">
+    <section id="workspace" class="scope-area" hidden aria-label="频域分析与测量">
+      <div class="analysis-heading">
+        <h2>频域分析与测量</h2>
+        <nav class="console-exports" aria-label="导出分析">
+          <a id="report-link" hidden>下载分析报告</a>
+          <a id="csv-link" hidden>下载双通道 CSV</a>
+        </nav>
+      </div>
+      <div class="dual-plots"><section class="scope-panel"><div class="scope-title"><h2>单边幅值频谱</h2><span>Hann窗 · 相干增益校正</span></div><svg id="fft-chart" viewBox="0 0 460 240" role="img" aria-label="输入输出幅值频谱"></svg></section><section class="scope-panel"><div class="scope-title"><h2>理论滤波频响</h2><span id="filter-type">—</span></div><svg id="response-chart" viewBox="0 0 460 240" role="img" aria-label="理论增益频响"></svg></section></div><section id="transfer-panel" hidden><h2>同步输入／输出：H1频响与相干性</h2><p id="transfer-note"></p><div class="transfer-grid"><figure><figcaption>增益 / dB</figcaption><svg id="transfer-gain" viewBox="0 0 480 260" role="img" aria-label="可靠频点的传递函数增益"></svg></figure><figure><figcaption>相位 / 度</figcaption><svg id="transfer-phase" viewBox="0 0 480 260" role="img" aria-label="可靠频点的传递函数相位"></svg></figure><figure><figcaption>幅值平方相干性 / 0–1</figcaption><svg id="transfer-coherence" viewBox="0 0 480 260" role="img" aria-label="输入输出相干性"></svg></figure></div></section><section class="measurement-panel"><div class="scope-title"><h2>频点读数</h2><span id="source-type">等待运行</span></div><div id="tone-table" class="table-scroll"></div><p id="alias-note"></p><details class="technical"><summary>测量方法</summary><p id="measurement-note" class="measurement-note">频点幅值取最近FFT频点；非整数周期会产生谱泄漏。有效指标使用全部保留样本；输入来源和分析参数随报告保存。</p></details></section>
+    </section>
+    <details class="history-panel"><summary>最近分析记录</summary><div id="history"></div></details><details class="technical"><summary>输入与分析代码校验值</summary><p id="hash" class="hash-line"></p></details>
+  </div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

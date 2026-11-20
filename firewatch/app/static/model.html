@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>火焰检测 · 模型与规则对照</title>
+  <link rel="stylesheet" href="/static/research.css"><link rel="stylesheet" href="/static/navigation.css?v=station">
+</head>
+<body class="fw-station fw-model">
+<fw-navigation current="model"></fw-navigation><script src="/static/navigation.js?v=station"></script>
+<main class="fw-workspace"><header class="fw-command"><h1>模型与规则对照</h1><div class="fw-actions"><button id="export-model" disabled>下载推理报告</button></div></header>
+  <div class="fw-split">
+    <section class="research-panel fw-model-stage">
+      <header><h2>同帧检测结果</h2><span id="model-time" class="hint"></span></header>
+      <div id="model-message" class="research-message" role="status" aria-live="polite"></div>
+      <div id="model-result" class="research-content"></div>
+    </section>
+    <section class="research-panel"><header><h2>样本与阈值</h2></header>
+      <form id="model-form" class="research-content">
+        <label>样本来源<select id="sample" disabled></select></label>
+        <label id="upload-label" hidden>选择图像<input type="file" id="model-image" accept="image/jpeg,image/png,image/webp"></label>
+        <label>置信度门槛<input id="model-confidence" type="number" min="0" max="1" step="0.01" value="0.25" required></label>
+        <label>重叠框抑制门槛（IoU）<input id="model-iou" type="number" min="0" max="1" step="0.01" value="0.45" required></label>
+        <button class="primary" id="run-model" disabled>运行对照</button>
+        <p class="hint"><a href="https://github.com/steffensbola/furg-fire-dataset/tree/6aff09d7baa27425f31d1df685284c26cbffe7af">FURG 原始视频和标注 ↗</a> · <a href="https://huggingface.co/fiacecson20/cctv-ai-fire-smoke/tree/343990e42d99a5d27e9f35fc7c80880dc5f43f45">内置模型来源 ↗</a></p>
+      </form><p id="model-status" class="model-state" role="status">正在加载模型…</p>
+    </section>
+  </div>
+</main><script src="/static/model.js?v=station"></script>
+</body></html>

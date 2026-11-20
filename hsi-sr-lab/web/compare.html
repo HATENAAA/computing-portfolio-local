@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>重建实验对比</title><style>body{background:#f5f4f8;color:#33293d;font:16px/1.7 system-ui;margin:30px auto;max-width:1000px;padding:20px}a{color:#6548a3}select,button{font:inherit;padding:10px;margin:8px;background:#fff;color:#49365e;border:1px solid #cbbdde}select{max-width:100%;width:310px}table{width:100%;border-collapse:collapse}td,th{overflow-wrap:anywhere}td,th{padding:12px;border-bottom:1px solid #d8cee4;text-align:left}pre{white-space:pre-wrap;overflow-wrap:anywhere}#message{color:#9c5424}#result{overflow-x:auto}select{box-sizing:border-box;width:min(270px,90%)}@media(max-width:600px){body{margin:0;padding:14px}td,th{padding:6px;font-size:13px}}</style>
+<a href="/">← 返回重建工作台</a><h1>重建实验对比</h1><p>选择真值、倍率与量程一致的两条记录。正向改善值统一表示候选方案更好。单幅影像仅作描述性比较；多场景统计方法见项目说明。</p><form id="form"><label>基线<select id="baseline" required></select></label><label>候选<select id="candidate" required></select></label><button>比较</button></form><p id="message" role="status"></p><div id="result"></div><button id="download" hidden>下载对比报告</button><script>
+const $=id=>document.getElementById(id);let report;
+let history = [];
+const submit = $('form').querySelector('button');
+function options(select, values) {
+ select.replaceChildren(...values.map(run => new Option(
+   [run.scene_name, run.method, '×' + run.scale].filter(Boolean).join(' · '), run.id)));
+}
+function updateCandidates() {
+ const base = history.find(run => run.id === $('baseline').value);
+ const candidates = base ? history.filter(run => run.id !== base.id &&
+   run.truth_sha256 === base.truth_sha256 && run.scale === base.scale && run.data_range === base.data_range) : [];
+ options($('candidate'), candidates);
+ submit.disabled = !candidates.length;
+ $('message').textContent = candidates.length ? '' : '请先在工作台运行同一场景、同一倍率下的两种重建方法。';
+}
+$('baseline').onchange = updateCandidates;
+fetch('/api/history').then(async response => {
+ if (!response.ok) throw Error('读取记录失败，请重试。');
+ history = await response.json();
+ options($('baseline'), history);
+ updateCandidates();
+}).catch(error => {$('message').textContent = error.message;submit.disabled = true;});
+$('form').onsubmit=async e=>{e.preventDefault();report=null;$('download').hidden=true;$('result').replaceChildren();const submit=$('form').querySelector('button');submit.disabled=true;try{const r=await fetch('/api/compare',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({baseline:$('baseline').value,candidate:$('candidate').value})});const v=await r.json();if(!r.ok)throw new Error(v.error||'比较失败');report=v;$('result').replaceChildren();const table=document.createElement('table');const head=document.createElement('tr');for(const label of ['指标','基线','候选','改善值','改善方向']){const th=document.createElement('th');th.textContent=label;head.append(th)}table.append(head);for(const [metric,data] of Object.entries(v.metrics)){const tr=document.createElement('tr');for(const text of [metric,...['baseline','candidate'].map(k=>v.compared_values[k][metric]==null?'未定义':Number(v.compared_values[k][metric]).toPrecision(6)),data.mean_improvement==null?'未定义':data.mean_improvement.toPrecision(6),['RMSE','SAM_deg','ERGAS'].includes(metric)?'基线 − 候选（越小越好）':'候选 − 基线（越大越好）']){const td=document.createElement('td');td.textContent=text;tr.append(td)}table.append(tr)}$('result').append(table);$('message').textContent='同幅影像的描述性比较，正值表示候选更好；单场景不计算置信区间。';$('download').hidden=false;}catch(e){$('message').textContent=e.message}finally{submit.disabled=false;}};
+$('download').onclick=()=>{const u=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='paired-comparison.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
+</script></html>

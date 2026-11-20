@@ -1,0 +1,88 @@
+---
+license: mit
+library_name: ultralytics
+pipeline_tag: object-detection
+tags:
+  - yolov8
+  - object-detection
+  - cctv
+  - fire-smoke
+base_model: Ultralytics/YOLOv8
+---
+
+# cctv-ai · fire-smoke · YOLOv8n round-1
+
+YOLOv8n trained on CPU for the [CCTV-AI](https://github.com/fiacecson20/CCTV-AI)
+project. Round-1 baseline — see [`docs/TRAINING_REPORT.md`](https://github.com/fiacecson20/CCTV-AI/blob/main/docs/TRAINING_REPORT.md)
+in the upstream repo for full eval details.
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `best.onnx` | ONNX export (opset 12), drop-in for onnxruntime / OpenVINO / TensorRT. |
+| `args.yaml` | Full training arguments (reproducibility). |
+| `results.csv` | Per-epoch metrics. |
+| `confusion_matrix.png` | Validation confusion matrix. |
+| `BoxPR_curve.png` | Precision-recall curve (per class). |
+| `BoxF1_curve.png` | F1 curve (per class). |
+| `results.png` | Training curves (loss + metrics across epochs). |
+| `val_batch0_pred.jpg` / `val_batch0_labels.jpg` | Sample predictions vs. ground truth. |
+
+The `.pt` weights live inside the upstream repo at
+[`weights/fire-smoke-yolov8n-v0.pt`](https://github.com/fiacecson20/CCTV-AI/tree/main/weights)
+via Git LFS — `.onnx` lives here because it exceeds the 10 MB LFS threshold
+we picked for in-repo storage.
+
+## Eval (val split)
+
+* Classes: `fire, smoke`
+* Overall val mAP@0.5: **0.743**
+* Inference: ~44 ms / frame on 2-core AMD EPYC CPU (≈22 FPS)
+
+| class | precision | recall | mAP@0.5 |
+|---|---|---|---|
+| fire | 0.781 | 0.893 | 0.912 |
+| smoke | 0.706 | 0.517 | 0.573 |
+
+## Training config
+
+* Model: `yolov8n.pt` (Ultralytics)
+* `imgsz=320`, `batch=8`, `epochs=12`, `patience=4`, `cos_lr=true`
+* Optimizer: AdamW (auto)
+* Hardware: 2-core CPU, no GPU; `OMP_NUM_THREADS=2`
+* Seed: 0
+* See `args.yaml` for full args.
+
+## Dataset
+
+CC-BY 4.0 dataset, downloaded at training time via
+[`scripts/download_dataset.py`](https://github.com/fiacecson20/CCTV-AI/blob/main/scripts/download_dataset.py).
+Source images are NOT redistributed here.
+
+## Usage
+
+```python
+import onnxruntime as ort
+sess = ort.InferenceSession("best.onnx", providers=["CPUExecutionProvider"])
+# input: (1, 3, 320, 320) float32 RGB, normalised to [0,1]
+# output: (1, N, 84) or YOLOv8 detection head — see Ultralytics docs.
+```
+
+Or via Ultralytics:
+
+```python
+from ultralytics import YOLO
+model = YOLO("best.onnx")
+results = model("image.jpg", imgsz=320)
+```
+
+## Caveat (round-1, fixed in round-2)
+
+Smoke class had only 29 val instances — mAP 0.573. Round-2 will use a larger / class-balanced dataset.
+
+## License
+
+MIT for these weights. Source dataset CC-BY 4.0 (see upstream `TRAINING_REPORT.md`
+for attribution). Ultralytics base model is AGPL-3.0 — using these weights in a
+hosted service may require AGPL compliance; see [Ultralytics License](https://github.com/ultralytics/ultralytics/blob/main/LICENSE).

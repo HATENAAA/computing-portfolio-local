@@ -1,0 +1,47 @@
+/* Match the existing journal / AI coach navy and pale-cyan theme across every route. */
+:root{--fit-lime:#b3d9e5;--fit-ink:#142d43}
+html,body,#app{background:#0c1829;color:#d9e7f3}
+#app .training-lobby{background:#0c1829;color:#d9e7f3}#app .lobby-header{border-color:#29415c}#app .lobby-header>a>span{color:#b3d9e5}#app .lobby-header>span,#app .lobby-instructions{color:#85a3bc}#app .lobby-label h1{color:#d7e7f2}#app .lobby-label button{color:#a7cada}#app .lobby-course,#app .lobby-course.focus,#app .lobby-course.flow{background:#142a42;border-color:#304b68;color:#d9e7f3}#app .lobby-course:hover{background:#203c55}#app .course-number,#app .course-enter{color:#a9d5e5}#app .lobby-course div>span{color:#8facbf}#app .lobby-guidance{border-color:#29435f}#app .lobby-guidance h2{color:#c7deec}#app .lobby-guidance p,#app .lobby-guidance h2 small{color:#8ba8bd}#app .lobby-guidance button{border-color:#42627e;color:#b0d4e6}#app .room-tag{background:#142b40df;color:#d4e8f1}#app .room-tag>span{color:#8baebd}
+#app .training-arena{background:#0c1728;border-color:#2e4968}#app .arena-heading b,#app .arena-cue>span{color:#d4e9f3}#app .arena-heading>span,#app .arena-heading small,#app .arena-cue small,#app .scene-tip{color:#8dadc5}#app .arena-performance{background:#132b43df;border-color:#385570;color:#9ab6ca}#app .arena-performance b{color:#c3e0ee}#app .arena-tools button{background:#162e46;color:#accddd;border-color:#3b5c79}#app .arena-cue{background:#132c45e8;border-color:#395b78}#app .hold-track{background:#2d4963}#app .hold-track i{background:#a9d6e6}#app .studio-layout,#app .studio-stage,#app .studio-screen{background:#0c1829}#app .training-bottom,#app .session-summary{background:#132b43;color:#c8dfed}
+#app .product-dock,#app .console-dock,#app .fitness-dock,#app nav[aria-label='训练功能']{background:#142a41ef;border-color:#34516d}#app nav[aria-label='训练功能'] a{color:#92afc4}#app nav[aria-label='训练功能'] a.router-link-active{background:#b3d9e5;color:#18344c}
+
+#app .shell{background:#0c1829}#app .training-shell .session-controls{background:#132b43!important;border-color:#385570!important}#app .session-controls .timer{color:#b3d9e5}#app .session-controls .hit-stat strong{color:#c8dfed}#app .session-controls .hit-stat span{color:#92afc4}
+
+/* Keep controls above the persistent dock, including at the bottom of long pages. */
+#app .training-lobby{padding-bottom:calc(148px + env(safe-area-inset-bottom,0px))}
+#app .inline-settings{scroll-margin-top:24px;scroll-margin-bottom:148px}
+#app .session-recap{background:#142a42;border-color:#385570;color:#d9e7f3;margin-bottom:40px}
+#app .session-recap>span{color:#a6d4e3}#app .session-recap h2,#app .session-recap strong,#app .recap-metrics b{color:#d4e9f3}
+#app .session-recap p,#app .session-recap small,#app .recap-metrics>span{color:#91afc6}
+#app .session-recap .recap-metrics{border-color:#385570}#app .session-recap button{background:#b3d9e5;color:#18344c;border:1px solid #b3d9e5}
+#app .session-recap .recap-next{color:#b3d9e5;border-color:#426482}#app .session-recap .recap-note{color:#91afc6}
+#app .session-course-info{display:grid;gap:6px;margin-right:auto}#app .session-course-info b{font-size:13px;font-weight:500;color:#c8dfed}#app .session-course-info span{font-size:11px;color:#92afc4}
+#app .arena-performance small,#app .arena-performance span,#app .training-arena .vr-entry{color:#91afc6}
+#app .combo-track span{background:#18314b;border-color:#426482;color:#9dbdd2}#app .combo-track span.current{background:#b3d9e5;color:#18344c}
+#app .training-arena .vr-entry button{background:#24445f!important;color:#c8e2ed!important}
+
+/* Shared form controls use the same pale cyan as the rest of the application. */
+#app input[type="range"],#app input[type="checkbox"],#app input[type="radio"]{accent-color:#b3d9e5;color-scheme:dark}
+#app input[type="range"]{appearance:none;-webkit-appearance:none;height:24px;padding:0;background:transparent;border:0;cursor:pointer}
+#app input[type="range"]::-webkit-slider-runnable-track{height:5px;border-radius:5px;background:#355570}
+#app input[type="range"]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:17px;height:17px;margin-top:-6px;border:2px solid #d6edf5;border-radius:50%;background:#b3d9e5}
+#app input[type="range"]::-moz-range-track{height:5px;border-radius:5px;background:#355570}
+#app input[type="range"]::-moz-range-progress{height:5px;border-radius:5px;background:#b3d9e5}
+#app input[type="range"]::-moz-range-thumb{width:13px;height:13px;border:2px solid #d6edf5;border-radius:50%;background:#b3d9e5}
+#app input[type="range"]:focus-visible{outline:2px solid #b3d9e5;outline-offset:4px}
+#app .model-setup{background:#132b43;border:1px solid #385570;border-radius:8px;padding:18px 20px;margin:18px 0;color:#b6d0e5;font-size:13px}
+#app .model-setup summary{cursor:pointer;color:#c8e2ed}#app .model-setup li{margin:8px 0;line-height:1.7}#app .model-setup a{color:#b3d9e5}
+#app .model-config-status button{margin-left:12px;background:#162e46;color:#b3d9e5;border:1px solid #426482;border-radius:5px;padding:5px 10px;font:inherit;font-size:12px}
+#app .reflection-panel>.journal-drill-summary{display:block;background:#1b354f;border:1px solid #385570;padding:16px;margin:20px 0;color:#c7deec}
+#app .journal-drill-summary b{display:block;font-size:13px;color:#c8e2ed;margin-bottom:8px}
+#app .journal-drill-summary p{color:#9fbad0;margin:6px 0;line-height:1.8}
+
+/* Course-led layout, retaining the original navy and pale-blue palette. */
+#app .training-lobby{max-width:1440px;margin:auto;padding:28px 44px 150px;display:grid;grid-template-columns:.8fr 1.2fr;gap:24px 34px}#app .lobby-header{grid-column:1/-1;padding:0 0 22px;margin:0}#app .lobby-positioning{grid-column:1;grid-row:2;align-self:center;margin:0;padding:28px 0}#app .lobby-positioning h1{font-size:clamp(30px,3.6vw,52px);line-height:1.2;font-weight:800;letter-spacing:-1px;max-width:460px;color:#d9e7f3;margin:0 0 24px}#app .lobby-positioning p{font-size:14px;line-height:1.9;color:#9fbad0}#app .lobby-positioning a{font-size:12px;color:#b3d9e5}#app .lobby-room{grid-column:2;grid-row:2;height:380px;border-radius:24px;overflow:hidden;margin:0;background:#162e46}#app .lobby-courses,#app .lobby-guidance,#app .lobby-instructions,#app .inline-settings,#app .session-recap{grid-column:1/-1}#app .lobby-course-list{gap:16px}#app .lobby-course{padding:24px;border-radius:18px;min-height:132px}#app .lobby-course[aria-pressed=true]{border:2px solid #b3d9e5;background:#203c55}#app .lobby-course h2{font-size:22px;font-weight:700}#app .lobby-course div>span{color:#a9bfd0;font-size:12px}#app .course-number{font:22px ui-monospace,monospace;align-self:flex-start}#app .course-enter{font-size:28px}#app .lobby-label h1{font-size:24px;font-weight:700}#app .lobby-guidance{margin-top:4px;padding:24px 0;border-block:1px solid #29435f}#app .lobby-guidance h2{color:#c8dfed}#app .lobby-guidance p,#app .lobby-guidance h2 small{color:#9fbad0}#app .lobby-guidance button{border-radius:30px;color:#b3d9e5;padding:11px 20px}#app .lobby-header>span,#app .lobby-instructions{color:#9fbad0}#app .room-tag{background:#142a42ed;color:#d9e7f3;border-radius:20px}#app .room-tag>span{color:#b3d9e5}#app .fitness-dock{border-radius:36px}#app .fitness-dock a{border-radius:28px}#app .inline-settings{background:#142a42;border-color:#385570;border-radius:20px}#app .inline-settings :is(label,p,small){color:#9fbad0}#app .inline-settings :is(select,input){background:#0c1829;color:#d9e7f3;border-color:#426482}#app .start-training{background:#b3d9e5;color:#18344c;border-color:#b3d9e5;border-radius:28px}
+#app .progress-workspace{color:#d9e7f3}#app .progress-workspace :is(p,small,label),#app .journal-stats span,#app .journal-toolbar a{color:#9fbad0}#app .journal-overview>section,#app .reflection-panel{background:#142a42;border-color:#385570}#app .progress-workspace :is(button,input,select,textarea){background:#162e46;color:#c8dfed;border-color:#426482}#app .goal-track{background:#29435f}#app .goal-track>i,#app .daily-bars i{background:#b3d9e5}#app .progress-workspace header>span{color:#b3d9e5}#app .journal-stats,#app .journal-stats>div,#app .journal-table td,#app .journal-table th{border-color:#29435f}#app .progress-workspace h1{font-weight:750}
+@media(max-width:800px){#app .training-lobby{display:flex;flex-direction:column;padding:22px 20px 150px;gap:22px}#app .lobby-positioning{padding:8px 0;width:100%}#app .lobby-positioning h1{font-size:36px;max-width:500px;margin-bottom:16px}#app .lobby-room{width:100%;height:270px}#app .lobby-header{width:100%}#app .lobby-course-list{grid-template-columns:1fr}#app .lobby-course{min-height:105px;padding:20px}#app .lobby-guidance{padding:20px 0}}
+
+/* Functional headings without promotional emphasis. */
+#app .lobby-positioning h1{font-size:clamp(28px,3vw,40px);font-weight:650;letter-spacing:0}#app .lobby-course[aria-pressed=true]{box-shadow:inset 0 0 0 1px #b3d9e5;outline:0}
+
+#app .quick-practice{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:14px 0}#app .quick-practice button{background:#b3d9e5;color:#162e44;border:0;border-radius:24px;padding:10px 18px;cursor:pointer}

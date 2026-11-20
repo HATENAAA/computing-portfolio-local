@@ -1,0 +1,8 @@
+{
+ "model":"fire.onnx",
+ "sha256":"replace-with-the-actual-file-sha256",
+ "input_size":640,
+ "class_names":["fire","smoke"],
+ "target_classes":[0],
+ "output_layout":"yolov8-raw"
+}

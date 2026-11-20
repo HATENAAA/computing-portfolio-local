@@ -1,0 +1,9 @@
+/* Keep persistent recovery notices in flow so every session action remains reachable. */
+#app .training-shell .status{position:static;inset:auto;transform:none;width:auto;max-width:none;margin:12px 0 20px;box-shadow:none;line-height:1.7;}
+@media(max-width:600px){
+ #app .training-shell .session-controls button{flex:1 1 calc(50% - 10px);margin:0;}
+ #app .training-shell .session-controls .session-course-info{margin-right:0;flex:1;min-width:80px;}
+}
+/* Project introductions should not inherit the older horizontal app-header layout. */
+#app .project-review>header{display:block;position:static;height:auto;min-height:0;gap:0;padding:0;margin:0;background:transparent;border:0;}
+#app .project-review>header h1{margin:12px 0;line-height:1.4;}

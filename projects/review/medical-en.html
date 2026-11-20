@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Xixin Health Screening Appointments and Reports · Jiawei Wang</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/review.css">
+  <script defer src="../../assets/review.js"></script>
+  <script defer src="../../assets/medical-demo.js"></script>
+</head>
+<body class="medical">
+  <header class="mast"><strong><a class="catalog-return" href="../../index.html?lang=en#project-medical">All projects</a></strong><nav><a class="" href="medical-zh.html">中文</a></nav></header>
+  <main><section class="hero"><p class="role">Team project · Frontend implementation, asset research and content integration</p><h1>Xixin Health Screening Appointments and Reports</h1><p class="project-honour">Outstanding Project · Summer Practicum</p><p>The team system covers registration, clinic and package selection, appointment slots, order management, doctor-side appointment search and report publication, and patient report lookup.</p><div class="actions hero-actions"><a class="btn primary project-entry" href="#sample-appointment">Open the appointment demo →</a><a class="btn" href="#overview">Project functions</a><a hidden data-local-only data-app="medical" data-app-path="/" href="../offline.html?project=medical&path=%2F">Run full system ↗</a><a hidden data-local-only data-app="medical" data-app-path="/doctor.html" href="../offline.html?project=medical&path=%2Fdoctor.html">Open doctor workspace ↗</a></div></section><nav class="reading-nav" aria-label="On this project page" data-reading-nav><a href="#overview">Functions</a><a href="#sample-appointment">Demo and evidence</a><a href="#workflow">Process and results</a></nav><nav class="function-index" id="overview" aria-labelledby="overview-title"><h2 id="overview-title">Project functions</h2><ul><li><a href="#sample-appointment"><strong>Clinic, package and slot</strong><span>Select a slot and create a sample booking.</span></a></li><li><a href="#appointments"><strong>Order management</strong><span>Review bookings or cancel a pending appointment.</span></a></li><li><a href="#doctor-demo"><strong>Doctor-side report entry</strong><span>Save a report for a pending sample order.</span></a></li><li><a href="#report"><strong>Patient report lookup</strong><span>Read the summary and individual check items.</span></a></li></ul></nav><article class="evidence" id="sample-appointment"><div id="evidence"></div><p class="source">Browser walkthrough · Fictional records</p><h2>Screening appointment demo</h2>
+    <p class="medical-demo-note">Offline demo with fictional records. Changes apply to this page and reset on refresh.</p>
+
+    <div class="flow medical-flow">
+      <form id="booking">
+        <div data-book="0"><label><b>1 / 4 · Institution</b><br><select id="clinic"><option value="a">Harbour Clinic</option><option value="b">Riverside Clinic</option></select></label></div><div data-book="1"><label><b>2 / 4 · Package</b><br><select id="package"><option value="basic">Basic screening</option><option value="extended">Extended screening</option></select></label></div><div data-book="2"><label><b>3 / 4 · Appointment slot</b><br><select id="slot"><option value="full">Tuesday morning · full</option><option value="wed">Wednesday morning</option><option value="thu">Thursday afternoon</option></select></label></div>
+        <div data-book="3"><h3>4 / 4 · Confirm selection</h3><output id="booking-summary"></output></div>
+        <p id="booking-message" role="status"></p>
+        <div class="actions" id="booking-actions" hidden>
+          <button id="back" type="button">Back</button>
+          <button class="primary" id="advance" type="button">Continue</button>
+          <a id="booking-orders" href="#appointments" hidden>View my appointments</a>
+        </div>
+      </form>
+    </div>
+
+    <section class="medical-module" id="appointments">
+      <h3>My appointments</h3>
+      <p>Review the booking, then cancel it or continue to the doctor view.</p>
+      <div id="medical-orders"></div>
+      <p id="medical-orders-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="doctor-demo">
+      <h3>Doctor view · offline simulation</h3>
+      <p>Select a pending order and save a preset fictional result. The original backend has order lookup and report-writing endpoints.</p>
+      <div class="actions" id="medical-doctor-actions" hidden>
+        <label>Pending order <select id="medical-doctor-order"><option value="">No pending orders</option></select></label>
+        <button type="button" id="medical-save-report">Save sample report</button>
+        <a href="#report" id="medical-doctor-report" hidden>View the saved report</a>
+      </div>
+      <p id="medical-doctor-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="report">
+      <h3>Report centre</h3>
+      <p>Completed sample reports include an overview and individual check items.</p>
+      <details id="medical-report-details">
+        <summary>Open a fictional report</summary>
+        <label>Report order <select id="medical-report-order"><option value="DEMO-01">DEMO-01</option></select></label>
+        <p id="medical-report-caption"></p>
+        <div class="actions medical-report-tabs" aria-label="Report views" hidden>
+          <button type="button" data-medical-report-tab="overview" aria-pressed="true">Overview</button>
+          <button type="button" data-medical-report-tab="details" aria-pressed="false">Check items</button>
+        </div>
+        <div id="medical-report-content" aria-live="polite"></div>
+      </details>
+    </section></article><article class="evidence workflow" id="workflow"><div id="implementation" aria-hidden="true"></div><h2>Process and results</h2><h3>My contribution</h3><p>The practicum report lists my responsibilities as frontend implementation, sourcing interface assets, and integrating content. The backend, database and doctor workflow are presented as team work.</p><h3>Team system architecture</h3><div class="table-scroll"><table><thead><tr><th scope="col">Area</th><th scope="col">Original implementation</th></tr></thead><tbody><tr><td>Patient app</td><td>Account and profile, clinic and package browsing, dates, confirmation, appointments and reports.</td></tr><tr><td>Appointment services</td><td>Spring Boot controllers connect the calendar, clinic, package and order services. The calendar reports configured capacity, booked counts and remaining slots.</td></tr><tr><td>Doctor and reporting services</td><td>The backend provides order lookup, check-item entry, detailed results and an overall result. The patient app reads reports by order ID.</td></tr><tr><td>Persistence</td><td>JPA repositories use MySQL. An order links the user, clinic, package and appointment date; report records reference the order.</td></tr></tbody></table></div><h3>Running application</h3><p>The local edition uses the original patient app and backend, with a doctor workspace rebuilt from the practicum report and team APIs. Doctors can filter appointments by patient, package, date and report status, enter results and read archived reports. Both interfaces use fictional records.</p><div class="thumbs"><figure><a href="../../case-studies/medical/images/patient-runtime.jpg"><img src="../../case-studies/medical/images/patient-runtime.jpg" alt="Patient report in the running app" width="860" height="532" loading="lazy"></a><figcaption>Patient report in the running app</figcaption></figure><figure><a href="../../case-studies/medical/images/doctor-runtime.jpg"><img src="../../case-studies/medical/images/doctor-runtime.jpg" alt="Doctor report form in the running app" width="826" height="411" loading="lazy"></a><figcaption>Doctor report form in the running app</figcaption></figure></div></article></main>
+  <footer class="foot"><nav aria-label="Project navigation"><a class="" href="bathymetry-en.html">← Satellite bathymetry</a> <a class="catalog-return" href="../../index.html?lang=en#project-medical">All projects</a> <a class="" href="hsi-en.html">Remote Sensing Image Super-Resolution Reconstruction Based on Deep Learning →</a></nav></footer>
+</body>
+</html>

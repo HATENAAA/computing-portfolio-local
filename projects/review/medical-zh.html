@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>熙心健康体检预约与报告系统 · Jiawei Wang</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/review.css">
+  <script defer src="../../assets/review.js"></script>
+  <script defer src="../../assets/medical-demo.js"></script>
+</head>
+<body class="medical">
+  <header class="mast"><strong><a class="catalog-return" href="../../index.html?lang=zh#project-medical">全部项目</a></strong><nav><a class="" href="medical-en.html">English</a></nav></header>
+  <main><section class="hero"><p class="role">团队项目 · 前端制作、素材查找、内容整合</p><h1>熙心健康体检预约与报告系统</h1><p class="project-honour">暑期实训 · 优秀项目</p><p>团队系统涵盖注册登录、医院与套餐选择、号源预约、订单管理、医生端预约查询与报告发布，以及用户端报告查询。</p><div class="actions hero-actions"><a class="btn primary project-entry" href="#sample-appointment">打开体检预约演示 →</a><a class="btn" href="#overview">项目功能</a><a hidden data-local-only data-app="medical" data-app-path="/" href="../offline.html?project=medical&path=%2F">运行完整系统 ↗</a><a hidden data-local-only data-app="medical" data-app-path="/doctor.html" href="../offline.html?project=medical&path=%2Fdoctor.html">打开医生端 ↗</a></div></section><nav class="reading-nav" aria-label="本项目章节" data-reading-nav><a href="#overview">项目功能</a><a href="#sample-appointment">演示与证据</a><a href="#workflow">过程与结果</a></nav><nav class="function-index" id="overview" aria-labelledby="overview-title"><h2 id="overview-title">项目功能</h2><ul><li><a href="#sample-appointment"><strong>医院、套餐和号源</strong><span>选择号源并创建示例预约。</span></a></li><li><a href="#appointments"><strong>订单管理</strong><span>查看记录或取消待检预约。</span></a></li><li><a href="#doctor-demo"><strong>医生端报告录入</strong><span>为待检示例订单保存报告。</span></a></li><li><a href="#report"><strong>用户端报告查询</strong><span>查看总检结论和逐项明细。</span></a></li></ul></nav><article class="evidence" id="sample-appointment"><div id="evidence"></div><p class="source">网页演示 · 虚构记录</p><h2>体检预约演示</h2>
+    <p class="medical-demo-note">静态演示使用虚构记录。操作只影响当前页面，刷新后重置。</p>
+
+    <div class="flow medical-flow">
+      <form id="booking">
+        <div data-book="0"><label><b>1 / 4 · 机构</b><br><select id="clinic"><option value="a">海港示例机构</option><option value="b">滨河示例机构</option></select></label></div><div data-book="1"><label><b>2 / 4 · 套餐</b><br><select id="package"><option value="basic">基础套餐</option><option value="extended">扩展套餐</option></select></label></div><div data-book="2"><label><b>3 / 4 · 预约时段</b><br><select id="slot"><option value="full">周二上午 · 已满</option><option value="wed">周三上午</option><option value="thu">周四下午</option></select></label></div>
+        <div data-book="3"><h3>4 / 4 · 确认所选信息</h3><output id="booking-summary"></output></div>
+        <p id="booking-message" role="status"></p>
+        <div class="actions" id="booking-actions" hidden>
+          <button id="back" type="button">上一步</button>
+          <button class="primary" id="advance" type="button">继续</button>
+          <a id="booking-orders" href="#appointments" hidden>查看我的预约</a>
+        </div>
+      </form>
+    </div>
+
+    <section class="medical-module" id="appointments">
+      <h3>我的预约</h3>
+      <p>查看订单，可取消待检预约，或进入医生端示例。</p>
+      <div id="medical-orders"></div>
+      <p id="medical-orders-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="doctor-demo">
+      <h3>医生端 · 静态模拟</h3>
+      <p>选择待检订单并保存预设的虚构结果。原项目后端实现了订单查询与报告录入接口。</p>
+      <div class="actions" id="medical-doctor-actions" hidden>
+        <label>待检订单 <select id="medical-doctor-order"><option value="">暂无待检订单</option></select></label>
+        <button type="button" id="medical-save-report">保存示例报告</button>
+        <a href="#report" id="medical-doctor-report" hidden>查看已保存报告</a>
+      </div>
+      <p id="medical-doctor-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="report">
+      <h3>报告中心</h3>
+      <p>已完成的示例报告可查看总检结论和检查明细。</p>
+      <details id="medical-report-details">
+        <summary>查看虚构报告</summary>
+        <label>报告订单 <select id="medical-report-order"><option value="DEMO-01">DEMO-01</option></select></label>
+        <p id="medical-report-caption"></p>
+        <div class="actions medical-report-tabs" aria-label="报告视图" hidden>
+          <button type="button" data-medical-report-tab="overview" aria-pressed="true">总检结论</button>
+          <button type="button" data-medical-report-tab="details" aria-pressed="false">检查明细</button>
+        </div>
+        <div id="medical-report-content" aria-live="polite"></div>
+      </details>
+    </section></article><article class="evidence workflow" id="workflow"><div id="implementation" aria-hidden="true"></div><h2>过程与结果</h2><h3>个人责任范围</h3><p>实训报告记载的个人分工为前端制作、素材查找、内容整合。后端、数据库与医生端业务作为团队成果展示。</p><h3>团队项目架构</h3><div class="table-scroll"><table><thead><tr><th scope="col">模块</th><th scope="col">原工程实现</th></tr></thead><tbody><tr><td>用户端</td><td>注册登录、个人中心、医院和套餐浏览、预约日期、确认、预约记录与报告。</td></tr><tr><td>预约服务</td><td>Spring Boot 控制器衔接日历、医院、套餐和订单服务。日历查询配置号源、已预约数量与可约余量。</td></tr><tr><td>医生与报告服务</td><td>后端提供订单查询、检查项目和明细录入、总检结果保存。用户端按订单 ID 读取报告。</td></tr><tr><td>数据层</td><td>通过 JPA 仓储访问 MySQL。订单关联用户、医院、套餐与预约日期，报告记录通过订单 ID 关联。</td></tr></tbody></table></div><h3>本地运行画面</h3><p>本地版沿用原用户端和后端，参照实训报告与团队接口补建医生工作台。医生可按体检人、套餐、日期和报告状态筛选，录入结果并查阅归档报告。两端均使用虚构记录。</p><div class="thumbs"><figure><a href="../../case-studies/medical/images/patient-runtime.jpg"><img src="../../case-studies/medical/images/patient-runtime.jpg" alt="本地用户端 · 总检报告" width="860" height="532" loading="lazy"></a><figcaption>本地用户端 · 总检报告</figcaption></figure><figure><a href="../../case-studies/medical/images/doctor-runtime.jpg"><img src="../../case-studies/medical/images/doctor-runtime.jpg" alt="本地医生端 · 报告录入" width="826" height="411" loading="lazy"></a><figcaption>本地医生端 · 报告录入</figcaption></figure></div></article></main>
+  <footer class="foot"><nav aria-label="项目导航"><a class="" href="bathymetry-zh.html">← 卫星测深回归</a> <a class="catalog-return" href="../../index.html?lang=zh#project-medical">全部项目</a> <a class="" href="hsi-zh.html">基于深度学习的遥感影像超分辨率重建 →</a></nav></footer>
+</body>
+</html>

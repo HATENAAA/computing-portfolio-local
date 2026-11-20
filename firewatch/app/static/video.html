@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>火焰检测 · 视频工作区</title>
+    <link rel="stylesheet" href="/static/video-workspace.css" />
+  <link rel="stylesheet" href="/static/navigation.css?v=station"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"></head>
+  <body class="fw-station fw-video">
+    <fw-navigation current="video"></fw-navigation><script src="/static/navigation.js?v=station"></script>
+    <main class="fw-workspace">
+<header class="fw-command"><h1>视频任务</h1><div class="fw-actions"><span class="model-status" id="model-status" role="status">正在检查模型配置…</span></div></header>
+      <div class="fw-split video-layout">
+
+        <section class="queue-panel">
+          <div class="queue-summary">
+            <div><span>已完成</span><b id="done-count">0</b></div>
+            <div><span>处理中</span><b id="active-count">0</b></div>
+            <div><span>最近任务占用</span><b id="storage-total">0 MB</b></div>
+          </div>
+          <div class="queue-toolbar">
+            <h2>分析记录 <small>最近 30 项</small></h2>
+            <input
+              id="search-jobs"
+              type="search"
+              placeholder="搜索文件名称"
+              aria-label="搜索视频任务"
+            /><select id="status-filter" aria-label="筛选处理状态">
+              <option value="all">全部状态</option>
+              <option value="completed">已完成</option>
+              <option value="active">处理中</option>
+              <option value="failed">失败 / 取消</option></select
+            ><button id="refresh-jobs" aria-label="刷新任务">↻</button>
+          </div>
+          <div id="jobs" aria-live="polite"></div>
+          <p class="queue-footnote">
+            0
+            个候选事件不等于画面中没有火焰。打开报告可以查看代表帧、筛选原因与得分。
+          </p>
+        </section>
+        <aside class="upload-panel">
+          <div class="panel-title">
+            <h2>新建视频任务</h2>
+          </div>
+          <form id="upload">
+            <label class="file-drop" for="video"
+              ><span class="upload-symbol">↑</span
+              ><b id="selected-file">选择一段视频</b
+              ><span>MP4 · MOV · AVI · WebM</span
+              ><small>最大 50 MB · 分析前 300 秒</small
+              ><input
+                type="file"
+                id="video"
+                accept=".mp4,.avi,.mov,.webm"
+                required /></label
+            ><label
+              >分析引擎<select id="video-engine">
+                <option value="cpp" selected>C++ 区域与运动（推荐）</option><option value="rules">旧版颜色与边缘（对照）</option>
+                <option value="model" id="model-option" disabled>
+                  ONNX 模型 + 规则对照
+                </option>
+              </select></label
+            >
+            <p class="field-help" id="engine-help">
+              规则不依赖模型，适合观察颜色与边缘特征。
+            </p>
+            <div id="rule-settings">
+              <label
+                >边缘支持门槛<select id="video-edge">
+                  <option value="0.6">60% · 默认</option>
+                  <option value="0.5">50% · 增加候选</option>
+                  <option value="0.45">45% · 探索复核</option>
+                </select></label
+              ><label
+                >亮度门槛<input
+                  id="video-brightness"
+                  type="number"
+                  min="0"
+                  max="255"
+                  step="1"
+                  value="150"
+                  required
+              /></label>
+            </div>
+            <label id="model-settings" hidden
+              >模型置信度门槛<input
+                id="video-confidence"
+                type="number"
+                min="0.01"
+                max="1"
+                step="0.01"
+                value="0.25"
+            /></label>
+            <details class="sampling-settings">
+              <summary>采样与事件设置</summary>
+              <label
+                >目标采样频率<select id="sample-hz">
+                  <option value="2">2 帧 / 秒 · 较省时</option>
+                  <option value="5" selected>5 帧 / 秒 · 默认</option>
+                  <option value="10">10 帧 / 秒 · 更密集</option>
+                </select></label
+              >
+              <div class="paired-fields">
+                <label
+                  ><span id="video-confirm-label">滑窗内命中 / 帧</span><input
+                    id="on-frames"
+                    type="number"
+                    min="1"
+                    max="30"
+                    value="3"
+                    required /></label
+                ><label
+                  >连续释放 / 帧<input
+                    id="off-frames"
+                    type="number"
+                    min="1"
+                    max="30"
+                    value="2"
+                    required
+                /></label>
+              </div>
+              <p class="field-help">
+                按原视频帧率采样，实际频率可能较低；不适用于精确的可变帧率时间标注。
+              </p>
+            </details>
+            <label class="retain-option"
+              ><input type="checkbox" id="retain-source" /><span
+                >保留原视频供回放<small
+                  >保存在本机，可在任务菜单中清理</small
+                ></span
+              ></label
+            ><button type="submit" id="submit" class="primary">
+              开始分析 <span>→</span>
+            </button>
+            <p id="message" role="status">
+              最多 3 项待处理任务。候选事件需要人工复核。
+            </p>
+          </form>
+        </aside>
+      </div>
+    </main>
+    <script src="/static/video.js"></script>
+  </body>
+</html>

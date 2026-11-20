@@ -1,0 +1,36 @@
+{
+  "data_range": 1.0,
+  "scale": 4.0,
+  "layout": "HWC",
+  "samples": [
+    {
+      "truth": "truth.npy",
+      "prediction": "prediction.npy",
+      "truth_sha256": "5b915d5c6dcacaae57a0a48e22463f41db6d30537345984c06cb717f278c49a7",
+      "prediction_sha256": "0fe3340da08dba01b9e8537e5169bdd43706084d094ebf84b477cf52412bf56e",
+      "metrics": {
+        "RMSE": 0.020276493406684776,
+        "MPSNR": 33.86440419731246,
+        "psnr_has_infinite_band": false,
+        "MSSIM": 0.9960350937634761,
+        "SAM_deg": 1.9741599981555438,
+        "ERGAS": 1.0226957656048477,
+        "CrossCorrelation": 0.9961518690104602,
+        "sam_valid_pixels": 1024,
+        "sam_total_pixels": 1024,
+        "ergas_zero_mean_bands": 0,
+        "constant_correlation_bands": 0,
+        "per_band_rmse": [
+          0.02073157206408155,
+          0.020598204140104163,
+          0.019596692169424907,
+          0.019850794607471467,
+          0.01982093170654799,
+          0.020443722736827562,
+          0.020207497766884037,
+          0.020922784120170936
+        ]
+      }
+    }
+  ]
+}

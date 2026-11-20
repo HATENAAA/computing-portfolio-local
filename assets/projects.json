@@ -1,0 +1,239 @@
+[
+  {
+    "id": "hsi",
+    "title": "基于深度学习的遥感影像超分辨率重建",
+    "en": "Hyperspectral Super-Resolution",
+    "date": "2025.10 – 2026.05",
+    "role": "本科毕业论文",
+    "stack": "Python · PyTorch · MATLAB",
+    "image": "hsi-ercsr-comparison.jpg",
+    "caption": "Pavia Centre ×4 同区域重建。左为 ERCSR，右为 MCArb-ERCSR。",
+    "url": "http://127.0.0.1:8782/",
+    "summary": "复现高光谱影像重建方法，比较重建图、误差图与像素光谱，检查空间细节和光谱保真度。",
+    "result": "MCArb-SSPSR相较SSPSR-b，在两数据集及两个尺度的六项指标均改善，PSNR提升0.21–0.36 dB。",
+    "points": [
+      [
+        "框架复现与数据",
+        "复现MCArb框架（Zhang et al., IEEE TGRS 2025），以MCNet／SSPSR／ERCSR为主干，加入3DMetaUM、SAFAM及3DSPPM模块，开展空谱特征学习与多尺度高光谱重建。"
+      ],
+      [
+        "评价流程",
+        "在MATLAB中预处理Pavia Centre与Chikusei数据；开发Python评测流程，计算PSNR、SSIM、CC、RMSE、SAM和ERGAS，按逐图平均汇总，并生成重建图像和误差图。"
+      ],
+      [
+        "消融与配置选择",
+        "开展协同学习、三维上采样和跨尺度特征对齐消融；在Pavia Centre的×4／×8下，替换为二维上采样使ERCSR的PSNR分别下降1.31／0.42 dB。×2辅助上采样倍率与25%裁剪面积比例取得较均衡结果，与原文一致。"
+      ],
+      [
+        "结果与分析",
+        "Pavia Centre ×4／×8下，三类MCArb模型的PSNR、SSIM和CC均优于对应基线；MCArb-SSPSR在两数据集及两个尺度上的六项指标均改善（相较SSPSR-b，PSNR +0.21–0.36 dB），并分析空间质量与光谱保真度的权衡。"
+      ]
+    ],
+    "category": "vision",
+    "categoryLabel": "视觉与重建",
+    "kind": "application",
+    "evidenceImages": 13,
+    "evidenceTables": 1
+  },
+  {
+    "id": "vrfitai",
+    "title": "VRFitAI — VR健身指导与训练管理平台",
+    "en": "VR Fitness Coaching & Training Management",
+    "date": "2025.04 – 2026.06",
+    "role": "XR交互负责人；网站主要开发者",
+    "stack": "Vue · Three.js / WebXR · Express · SQLite",
+    "image": "vrfitai-preview.jpg",
+    "caption": "VRFitAI 三维训练室全景，两只悬挂沙袋用于桌面和 WebXR 训练。",
+    "url": "http://127.0.0.1:8780/",
+    "summary": "选择课程，在桌面或 VR 中完成交互训练。中断后可继续训练，并在结束后回看记录。",
+    "result": "客户端生成ID、服务端事件重放和检查点恢复贯通训练记录与中断恢复，暂停及离开页面的时间不计入有效训练时长。",
+    "points": [
+      [
+        "交互与双端应用",
+        "开发左右手交替目标、双控制器输入及追踪丢失暂停；构建桌面端和移动端应用，整合课程选择、训练和结果回顾。"
+      ],
+      [
+        "训练建议与DeepSeek接入",
+        "通过服务端API接入DeepSeek提供课程指导；依据至少三次可比较训练制定进阶规则，建议上下调整一级难度或将时长调整最多20%，由用户确认采用。"
+      ],
+      [
+        "训练记录一致性",
+        "通过客户端生成ID和幂等保存处理重复提交，结合服务端事件重放重建训练记录；提供用户确认的检查点恢复，并从有效训练时长中扣除中断时间。"
+      ]
+    ],
+    "category": "systems",
+    "categoryLabel": "交互与系统",
+    "kind": "application",
+    "evidenceImages": 2,
+    "evidenceTables": 1
+  },
+  {
+    "id": "manufacturing",
+    "title": "制造订单与库存管理系统",
+    "en": "Manufacturing Order & Inventory Management",
+    "date": "2024.07",
+    "role": "全栈系统开发",
+    "stack": "Vue · Spring Boot · MyBatis · MySQL",
+    "image": "manufacturing-home.jpg",
+    "caption": "制造执行工作台首页，含业务模块和实际库存对账预览。",
+    "url": "http://127.0.0.1:8081/",
+    "summary": "从订单查看物料需求、库存预留和收发流水，定位缺料或账实不符的环节。",
+    "result": "MySQL 部署测试验证了并发超卖防护、缺料回滚及库存流水一致性。",
+    "points": [
+      [
+        "订单与物料事务",
+        "结合订单专属BOM快照、有序行锁与整单事务，保持物料需求稳定，并在库存不足时回滚预留。"
+      ],
+      [
+        "库存一致性",
+        "在同一事务内核对库存余额、流水与有效预留，以请求 ID 保证重复收货不多记。本地演示基于预置的虚构工厂数据，可查看库存余额、收发流水与有效预留。"
+      ]
+    ],
+    "category": "systems",
+    "categoryLabel": "交互与系统",
+    "kind": "application",
+    "evidenceImages": 1,
+    "evidenceTables": 1
+  },
+  {
+    "id": "firewatch",
+    "title": "视觉火焰检测与事件分析系统",
+    "en": "Visual Flame Detection & Event Analysis",
+    "date": "2024.12",
+    "role": "计算机视觉算法开发",
+    "stack": "C++ · OpenCV · FastAPI · ONNX",
+    "image": "firewatch-preview.jpg",
+    "caption": "实际运行的图像检测工作区；输入画面取自随包标注视频。",
+    "url": "http://127.0.0.1:8765/",
+    "summary": "查看单帧火焰候选区域、公开数据检测框评测与视频事件时间轴。",
+    "result": "按视频来源划分两段验证、两段测试视频；验证后固定设置，输出可复核的事件匹配与指标报告。",
+    "points": [
+      [
+        "图像与视频检测",
+        "设计颜色—边缘规则检测火焰，通过形态学闭运算连接碎片化区域；结合局部与场景运动线索及滑动窗口帧投票确认火焰事件。比较Sobel、Canny、Laplacian和Scharr算子。"
+      ],
+      [
+        "事件级评价",
+        "开发一对一时间IoU匹配及指标报告；在四段按来源分离的标注视频上比较规则检测与ONNX分类（两段验证／两段测试），验证后固定测试设置。"
+      ]
+    ],
+    "category": "vision",
+    "categoryLabel": "视觉与重建",
+    "kind": "application",
+    "evidenceImages": 1,
+    "evidenceTables": 2
+  },
+  {
+    "id": "signal",
+    "title": "虚拟仪器与信号分析系统",
+    "en": "Virtual Instrumentation & Signal Analysis",
+    "date": "2025.04",
+    "role": "数字信号处理系统开发",
+    "stack": "LabVIEW · Python",
+    "image": "signal-preview.jpg",
+    "caption": "本地虚拟示波器按 1,024 Hz 采样，琥珀黄为输入，冰蓝为滤波输出。",
+    "url": "http://127.0.0.1:8783/",
+    "summary": "比较滤波前后波形、观察采样混叠，或一键载入 PhysioNet 实录。",
+    "result": "无输出噪声的参考条件下，10–180 Hz有效频点的增益／相位MAE为0.0116 dB／0.0843°。",
+    "points": [
+      [
+        "虚拟仪器",
+        "构建双通道虚拟示波器，整合Butterworth和Chebyshev滤波器、FFT及X-Y分析，分析滤波响应和输入输出关系。"
+      ],
+      [
+        "频响估计与对照",
+        "开发带激励、相干性和平稳性检查的Welch H1估计器；通过27组改变噪声、窗长和重叠率的仿真量化误差。在无输出噪声、1024点窗与50%重叠的参考条件下，10–180 Hz有效频点的增益／相位MAE为0.0116 dB／0.0843°。"
+      ]
+    ],
+    "category": "signal",
+    "categoryLabel": "信号与仪器",
+    "kind": "application",
+    "evidenceImages": 3,
+    "evidenceTables": 1
+  },
+  {
+    "id": "city",
+    "category": "geospatial",
+    "categoryLabel": "地图与空间数据",
+    "kind": "application",
+    "title": "上海红色文化地图",
+    "en": "Shanghai red heritage atlas",
+    "date": "",
+    "role": "交互式地图应用",
+    "stack": "Vue · Leaflet · JavaScript",
+    "image": "city-preview.jpg",
+    "caption": "上海红色文化地图的主题步行路线，显示分段距离与预计用时。",
+    "url": "http://127.0.0.1:8766/",
+    "summary": "浏览黄浦、静安、虹口、徐汇和长宁的历史场址，查看官方地址与地图定位。",
+    "result": "支持主题路线、两点步行和自选多站行程，并可按路网距离调整站序。",
+    "points": [
+      [
+        "步行路线",
+        "按可步行路网规划路线，展示分段距离和参考时长。"
+      ],
+      [
+        "数据出处",
+        "场址地址链接至市级公开资料，定位链接至对应地图要素。"
+      ]
+    ],
+    "evidenceImages": 2,
+    "evidenceTables": 1
+  },
+  {
+    "id": "bathymetry",
+    "category": "geospatial",
+    "categoryLabel": "地图与空间数据",
+    "kind": "application",
+    "title": "卫星测深回归分析",
+    "en": "Satellite-Derived Bathymetry Regression",
+    "date": "",
+    "role": "遥感样本建模与评价",
+    "stack": "Python · scikit-learn · NumPy · joblib",
+    "image": "bathymetry-preview.jpg",
+    "caption": "运行合成样例后的分组留出评价与水深预测散点图。",
+    "url": "http://127.0.0.1:8784/",
+    "summary": "在留出组比较测深模型，试算新样本，并查看真实光子沿轨高度。",
+    "result": "报告保留训练／测试组、RMSE、MAE、R²和逐样本预测；模型导出包含归一化器，新样本预测标记超出训练范围的输入。",
+    "points": [
+      [
+        "样本与分组评价",
+        "检查波段量程、非负水深和采集时间差；按场景、轨道或空间块分组留出测试集，归一化仅在训练组拟合。"
+      ],
+      [
+        "模型与预测",
+        "比较线性回归和支持向量回归，导出评价指标、模型及逐样本预测；保留输入与模型摘要，批量预测标记波段外推和负值输出。"
+      ]
+    ],
+    "evidenceImages": 3,
+    "evidenceTables": 2
+  },
+  {
+    "id": "medical",
+    "category": "systems",
+    "categoryLabel": "交互与系统",
+    "kind": "application",
+    "title": "熙心健康体检预约与报告系统",
+    "en": "Xixin Health Screening Appointments and Reports",
+    "date": "",
+    "role": "团队项目 · 前端制作、素材查找、内容整合",
+    "stack": "Vue · Spring Boot · JPA · MySQL",
+    "image": "medical-preview.jpg",
+    "caption": "本地用户端与医生端预约筛选及报告归档页面。",
+    "url": "http://127.0.0.1:8086/",
+    "summary": "团队系统涵盖注册登录、医院与套餐选择、号源预约、订单管理、医生端预约查询与报告发布，以及用户端报告查询。",
+    "result": "本地应用以虚构记录运行用户预约、医生录入与报告查询。",
+    "points": [
+      [
+        "预约流程",
+        "将体检机构、套餐和号源选择组织为连续页面，并衔接订单确认、预约查询与取消。"
+      ],
+      [
+        "报告与内容整合",
+        "实训报告记载的个人分工为前端制作、素材查找、内容整合。"
+      ]
+    ],
+    "evidenceImages": 3,
+    "evidenceTables": 1,
+    "award": "暑期实训 · 优秀项目"
+  }
+]

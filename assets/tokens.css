@@ -1,0 +1,16 @@
+/* Portfolio shell only. Applications maintain their own visual systems. */
+:root {
+ --paper:#f7f7f8;--surface:#ffffff;--ink-1:#24262a;--ink-2:#45494f;--ink-3:#666b73;
+ --rule:#cdd0d5;--rule-soft:#dedfe3;--accent:#303844;--accent-hover:#505c6d;--focus:#ad683e;--tint:#eeeeF1;
+ --ok:#4179a8;--warn:#8a6a2b;--bad:#8f4b3e;
+ --ink-bg:#151c27;--ink-surface:#202a38;--ink-line:#3b4b62;--ink-text:#e1e7f0;--ink-text-2:#a4b2c5;--ink-accent:#aec6e2;
+ --plot-a:#aec6e2;--plot-b:#e1b48c;--plot-grid:#3b4b62;--plot-muted:#a4b2c5;
+ --font-ui:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;
+ --fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-15:15px;--fs-18:18px;--fs-24:24px;--fs-34:34px;--fs-45:45px;
+ --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;
+ --radius:0;--hairline:1px solid var(--rule-soft);--shadow:0 1px 0 color-mix(in srgb,var(--ink-1) 4%,transparent);
+}
+*{box-sizing:border-box}html{font-family:var(--font-ui);font-variant-numeric:tabular-nums}
+button,input,select,textarea{font:inherit}button,a,input,select,textarea,summary{touch-action:manipulation}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+[hidden]{display:none}button:disabled{cursor:not-allowed;opacity:.5}svg.ui-icon{width:16px;height:16px;stroke-width:1.5}

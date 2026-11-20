@@ -1,0 +1,10 @@
+manufacturing-platform/backend/src/test/java/com/hystu/springboot_/WorkflowTests.java
+
+@Test void shortageRollsBackEarlierLinesAndAudit()throws Exception{
+    long a=material("M1",10),b=material("M2",1);bom(a,b);long id=accepted();
+    postAs("/inventory/orders/"+id+"/reserve","{\"version\":1}","alice").andExpect(status().isConflict());
+    assertEquals(0L,db.queryForObject("SELECT reserved FROM materials WHERE id=?",Long.class,a));
+    assertEquals(0,db.queryForObject("SELECT COUNT(*) FROM material_reservations",Integer.class));
+    assertEquals(0,db.queryForObject("SELECT COUNT(*) FROM material_ledger",Integer.class));
+    assertEquals(1,db.queryForObject("SELECT version FROM orders WHERE id=?",Integer.class,id));
+  }

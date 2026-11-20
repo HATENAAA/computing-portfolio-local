@@ -1,0 +1,1216 @@
+/* The training product keeps its own visual system, separate from FireWatch. */
+:root {
+  --fit-lime: #d4ed91;
+  --fit-ink: #19382b;
+}
+.fitness-home {
+  background: #f4f5ed;
+  color: var(--fit-ink);
+  padding-bottom: 105px;
+  min-height: 100vh;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    sans-serif;
+}
+.home-masthead {
+  height: 84px;
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 5%;
+  background: #f4f5ed !important;
+  border: 0 !important;
+  margin: 0 !important;
+}
+.studio-wordmark,
+.home-device {
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 1.4px;
+  color: #5c7063;
+}
+.home-brand {
+  font-size: 28px;
+  color: #173c2c;
+  letter-spacing: -1.5px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.home-brand span {
+  font-size: 11px;
+  vertical-align: top;
+  line-height: 25px;
+  letter-spacing: 0;
+  margin-left: 2px;
+}
+.home-device {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.home-device i {
+  width: 6px;
+  height: 6px;
+  background: #749b39;
+  border-radius: 50%;
+}
+.home-hero {
+  display: grid;
+  grid-template-columns: 0.86fr 1.25fr;
+  max-width: 1600px;
+  margin: auto;
+  padding: 8px 3% 0 5%;
+  gap: 2%;
+  min-height: 540px;
+}
+.hero-statement {
+  padding: 55px 0 40px;
+  position: relative;
+  z-index: 2;
+}
+.hero-kicker,
+.small-label {
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  font-weight: 600;
+}
+.hero-kicker {
+  display: block;
+  margin-bottom: 28px;
+  color: #688259;
+}
+.hero-statement h1 {
+  font-size: clamp(42px, 4.5vw, 76px);
+  line-height: 1.23;
+  font-weight: 600;
+  letter-spacing: -3px;
+  margin: 0 0 25px !important;
+  color: #1b392a;
+}
+.hero-statement h1 span {
+  color: #95aa63;
+}
+.hero-statement > p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #6b7a69;
+  margin: 0 0 30px;
+}
+.home-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background: #244a34 !important;
+  color: #f5f6e8 !important;
+  border: 1px solid #244a34 !important;
+  border-radius: 8px !important;
+  padding: 17px 23px !important;
+  font: 500 13px inherit;
+  cursor: pointer;
+  min-height: 52px;
+}
+.home-start:hover {
+  background: #345f42 !important;
+}
+.home-start > span {
+  font-size: 21px;
+}
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 15px;
+  margin-top: 23px;
+  color: #7a8774;
+  font-size: 10px;
+}
+.hero-proof span + span:before {
+  content: "·";
+  margin-right: 15px;
+}
+.studio-visual {
+  position: relative;
+  min-height: 540px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #c8cebd;
+}
+.studio-visual .showcase-scene {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  height: 100%;
+}
+.showcase-scene canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.visual-caption {
+  position: absolute;
+  left: 26px;
+  bottom: 25px;
+  color: #f9faee;
+  z-index: 2;
+  text-shadow: 0 1px 7px #29463288;
+}
+.visual-caption span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 12px;
+}
+.visual-caption b {
+  font-size: 19px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.visual-caption small {
+  display: block;
+  font-size: 9px;
+  margin-top: 12px;
+  opacity: 0.7;
+}
+.visual-coordinate {
+  position: absolute;
+  right: 19px;
+  top: 20px;
+  writing-mode: vertical-rl;
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 1px;
+  color: #f5fae7;
+  opacity: 0.8;
+}
+.studio-fallback {
+  height: 100%;
+  background: linear-gradient(130deg, #526348, #a3b68b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f0f4e6;
+  gap: 30px;
+}
+.studio-fallback b {
+  font-size: 25px;
+}
+.studio-fallback i {
+  height: 140px;
+  width: 130px;
+  border: 6px solid #c4e390;
+  border-radius: 65px 65px 0 0;
+}
+.home-course-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin: 55px 5% 25px;
+}
+.home-course-heading span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #80916f;
+}
+.home-course-heading h2 {
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 13px 0 0;
+}
+.home-course-heading > p {
+  font-size: 12px;
+  color: #83917a;
+}
+.course-posters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 5%;
+}
+.course-poster {
+  text-align: left !important;
+  display: block !important;
+  border: 1px solid #e1e5d9 !important;
+  background: #fff !important;
+  border-radius: 5px !important;
+  padding: 0 !important;
+  color: #284631 !important;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.course-poster:hover {
+  transform: translateY(-4px);
+}
+.poster-art {
+  height: 185px;
+  position: relative;
+  overflow: hidden;
+  background: #dae3ce;
+}
+.poster-copy {
+  padding: 22px;
+}
+.poster-copy > small {
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 1.3px;
+  color: #829476;
+}
+.poster-copy > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.poster-copy h3 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 550;
+  letter-spacing: -0.7px;
+}
+.poster-copy > div > span {
+  font-size: 21px;
+}
+.poster-copy p {
+  font-size: 11px;
+  color: #75856c;
+  margin: 12px 0 18px;
+}
+.poster-level {
+  font-size: 9px;
+  color: #8b9580;
+}
+.poster-index {
+  position: absolute;
+  top: 17px;
+  left: 19px;
+  font:
+    10px ui-monospace,
+    monospace;
+  color: #677e5b;
+}
+.art-note {
+  position: absolute;
+  bottom: 15px;
+  right: 19px;
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 2px;
+  color: #3b6245;
+}
+.pad {
+  position: absolute;
+  top: 27px;
+  width: 66px;
+  height: 105px;
+  border-radius: 45% 45% 40% 40%;
+  background: linear-gradient(125deg, #52764c, #1e3b29);
+  box-shadow:
+    10px 12px 14px #71866144,
+    inset 3px 3px 4px #ffffff38;
+  border: 6px solid #304e31;
+}
+.pad:after {
+  content: "+";
+  position: absolute;
+  inset: 14px 4px;
+  text-align: center;
+  font: 50px sans-serif;
+  color: #cfdf9e;
+}
+.pad-left {
+  left: calc(50% - 65px);
+  transform: rotate(-19deg);
+}
+.pad-right {
+  left: calc(50% + 11px);
+  transform: rotate(19deg);
+  top: 45px;
+}
+.focus .poster-art {
+  background: #dce8e6;
+}
+.reach-orbit {
+  position: absolute;
+  left: calc(50% - 62px);
+  top: 33px;
+  width: 125px;
+  height: 125px;
+  border: 15px solid #769c94;
+  border-radius: 50%;
+  transform: rotateX(40deg) rotateY(20deg);
+  box-shadow:
+    6px 10px 12px #5b7f702d,
+    inset 2px 3px 6px #bedad1;
+}
+.reach-orbit.second {
+  left: calc(50% - 30px);
+  top: 14px;
+  border: 2px solid #effff5;
+  width: 100px;
+  height: 100px;
+}
+.flow .poster-art {
+  background: #edddd0;
+}
+.interval-bar {
+  position: absolute;
+  bottom: 42px;
+  width: 37px;
+  border-radius: 25px;
+  background: linear-gradient(100deg, #536b49, #94a46b);
+  box-shadow: 7px 8px 9px #8d8d6e2e;
+}
+.interval-bar.one {
+  height: 65px;
+  left: calc(50% - 76px);
+}
+.interval-bar.two {
+  height: 105px;
+  left: calc(50% - 18px);
+}
+.interval-bar.three {
+  height: 45px;
+  left: calc(50% + 40px);
+  background: linear-gradient(100deg, #c48c73, #e3b195);
+}
+.home-personal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  margin: 55px 5% 0;
+  border-top: 1px solid #d7ddcc;
+  padding: 36px 0;
+}
+.home-personal h2 {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.6px;
+  margin: 17px 0;
+}
+.home-personal p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #79876e;
+  max-width: 360px;
+}
+.home-personal small {
+  display: block;
+  font-size: 9px;
+  color: #8b9880;
+}
+.home-personal button {
+  font-size: 12px;
+  color: #24472d;
+  border: 0;
+  border-bottom: 1px solid #859b6b;
+  border-radius: 0;
+  background: none;
+  padding: 12px 0 7px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.home-routine {
+  position: relative;
+  padding-left: 40px;
+  border-left: 1px solid #d7ddcc;
+}
+.routine-strip {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 10px;
+  color: #8a9879;
+}
+.routine-strip i {
+  width: 30px;
+  height: 2px;
+  background: #bccca3;
+}
+.home-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 5% 25px;
+  font-size: 10px;
+  color: #8f9b85;
+}
+.discovery-shell .vr-dock {
+  background: #183828ef;
+  border-color: #52704855;
+  border-radius: 17px;
+  box-shadow: 0 10px 40px #16351b3d;
+}
+.discovery-shell .vr-dock a {
+  color: #a6b89c;
+}
+.discovery-shell .vr-dock .router-link-exact-active {
+  background: #cfe7a5;
+  color: #21412b;
+}
+.discovery-shell .vr-dock a:hover {
+  color: #e8f5d8;
+}
+.course-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #10251bc9;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.course-modal {
+  background: #f5f6ee;
+  color: #26452f;
+  position: relative;
+  border-radius: 14px;
+  padding: 38px;
+  width: 510px;
+  max-width: 100%;
+  max-height: 90dvh;
+  overflow: auto;
+  box-shadow: 0 30px 110px #08140c66;
+}
+.course-modal h2 {
+  font-size: 33px;
+  font-weight: 550;
+  margin: 15px 0;
+}
+.course-modal > p {
+  font-size: 12px;
+  color: #7a876f;
+  line-height: 1.8;
+}
+.course-modal .modal-close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  background: none;
+  border: 0;
+  color: #607659;
+  font-size: 26px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.course-modal ol {
+  margin: 23px 0;
+  padding: 0 0 0 20px;
+  color: #5c7156;
+  font-size: 12px;
+  line-height: 2;
+}
+.course-modal fieldset {
+  border: 0;
+  padding: 0;
+  margin: 21px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.course-modal legend {
+  margin-bottom: 11px;
+  font-size: 11px;
+  color: #77876d;
+}
+.course-modal fieldset button {
+  background: #e8ecdf;
+  color: #6e7d63;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 11px 17px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.course-modal fieldset button.picked {
+  background: #dce8c8;
+  border-color: #8ba269;
+  color: #2f4c2d;
+}
+.compact-range {
+  font-size: 12px;
+  display: block;
+  color: #4c6445;
+}
+.compact-range input {
+  display: inline-block;
+  width: auto;
+  margin-right: 8px;
+  accent-color: #5b7c3e;
+}
+.compact-range small {
+  display: block;
+  font-size: 10px;
+  margin: 8px 0 0 24px;
+  color: #89947b;
+}
+.course-modal .course-scope {
+  font-size: 10px;
+  margin: 22px 0 15px;
+}
+.course-modal .home-start {
+  width: 100%;
+}
+.fitness-home button:focus-visible,
+.course-modal button:focus-visible {
+  outline: 3px solid #97af65;
+  outline-offset: 4px;
+}
+.training-shell .studio-grid {
+  display: block;
+  position: relative;
+}
+.training-shell .stage {
+  height: calc(100dvh - 210px);
+  min-height: 560px;
+}
+.training-shell .session-controls {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px !important;
+  background: #12241ce8 !important;
+  border: 1px solid #49604c !important;
+  border-radius: 10px !important;
+  max-width: none !important;
+  margin-top: 12px;
+}
+.session-controls .timer {
+  font-size: 32px !important;
+  margin: 0 !important;
+}
+.session-controls > p:not(.micro) {
+  font-size: 10px;
+  margin: 0 10px 0 0;
+}
+.session-controls .hit-stat {
+  margin: 0 !important;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.session-controls .hit-stat strong {
+  font-size: 24px;
+}
+.session-controls .hit-stat span {
+  font-size: 10px;
+}
+.session-controls label {
+  font-size: 10px;
+  margin: 0 !important;
+  width: 140px;
+}
+.session-controls label select {
+  padding: 8px;
+  font-size: 11px;
+  margin: 5px 0 0 !important;
+}
+.session-controls .micro {
+  width: 100%;
+  margin: 0;
+  font-size: 9px !important;
+}
+.session-controls .pill {
+  font-size: 10px !important;
+}
+.session-controls button {
+  font-size: 11px !important;
+  padding: 11px 15px !important;
+  min-width: 0 !important;
+}
+.training-arena {
+  height: 100% !important;
+  min-height: 0 !important;
+  position: relative;
+  border: 1px solid #3d5748;
+  border-radius: 12px;
+  overflow: hidden;
+  outline: none !important;
+  background: #101b19;
+}
+.training-arena > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.arena-heading {
+  position: absolute;
+  left: 26px;
+  top: 22px;
+  z-index: 2;
+  pointer-events: none;
+  display: grid;
+  gap: 9px;
+}
+.arena-heading > span {
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 2px;
+  color: #91a486;
+}
+.arena-heading > b {
+  font-size: 19px;
+  font-weight: 450;
+  color: #edf3db;
+}
+.arena-heading > small {
+  font-size: 10px;
+  color: #8ca084;
+}
+.arena-performance {
+  position: absolute;
+  right: 25px;
+  top: 26px;
+  z-index: 2;
+  display: flex;
+  gap: 22px;
+  pointer-events: none;
+}
+.arena-performance > span {
+  font-size: 9px;
+  color: #9fb297;
+}
+.arena-performance b {
+  display: block;
+  font:
+    24px ui-monospace,
+    monospace;
+  margin-top: 10px;
+  color: #e5f1ce;
+}
+.arena-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 110px;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+  padding: 12px 25px;
+  background: #132d20b0;
+  border: 1px solid #6f8a5766;
+  border-radius: 25px;
+  color: #d5e5bf;
+  min-width: 190px;
+  backdrop-filter: blur(10px);
+}
+.arena-cue > span {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+.arena-cue small {
+  font-size: 10px;
+  display: block;
+  margin-top: 7px;
+}
+.arena-tools {
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+.arena-tools button {
+  background: #d6e1bd14;
+  border: 1px solid #819f6566;
+  color: #c8d7b5;
+  font-size: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.training-arena .scene-tip {
+  position: absolute;
+  left: 24px;
+  bottom: 19px;
+  right: auto;
+  margin: 0;
+  color: #7e987f;
+  font-size: 9px;
+}
+.training-arena .vr-entry {
+  position: absolute;
+  top: auto;
+  bottom: 60px;
+  left: 24px;
+  right: auto;
+  z-index: 5;
+  color: #728e75;
+  font-size: 9px;
+}
+.training-arena .vr-entry button {
+  position: static !important;
+  width: auto !important;
+  min-width: 140px !important;
+  background: #a6be7a33 !important;
+  font-size: 10px !important;
+}
+.hold-track {
+  height: 3px;
+  width: 160px;
+  background: #57714b;
+  margin: 9px auto 0;
+  border-radius: 3px;
+}
+.hold-track i {
+  height: 100%;
+  display: block;
+  background: #dcf5a7;
+  border-radius: 3px;
+}
+.session-recap .recap-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px 40px;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #354c40;
+}
+.recap-metrics > span {
+  font-size: 10px;
+  color: #9db092;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.recap-metrics b {
+  font-size: 25px;
+  color: #d9e9c9;
+  font-weight: 450;
+}
+.recap-note {
+  font-size: 10px;
+  color: #8ea082;
+  margin-top: 24px;
+}
+.journal-drill-summary {
+  padding: 15px;
+  background: #1b3c31;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+.journal-drill-summary b {
+  font-size: 13px;
+  color: #c8dfad;
+}
+@media (min-width: 1600px) {
+  .home-hero {
+    min-height: 640px;
+  }
+  .studio-visual {
+    min-height: 640px;
+  }
+  .hero-statement {
+    padding-top: 85px;
+  }
+  .poster-art {
+    height: 220px;
+  }
+}
+@media (max-width: 850px) {
+  .home-hero {
+    grid-template-columns: 0.85fr 1fr;
+    min-height: 470px;
+  }
+  .studio-visual {
+    min-height: 470px;
+  }
+  .hero-statement {
+    padding-top: 45px;
+  }
+  .hero-statement h1 {
+    font-size: 42px;
+  }
+  .hero-statement > p {
+    font-size: 12px;
+  }
+  .hero-proof {
+    font-size: 9px;
+    gap: 8px;
+  }
+  .hero-proof span + span:before {
+    display: none;
+  }
+  .home-course-heading h2 {
+    font-size: 23px;
+  }
+  .poster-art {
+    height: 150px;
+  }
+  .poster-copy {
+    padding: 17px;
+  }
+  .poster-copy h3 {
+    font-size: 19px;
+  }
+  .poster-copy p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .course-posters {
+    gap: 12px;
+  }
+  .home-personal {
+    gap: 25px;
+  }
+  .home-routine {
+    padding-left: 25px;
+  }
+  .training-shell .stage {
+    height: 560px;
+  }
+  .session-controls label {
+    width: 120px;
+  }
+  .arena-performance {
+    gap: 12px;
+  }
+  .arena-performance b {
+    font-size: 19px;
+  }
+}
+@media (max-width: 600px) {
+  .home-masthead {
+    height: 65px;
+    padding: 0 6%;
+  }
+  .studio-wordmark {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    max-width: 88px;
+    line-height: 1.6;
+  }
+  .home-brand {
+    font-size: 24px;
+  }
+  .home-device {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    gap: 5px;
+  }
+  .home-device i {
+    width: 4px;
+    height: 4px;
+  }
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 24px;
+  }
+  .hero-statement {
+    padding: 30px 2% 0;
+  }
+  .hero-kicker {
+    font-size: 8px;
+    margin-bottom: 20px;
+  }
+  .hero-statement h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 1.19;
+    margin-bottom: 22px !important;
+  }
+  .hero-statement > p {
+    margin-bottom: 23px;
+  }
+  .hero-statement .home-start {
+    min-width: 230px;
+  }
+  .hero-proof {
+    margin-top: 17px;
+    gap: 14px;
+  }
+  .studio-visual {
+    min-height: 330px;
+    height: 330px;
+    flex: none;
+  }
+  .visual-caption {
+    left: 20px;
+    bottom: 19px;
+  }
+  .visual-caption b {
+    font-size: 17px;
+  }
+  .visual-caption small {
+    font-size: 8px;
+  }
+  .visual-caption span {
+    font-size: 8px;
+    margin-bottom: 8px;
+  }
+  .visual-coordinate {
+    font-size: 8px;
+    top: 16px;
+    right: 14px;
+  }
+  .home-course-heading {
+    display: block;
+    margin-top: 35px;
+  }
+  .home-course-heading > p {
+    font-size: 11px;
+    margin-top: 14px;
+  }
+  .home-course-heading h2 {
+    font-size: 24px;
+  }
+  .course-posters {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin: 0;
+    padding: 0 5% 12px;
+  }
+  .course-poster {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+  }
+  .poster-art {
+    height: 180px;
+  }
+  .poster-copy h3 {
+    font-size: 23px;
+  }
+  .poster-copy p {
+    font-size: 11px;
+  }
+  .poster-copy {
+    padding: 22px;
+  }
+  .home-personal {
+    display: block;
+    margin-top: 27px;
+    padding-top: 28px;
+  }
+  .home-personal h2 {
+    font-size: 24px;
+  }
+  .home-routine {
+    border-left: 0;
+    border-top: 1px solid #d7ddcc;
+    padding: 28px 0 0;
+    margin-top: 30px;
+  }
+  .home-footer {
+    display: block;
+    line-height: 2;
+  }
+  .home-footer span {
+    display: block;
+    font-size: 9px;
+  }
+  .fitness-home {
+    padding-bottom: 105px;
+  }
+  .course-modal-backdrop {
+    padding: 14px;
+  }
+  .course-modal {
+    padding: 28px 23px;
+  }
+  .course-modal h2 {
+    font-size: 29px;
+  }
+  .course-modal ol {
+    font-size: 11px;
+  }
+  .course-modal fieldset button {
+    padding: 10px 14px;
+  }
+  .training-shell .stage {
+    height: 560px;
+    min-height: 0;
+  }
+  .arena-heading {
+    left: 17px;
+    top: 18px;
+  }
+  .arena-heading > b {
+    font-size: 16px;
+  }
+  .arena-heading > span {
+    font-size: 8px;
+  }
+  .arena-performance {
+    top: 94px;
+    left: 18px;
+    right: auto;
+    gap: 28px;
+  }
+  .arena-performance b {
+    font-size: 20px;
+  }
+  .arena-cue {
+    bottom: 118px;
+    font-size: 11px;
+  }
+  .arena-tools {
+    bottom: 43px;
+    right: 14px;
+    gap: 5px;
+  }
+  .arena-tools button {
+    font-size: 9px;
+    padding: 8px;
+  }
+  .training-arena .vr-entry {
+    left: 16px;
+    bottom: 85px;
+    max-width: 185px;
+    font-size: 8px;
+  }
+  .training-arena .scene-tip {
+    bottom: 17px;
+    left: 16px;
+    font-size: 8px;
+  }
+  .session-controls .micro {
+    font-size: 8px !important;
+  }
+  .session-controls .timer {
+    font-size: 27px !important;
+  }
+  .training-shell .session-controls {
+    gap: 12px;
+    padding: 15px !important;
+  }
+  .session-controls .hit-stat span {
+    font-size: 9px;
+  }
+  .session-controls label {
+    width: calc(50% - 8px);
+  }
+  .recap-metrics b {
+    font-size: 21px;
+  }
+  .session-recap .recap-metrics {
+    gap: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-poster {
+    transition: none;
+  }
+  .course-poster:hover {
+    transform: none;
+  }
+}
+
+.training-shell .stage {
+  height: calc(100dvh - 285px);
+  min-height: 380px;
+}
+.training-shell .session-controls {
+  margin-bottom: 0;
+}
+.session-recap {
+  background: #13271e;
+  border-color: #3d5742;
+}
+.training-shell .vr-dock {
+  background: #192b23ef;
+  border-color: #5a725344;
+}
+.training-shell .vr-dock .router-link-exact-active {
+  background: #cfe3a821;
+  color: #e0ecc9;
+}
+@media (max-width: 600px) {
+  .training-shell .stage {
+    height: calc(100dvh - 290px);
+    min-height: 380px;
+  }
+  .arena-heading > b {
+    font-size: 14px;
+  }
+  .arena-cue {
+    bottom: 110px;
+  }
+  .arena-tools {
+    bottom: 43px;
+  }
+  .arena-performance {
+    top: 92px;
+  }
+  .training-shell .session-controls {
+    margin-bottom: 10px;
+  }
+}
+
+.combo-track {
+  position: absolute;
+  top: 112px;
+  left: 26px;
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+  pointer-events: none;
+}
+.combo-track span {
+  border: 1px solid #4a6446;
+  color: #779570;
+  font:
+    9px ui-monospace,
+    monospace;
+  width: 23px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+}
+.combo-track .current {
+  background: #d4e8ab;
+  color: #24462c;
+  border-color: #d4e8ab;
+}
+@media (max-width: 700px) {
+  .combo-track {
+    top: 158px;
+    left: 18px;
+    gap: 4px;
+  }
+  .combo-track span {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+  .arena-heading {
+    max-width: calc(100% - 32px);
+  }
+  .arena-performance {
+    top: 94px;
+    left: 18px;
+    right: auto;
+    gap: 28px;
+  }
+  .arena-heading > b {
+    font-size: 15px;
+  }
+}
+.fitness-home .hero-proof{position:static;background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;border:0!important;border-radius:0;padding:0!important;margin:20px 0 0!important;width:auto;color:#75846a}.fitness-home .hero-proof span{color:#75846a}.home-personal .home-routine h2{font-size:24px}@media(min-width:601px) and (max-width:750px){.home-personal{grid-template-columns:1fr}.home-routine{border-left:0;border-top:1px solid #d7ddcc;padding:26px 0 0}.home-personal .home-routine h2{font-size:25px}}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高光谱重建工作台</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body class="scene-workbench">
+  <header class="lab-header">
+    <b>高光谱重建工作台</b>
+    <span></span>
+    <a href="/compare.html">历史实验对比</a>
+    <a href="/evidence.html">论文归档</a>
+  </header>
+  <main>
+    <aside class="data-sidebar">
+      <section aria-labelledby="experiment-title">
+        <h2 id="experiment-title">航测场景实验</h2>
+        <form id="scene-form">
+          <label>场景<select id="scene" required></select></label>
+          <div class="two">
+            <label>倍率<select id="experiment-scale" required></select></label>
+            <label>重建方法<select id="experiment-method" required></select></label>
+          </div>
+          <button class="primary" id="experiment-button" disabled>运行重建</button>
+        </form>
+        <p id="scene-protocol">将参考影像按像元块取均值，构造低分辨率输入，再逐波段重建。</p>
+        <details id="scene-source" hidden>
+          <summary>数据来源</summary>
+          <p id="scene-credit"></p>
+          <p><a id="archive-link">高校数据归档</a> · <a id="original-link">原始数据目录</a> · <a id="license-link">数据许可</a></p>
+        </details>
+      </section>
+      <details>
+        <summary>评价自己的重建结果</summary>
+        <form id="upload-form">
+          <label>参考立方体（.npy）<input id="truth" type="file" accept=".npy" required></label>
+          <label>重建立方体（.npy）<input id="prediction" type="file" accept=".npy" required></label>
+          <label>方法名称<input id="method" value="上传的重建结果" maxlength="120"></label>
+          <div class="two">
+            <label>数据量程<input id="data-range" type="number" min="0.000000001" step="any" value="1" required></label>
+            <label>倍率<input id="scale" type="number" min="1" max="16" step="1" value="4" required></label>
+          </div>
+          <label>波长序列（选填）<textarea id="wavelengths" rows="2" placeholder="逗号分隔，与波段数一致"></textarea></label>
+          <button id="upload-button" class="primary">计算评价指标</button>
+          <p>两份文件须为同尺寸 HWC 实数数组，各不超过 16 MB 或 200 万元素。</p>
+        </form>
+      </details>
+      <details><summary>最近结果</summary><div id="history"></div></details>
+    </aside>
+    <div class="evaluation-main">
+      <section class="evaluation-heading">
+        <div><h1 id="run-title">高光谱重建实验</h1><p id="run-context"></p></div>
+      </section>
+      <div id="message" role="status" aria-live="polite"></div>
+      <div id="workspace" hidden>
+        <section class="band-toolbar" aria-label="影像显示">
+          <label id="display-label" hidden>视图<select id="display"><option value="composite">伪彩色</option><option value="band">单波段</option></select></label>
+          <label>波段 <b id="band-number">0</b><input id="band" type="range" min="0" max="0" step="1" value="0"></label>
+          <label>误差<select id="map"><option value="absolute_error">单波段绝对误差</option><option value="spectral_angle">全波段 SAM</option></select></label>
+        </section>
+        <div class="image-grid" id="image-grid" aria-label="参考影像、输入与重建对照">
+          <figure><figcaption>参考影像</figcaption><img id="truth-image" alt="参考影像"><small id="truth-meta"></small></figure>
+          <figure id="low-panel" hidden><figcaption>低分辨率输入</figcaption><img id="low-image" alt="按面积均值缩小后的输入"><small id="low-meta"></small></figure>
+          <figure><figcaption>重建结果</figcaption><img id="prediction-image" alt="重建影像"><small id="prediction-meta"></small></figure>
+          <figure><figcaption id="error-title">误差</figcaption><img id="error-image" alt="重建误差图"><small id="map-legend"></small></figure>
+        </div>
+        <section class="comparison" aria-labelledby="comparison-title">
+          <header><h2 id="comparison-title">同一输入的重建对照</h2><span id="comparison-context"></span></header>
+          <div id="comparison-table"></div>
+        </section>
+        <details class="inspection">
+          <summary>选区与像素光谱</summary>
+          <div class="pixel-controls">
+            <label>像素行<input id="row" type="number" min="0" value="0"></label>
+            <label>像素列<input id="col" type="number" min="0" value="0"></label>
+            <button id="pixel-button">查看光谱</button>
+            <span>也可点击参考、重建或误差图选像素。</span>
+          </div>
+          <section class="roi-control">
+            <div><h3>评价区域</h3><p>行列使用从 0 开始的索引。</p></div>
+            <label>起始行<input id="roi-row" type="number" min="0" value="0"></label>
+            <label>起始列<input id="roi-col" type="number" min="0" value="0"></label>
+            <label>高<input id="roi-height" type="number" min="1" value="1"></label>
+            <label>宽<input id="roi-width" type="number" min="1" value="1"></label>
+            <button id="roi-button">应用选区</button><button id="roi-reset">使用全图</button>
+          </section>
+          <div id="metrics" class="metric-grid"></div>
+          <div class="plots-grid">
+            <section class="plot-panel"><header><h3>像素光谱</h3><span id="pixel-label"></span></header><div class="plot-legend"><i></i>参考 <i class="pred-key"></i>重建</div><svg id="spectrum" viewBox="0 0 580 260" role="img" aria-label="参考与重建像素光谱"></svg></section>
+            <section class="plot-panel"><header><h3>各波段 RMSE</h3><span id="band-error-unit"></span></header><svg id="band-error" viewBox="0 0 580 260" role="img" aria-label="各波段重建均方根误差"></svg></section>
+          </div>
+          <p id="metric-note" class="metric-note"></p>
+        </details>
+        <details class="inspection">
+          <summary>导出本次结果</summary>
+          <div class="output-links">
+            <a id="export-link">全图报告 JSON</a>
+            <a id="export-cube">重建立方体 NPY</a>
+            <a id="export-low" hidden>低分辨率输入 NPY</a>
+            <button id="export-view" type="button">导出选区与像素报告</button>
+          </div>
+        </details>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "dataset": "MIT-BIH Arrhythmia Database 1.0.0",
+  "record": "100",
+  "channel": "MLII",
+  "sampling_hz": 360,
+  "segment_seconds": 10,
+  "amplitude_unit": "mV",
+  "license": "Open Data Commons Attribution License 1.0",
+  "source": "https://physionet.org/content/mitdb/1.0.0/",
+  "doi": "10.13026/C2F305",
+  "credit": "Moody, G. and Mark, R. (2005). MIT-BIH Arrhythmia Database (version 1.0.0). PhysioNet.",
+  "processing": "First 3600 samples, format 212 channel 0, (ADC - 1024) / 200.",
+  "sha256": "3d7c623995741665f8baf41eb7acdd459c22eaa7bba114d405fd0c9ede9dc12c"
+}

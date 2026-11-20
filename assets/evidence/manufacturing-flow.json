@@ -1,0 +1,47 @@
+{
+  "submit": {
+    "product": "SPINDLE-SLEEVE",
+    "status": "PENDING",
+    "quantity": 6,
+    "version": 0
+  },
+  "accept": {
+    "product": "SPINDLE-SLEEVE",
+    "status": "ACCEPTED",
+    "quantity": 6,
+    "version": 1
+  },
+  "reserve": {
+    "status": "RESERVED",
+    "bomVersion": 1,
+    "lines": [
+      {
+        "sku": "TUBE-12",
+        "quantity": 6,
+        "held": 6
+      },
+      {
+        "sku": "RING-04",
+        "quantity": 12,
+        "held": 12
+      }
+    ]
+  },
+  "reconcile": {
+    "checked": 2,
+    "consistent": true
+  },
+  "production": {
+    "device": "DEMO-CNC",
+    "plannedMinutes": 120,
+    "good": 6,
+    "rejected": 0,
+    "outcome": {
+      "product": "SPINDLE-SLEEVE",
+      "status": "COMPLETED",
+      "quantity": 6,
+      "version": 6
+    },
+    "reconciledAfterCompletion": true
+  }
+}

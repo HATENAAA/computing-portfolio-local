@@ -1,0 +1,5929 @@
+{
+  "mode": "real",
+  "methods": {
+    "rule": {
+      "selected": {
+        "threshold": 0.8,
+        "on_frames": 1
+      },
+      "validation_usable": false,
+      "validation_sweep": [
+        {
+          "threshold": 0.2,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 222.22863027806386,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 9.0,
+                    "confirmed_at": 9.0,
+                    "end": 11.0
+                  },
+                  {
+                    "start": 15.0,
+                    "confirmed_at": 15.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 0,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "temporal_localisation",
+                    "best_temporal_iou": 0.09514285714285714
+                  },
+                  {
+                    "prediction_index": 1,
+                    "category": "temporal_localisation",
+                    "best_temporal_iou": 0.2864285714285714
+                  }
+                ],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 2,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.2,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 111.11431513903193,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 15.0,
+                    "confirmed_at": 17.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "temporal_localisation",
+                    "best_temporal_iou": 0.2864285714285714
+                  }
+                ],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 1,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.2,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 111.11431513903193,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 15.0,
+                    "confirmed_at": 19.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "temporal_localisation",
+                    "best_temporal_iou": 0.2864285714285714
+                  }
+                ],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 1,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        }
+      ],
+      "test_iou_sensitivity": {
+        "0.25": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 0.0,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.25,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.25,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        },
+        "0.5": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 0.0,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.5,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.5,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        },
+        "0.75": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 0.0,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.75,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [],
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.75,
+              "matched_pairs": [],
+              "false_positives": [],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        }
+      },
+      "confirmation_ablation": [
+        {
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "model": {
+      "selected": {
+        "threshold": 0.5,
+        "on_frames": 1
+      },
+      "validation_usable": true,
+      "validation_sweep": [
+        {
+          "threshold": 0.2,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "false_alarms_per_hour": 111.11431513903193,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 0.0,
+            "alarm_delay_p95_s": 0.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 0.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 0.0,
+                    "end": 11.378044711378045
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.0,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "background",
+                    "best_temporal_iou": 0
+                  }
+                ],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 1
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.2,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "false_alarms_per_hour": 111.11431513903193,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 2.0,
+            "alarm_delay_p95_s": 2.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 2.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  2.0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 2.0,
+                    "end": 11.378044711378045
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.0,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "background",
+                    "best_temporal_iou": 0
+                  }
+                ],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 1
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.2,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "false_alarms_per_hour": 111.11431513903193,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 4.0,
+            "alarm_delay_p95_s": 4.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 4.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  4.0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 4.0,
+                    "end": 11.378044711378045
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.0,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "background",
+                    "best_temporal_iou": 0
+                  }
+                ],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 1
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 0.0,
+            "alarm_delay_p95_s": 0.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 0.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 2.0,
+            "alarm_delay_p95_s": 2.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 2.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  2.0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.5,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 0.0,
+            "alarm_delay_median_s": 4.0,
+            "alarm_delay_p95_s": 4.0,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 0.0,
+                    "confirmed_at": 4.0,
+                    "end": 21.02102102102102
+                  }
+                ],
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0,
+                "confirmation_delay_seconds": [
+                  4.0
+                ],
+                "iou_threshold": 0.5,
+                "matched_pairs": [
+                  {
+                    "prediction_index": 0,
+                    "truth_index": 0,
+                    "temporal_iou": 1.0
+                  }
+                ],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "threshold": 0.8,
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "Car1",
+                "scene": "vehicle-fire",
+                "duration": 21.02102102102102,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "non_fire_patrolbot_onboard",
+                "scene": "patrol-negative",
+                "duration": 11.378044711378045,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        }
+      ],
+      "test_iou_sensitivity": {
+        "0.25": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 48.15532247266235,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [
+                {
+                  "start": 24.0,
+                  "confirmed_at": 24.0,
+                  "end": 25.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.25,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "temporal_localisation",
+                  "best_temporal_iou": 0.033337041156840934
+                }
+              ],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 1,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [
+                {
+                  "start": 70.0,
+                  "confirmed_at": 70.0,
+                  "end": 71.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.25,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "background",
+                  "best_temporal_iou": 0
+                }
+              ],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 1
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        },
+        "0.5": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 48.15532247266235,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [
+                {
+                  "start": 24.0,
+                  "confirmed_at": 24.0,
+                  "end": 25.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.5,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "temporal_localisation",
+                  "best_temporal_iou": 0.033337041156840934
+                }
+              ],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 1,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [
+                {
+                  "start": 70.0,
+                  "confirmed_at": 70.0,
+                  "end": 71.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.5,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "background",
+                  "best_temporal_iou": 0
+                }
+              ],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 1
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        },
+        "0.75": {
+          "tp": 0,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_hour": 48.15532247266235,
+          "event_miss_rate": 1.0,
+          "alarm_delay_median_s": null,
+          "alarm_delay_p95_s": null,
+          "videos": [
+            {
+              "id": "house6",
+              "scene": "house-fire",
+              "duration": 29.996663329996665,
+              "truth_events": 1,
+              "events": [
+                {
+                  "start": 24.0,
+                  "confirmed_at": 24.0,
+                  "end": 25.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.75,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "temporal_localisation",
+                  "best_temporal_iou": 0.033337041156840934
+                }
+              ],
+              "missed_truth_indices": [
+                0
+              ],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 1,
+                "background": 0
+              },
+              "matching": "maximum cardinality, one to one"
+            },
+            {
+              "id": "cleaner",
+              "scene": "cleaner-negative",
+              "duration": 119.51951951951952,
+              "truth_events": 0,
+              "events": [
+                {
+                  "start": 70.0,
+                  "confirmed_at": 70.0,
+                  "end": 71.0
+                }
+              ],
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "confirmation_delay_seconds": [],
+              "iou_threshold": 0.75,
+              "matched_pairs": [],
+              "false_positives": [
+                {
+                  "prediction_index": 0,
+                  "category": "background",
+                  "best_temporal_iou": 0
+                }
+              ],
+              "missed_truth_indices": [],
+              "error_counts": {
+                "duplicate": 0,
+                "temporal_localisation": 0,
+                "background": 1
+              },
+              "matching": "maximum cardinality, one to one"
+            }
+          ]
+        }
+      },
+      "confirmation_ablation": [
+        {
+          "on_frames": 1,
+          "metrics": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 48.15532247266235,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [
+                  {
+                    "start": 24.0,
+                    "confirmed_at": 24.0,
+                    "end": 25.0
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "temporal_localisation",
+                    "best_temporal_iou": 0.033337041156840934
+                  }
+                ],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 1,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [
+                  {
+                    "start": 70.0,
+                    "confirmed_at": 70.0,
+                    "end": 71.0
+                  }
+                ],
+                "tp": 0,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.0,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [
+                  {
+                    "prediction_index": 0,
+                    "category": "background",
+                    "best_temporal_iou": 0
+                  }
+                ],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 1
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "on_frames": 3,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        },
+        {
+          "on_frames": 5,
+          "metrics": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0,
+            "false_alarms_per_hour": 0.0,
+            "event_miss_rate": 1.0,
+            "alarm_delay_median_s": null,
+            "alarm_delay_p95_s": null,
+            "videos": [
+              {
+                "id": "house6",
+                "scene": "house-fire",
+                "duration": 29.996663329996665,
+                "truth_events": 1,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [
+                  0
+                ],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              },
+              {
+                "id": "cleaner",
+                "scene": "cleaner-negative",
+                "duration": 119.51951951951952,
+                "truth_events": 0,
+                "events": [],
+                "tp": 0,
+                "fp": 0,
+                "fn": 0,
+                "precision": null,
+                "recall": null,
+                "confirmation_delay_seconds": [],
+                "iou_threshold": 0.5,
+                "matched_pairs": [],
+                "false_positives": [],
+                "missed_truth_indices": [],
+                "error_counts": {
+                  "duplicate": 0,
+                  "temporal_localisation": 0,
+                  "background": 0
+                },
+                "matching": "maximum cardinality, one to one"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "scope": "确认延迟只统计匹配事件，未含解码/推理耗时；FP/小时以完整已标注时长为分母。来源独立性依赖声明与源指纹。",
+  "source": "https://github.com/steffensbola/furg-fire-dataset",
+  "license": "CC0 1.0",
+  "model": {
+    "source": "https://huggingface.co/prithivMLmods/Fire-Detection-Engine-ONNX",
+    "revision": "02bd7f981aac3e27a75f83e0a3b97dfadaffc228",
+    "sha256": "11a8d876000c52d30e881cf3855442cd1a5bdf539eea3deab14448736608a7b6",
+    "task": "image-classification",
+    "class_names": [
+      "fire",
+      "normal",
+      "smoke"
+    ],
+    "license": "apache-2.0",
+    "training_overlap": "unknown"
+  },
+  "rule_box_iou_sensitivity": {
+    "0.25": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 121,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap_at_iou": 0.0,
+      "ground_truths": 121,
+      "predictions": 0,
+      "curve": [],
+      "errors": [
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 196,
+            "y": 1,
+            "width": 25,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 200,
+            "y": 45,
+            "width": 24,
+            "height": 17
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 175,
+            "y": 44,
+            "width": 34,
+            "height": 76
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 84,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 89,
+            "width": 19,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 15,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 49,
+            "width": 67,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 80,
+            "width": 24,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 82,
+            "width": 25,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 177,
+            "y": 45,
+            "width": 64,
+            "height": 75
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 158,
+            "y": 153,
+            "width": 17,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 59,
+            "width": 69,
+            "height": 61
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 84,
+            "width": 26,
+            "height": 32
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 16,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 46,
+            "width": 68,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 24,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 150,
+            "width": 17,
+            "height": 45
+          }
+        }
+      ]
+    },
+    "0.5": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 121,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap_at_iou": 0.0,
+      "ground_truths": 121,
+      "predictions": 0,
+      "curve": [],
+      "errors": [
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 196,
+            "y": 1,
+            "width": 25,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 200,
+            "y": 45,
+            "width": 24,
+            "height": 17
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 175,
+            "y": 44,
+            "width": 34,
+            "height": 76
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 84,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 89,
+            "width": 19,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 15,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 49,
+            "width": 67,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 80,
+            "width": 24,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 82,
+            "width": 25,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 177,
+            "y": 45,
+            "width": 64,
+            "height": 75
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 158,
+            "y": 153,
+            "width": 17,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 59,
+            "width": 69,
+            "height": 61
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 84,
+            "width": 26,
+            "height": 32
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 16,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 46,
+            "width": 68,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 24,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 150,
+            "width": 17,
+            "height": 45
+          }
+        }
+      ]
+    },
+    "0.75": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 121,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ap_at_iou": 0.0,
+      "ground_truths": 121,
+      "predictions": 0,
+      "curve": [],
+      "errors": [
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:0",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 176,
+            "y": 84,
+            "width": 24,
+            "height": 33
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 196,
+            "y": 1,
+            "width": 25,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:30",
+          "type": "missed",
+          "box": {
+            "x": 200,
+            "y": 45,
+            "width": 24,
+            "height": 17
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:60",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:90",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:120",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:150",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:180",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 171,
+            "y": 81,
+            "width": 29,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 201,
+            "y": 40,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:210",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 88,
+            "width": 21,
+            "height": 27
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:240",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:270",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:300",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:330",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:360",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:390",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 68,
+            "width": 28,
+            "height": 50
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 92,
+            "width": 18,
+            "height": 26
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 206,
+            "y": 43,
+            "width": 14,
+            "height": 24
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 133,
+            "y": 86,
+            "width": 18,
+            "height": 25
+          }
+        },
+        {
+          "image": "house6:420",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 152,
+            "width": 13,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:450",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 59,
+            "width": 34,
+            "height": 60
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 84,
+            "width": 25,
+            "height": 35
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 152,
+            "y": 150,
+            "width": 19,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 208,
+            "y": 46,
+            "width": 12,
+            "height": 16
+          }
+        },
+        {
+          "image": "house6:480",
+          "type": "missed",
+          "box": {
+            "x": 220,
+            "y": 86,
+            "width": 17,
+            "height": 30
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:509",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:539",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:569",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 56,
+            "width": 37,
+            "height": 62
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 157,
+            "y": 153,
+            "width": 15,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:599",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 79,
+            "width": 23,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:629",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 81,
+            "width": 24,
+            "height": 36
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 172,
+            "y": 34,
+            "width": 31,
+            "height": 87
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 87,
+            "width": 21,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:659",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 153,
+            "width": 19,
+            "height": 43
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:689",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 153,
+            "y": 152,
+            "width": 18,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 83,
+            "width": 26,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 173,
+            "y": 50,
+            "width": 32,
+            "height": 68
+          }
+        },
+        {
+          "image": "house6:719",
+          "type": "missed",
+          "box": {
+            "x": 218,
+            "y": 81,
+            "width": 21,
+            "height": 39
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 175,
+            "y": 44,
+            "width": 34,
+            "height": 76
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 84,
+            "width": 25,
+            "height": 31
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 219,
+            "y": 89,
+            "width": 19,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:749",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 15,
+            "height": 41
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 49,
+            "width": 67,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 80,
+            "width": 24,
+            "height": 38
+          }
+        },
+        {
+          "image": "house6:779",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 151,
+            "width": 17,
+            "height": 44
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 130,
+            "y": 82,
+            "width": 25,
+            "height": 34
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 177,
+            "y": 45,
+            "width": 64,
+            "height": 75
+          }
+        },
+        {
+          "image": "house6:809",
+          "type": "missed",
+          "box": {
+            "x": 158,
+            "y": 153,
+            "width": 17,
+            "height": 40
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 59,
+            "width": 69,
+            "height": 61
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 129,
+            "y": 84,
+            "width": 26,
+            "height": 32
+          }
+        },
+        {
+          "image": "house6:839",
+          "type": "missed",
+          "box": {
+            "x": 154,
+            "y": 152,
+            "width": 16,
+            "height": 42
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 174,
+            "y": 46,
+            "width": 68,
+            "height": 72
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 131,
+            "y": 86,
+            "width": 24,
+            "height": 29
+          }
+        },
+        {
+          "image": "house6:869",
+          "type": "missed",
+          "box": {
+            "x": 155,
+            "y": 150,
+            "width": 17,
+            "height": 45
+          }
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "4 videos only, source-disjoint validation/test, model training overlap unknown",
+    "1fps, first at most120s; no confidence intervals",
+    "Classifier has no boxes; box IoU only applies to rule baseline",
+    "No established sunset/reflection/light/orange-object negative coverage",
+    "Event delay excludes decode/inference latency"
+  ],
+  "implementation_sha256": "b3021634532e0dd444a90ee15ce2df30803b5e97c42191c9c4ca9fd032aa925f"
+}

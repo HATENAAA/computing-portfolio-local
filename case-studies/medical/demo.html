@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>体检预约与报告</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../assets/review.css">
+  <script defer src="../../assets/medical-demo.js"></script>
+</head>
+<body class="medical" data-project="medical">
+<main>
+  <section class="hero">
+    <h1>体检预约与报告</h1>
+    <nav aria-label="演示功能">
+      <a href="#sample-appointment">体检预约</a>
+      <a href="#appointments">我的预约</a>
+      <a href="#doctor-demo">医生端</a>
+      <a href="#report">报告中心</a>
+    </nav>
+  </section>
+  <article class="evidence" id="sample-appointment">
+    <h2>体检预约</h2>
+    
+    <p class="medical-demo-note">静态演示使用虚构记录。操作只影响当前页面，刷新后重置。</p>
+
+    <div class="flow medical-flow">
+      <form id="booking">
+        <div data-book="0"><label><b>1 / 4 · 机构</b><br><select id="clinic"><option value="a">海港示例机构</option><option value="b">滨河示例机构</option></select></label></div><div data-book="1"><label><b>2 / 4 · 套餐</b><br><select id="package"><option value="basic">基础套餐</option><option value="extended">扩展套餐</option></select></label></div><div data-book="2"><label><b>3 / 4 · 预约时段</b><br><select id="slot"><option value="full">周二上午 · 已满</option><option value="wed">周三上午</option><option value="thu">周四下午</option></select></label></div>
+        <div data-book="3"><h3>4 / 4 · 确认所选信息</h3><output id="booking-summary"></output></div>
+        <p id="booking-message" role="status"></p>
+        <div class="actions" id="booking-actions" hidden>
+          <button id="back" type="button">上一步</button>
+          <button class="primary" id="advance" type="button">继续</button>
+          <a id="booking-orders" href="#appointments" hidden>查看我的预约</a>
+        </div>
+      </form>
+    </div>
+
+    <section class="medical-module" id="appointments">
+      <h3>我的预约</h3>
+      <p>查看订单，可取消待检预约，或进入医生端示例。</p>
+      <div id="medical-orders"></div>
+      <p id="medical-orders-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="doctor-demo">
+      <h3>医生端 · 静态模拟</h3>
+      <p>选择待检订单并保存预设的虚构结果。原项目后端实现了订单查询与报告录入接口。</p>
+      <div class="actions" id="medical-doctor-actions" hidden>
+        <label>待检订单 <select id="medical-doctor-order"><option value="">暂无待检订单</option></select></label>
+        <button type="button" id="medical-save-report">保存示例报告</button>
+        <a href="#report" id="medical-doctor-report" hidden>查看已保存报告</a>
+      </div>
+      <p id="medical-doctor-message" role="status"></p>
+    </section>
+
+    <section class="medical-module" id="report">
+      <h3>报告中心</h3>
+      <p>已完成的示例报告可查看总检结论和检查明细。</p>
+      <details id="medical-report-details">
+        <summary>查看虚构报告</summary>
+        <label>报告订单 <select id="medical-report-order"><option value="DEMO-01">DEMO-01</option></select></label>
+        <p id="medical-report-caption"></p>
+        <div class="actions medical-report-tabs" aria-label="报告视图" hidden>
+          <button type="button" data-medical-report-tab="overview" aria-pressed="true">总检结论</button>
+          <button type="button" data-medical-report-tab="details" aria-pressed="false">检查明细</button>
+        </div>
+        <div id="medical-report-content" aria-live="polite"></div>
+      </details>
+    </section>
+  </article>
+</main>
+</body>
+</html>

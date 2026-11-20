@@ -1,0 +1,241 @@
+{
+  "source": "synthetic-known-system",
+  "seed": 7,
+  "filter_sos": [
+    [
+      0.017037712827965193,
+      0.034075425655930386,
+      0.017037712827965193,
+      1.0,
+      -0.5188352348999757,
+      0.0
+    ],
+    [
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      -1.2696361722517029,
+      0.5529106605559061
+    ]
+  ],
+  "rows": [
+    {
+      "noise_std": 0,
+      "window": 256,
+      "overlap": 0,
+      "reliable_bins": 42,
+      "gain_mae_db": 0.03780500054186918,
+      "phase_mae_deg": 0.2799177680419276
+    },
+    {
+      "noise_std": 0,
+      "window": 256,
+      "overlap": 0.5,
+      "reliable_bins": 42,
+      "gain_mae_db": 0.03135182091218788,
+      "phase_mae_deg": 0.2079349620708303
+    },
+    {
+      "noise_std": 0,
+      "window": 256,
+      "overlap": 0.75,
+      "reliable_bins": 42,
+      "gain_mae_db": 0.021336895773599113,
+      "phase_mae_deg": 0.1962103240373577
+    },
+    {
+      "noise_std": 0,
+      "window": 512,
+      "overlap": 0,
+      "reliable_bins": 84,
+      "gain_mae_db": 0.026606506867651907,
+      "phase_mae_deg": 0.16801514967906664
+    },
+    {
+      "noise_std": 0,
+      "window": 512,
+      "overlap": 0.5,
+      "reliable_bins": 84,
+      "gain_mae_db": 0.017386770230935978,
+      "phase_mae_deg": 0.118435195917659
+    },
+    {
+      "noise_std": 0,
+      "window": 512,
+      "overlap": 0.75,
+      "reliable_bins": 84,
+      "gain_mae_db": 0.01012485075042209,
+      "phase_mae_deg": 0.09596215335770115
+    },
+    {
+      "noise_std": 0,
+      "window": 1024,
+      "overlap": 0,
+      "reliable_bins": 169,
+      "gain_mae_db": 0.019438757039187862,
+      "phase_mae_deg": 0.12071716864991563
+    },
+    {
+      "noise_std": 0,
+      "window": 1024,
+      "overlap": 0.5,
+      "reliable_bins": 169,
+      "gain_mae_db": 0.011626953300015135,
+      "phase_mae_deg": 0.08427623829379156
+    },
+    {
+      "noise_std": 0,
+      "window": 1024,
+      "overlap": 0.75,
+      "reliable_bins": 169,
+      "gain_mae_db": 0.005934965974379454,
+      "phase_mae_deg": 0.06592032210806684
+    },
+    {
+      "noise_std": 0.1,
+      "window": 256,
+      "overlap": 0,
+      "reliable_bins": 37,
+      "gain_mae_db": 0.12953303016314055,
+      "phase_mae_deg": 1.0289391921322957
+    },
+    {
+      "noise_std": 0.1,
+      "window": 256,
+      "overlap": 0.5,
+      "reliable_bins": 38,
+      "gain_mae_db": 0.09279824686572949,
+      "phase_mae_deg": 0.5410956026377616
+    },
+    {
+      "noise_std": 0.1,
+      "window": 256,
+      "overlap": 0.75,
+      "reliable_bins": 38,
+      "gain_mae_db": 0.09397300041334687,
+      "phase_mae_deg": 0.5327557030862058
+    },
+    {
+      "noise_std": 0.1,
+      "window": 512,
+      "overlap": 0,
+      "reliable_bins": 76,
+      "gain_mae_db": 0.19582270795889564,
+      "phase_mae_deg": 0.9888196375043025
+    },
+    {
+      "noise_std": 0.1,
+      "window": 512,
+      "overlap": 0.5,
+      "reliable_bins": 77,
+      "gain_mae_db": 0.14240743724702895,
+      "phase_mae_deg": 0.7221793921003121
+    },
+    {
+      "noise_std": 0.1,
+      "window": 512,
+      "overlap": 0.75,
+      "reliable_bins": 76,
+      "gain_mae_db": 0.13885934499325012,
+      "phase_mae_deg": 0.6216302964534056
+    },
+    {
+      "noise_std": 0.1,
+      "window": 1024,
+      "overlap": 0,
+      "reliable_bins": 148,
+      "gain_mae_db": 0.23154381308931848,
+      "phase_mae_deg": 1.254436039583298
+    },
+    {
+      "noise_std": 0.1,
+      "window": 1024,
+      "overlap": 0.5,
+      "reliable_bins": 151,
+      "gain_mae_db": 0.20161828630969844,
+      "phase_mae_deg": 0.9785979730809137
+    },
+    {
+      "noise_std": 0.1,
+      "window": 1024,
+      "overlap": 0.75,
+      "reliable_bins": 152,
+      "gain_mae_db": 0.19585144252672337,
+      "phase_mae_deg": 0.9210750053914614
+    },
+    {
+      "noise_std": 0.5,
+      "window": 256,
+      "overlap": 0,
+      "reliable_bins": 5,
+      "gain_mae_db": 0.26199487495737067,
+      "phase_mae_deg": 2.6210942258111287
+    },
+    {
+      "noise_std": 0.5,
+      "window": 256,
+      "overlap": 0.5,
+      "reliable_bins": 9,
+      "gain_mae_db": 0.10172939816933382,
+      "phase_mae_deg": 1.2113632055350176
+    },
+    {
+      "noise_std": 0.5,
+      "window": 256,
+      "overlap": 0.75,
+      "reliable_bins": 8,
+      "gain_mae_db": 0.08334594320137875,
+      "phase_mae_deg": 1.3673600907564492
+    },
+    {
+      "noise_std": 0.5,
+      "window": 512,
+      "overlap": 0,
+      "reliable_bins": 19,
+      "gain_mae_db": 0.3680826503447746,
+      "phase_mae_deg": 2.213492577843576
+    },
+    {
+      "noise_std": 0.5,
+      "window": 512,
+      "overlap": 0.5,
+      "reliable_bins": 20,
+      "gain_mae_db": 0.18827552908747805,
+      "phase_mae_deg": 1.993325136244539
+    },
+    {
+      "noise_std": 0.5,
+      "window": 512,
+      "overlap": 0.75,
+      "reliable_bins": 18,
+      "gain_mae_db": 0.16923655749438207,
+      "phase_mae_deg": 1.891729555224278
+    },
+    {
+      "noise_std": 0.5,
+      "window": 1024,
+      "overlap": 0,
+      "reliable_bins": 35,
+      "gain_mae_db": 0.45895031257496544,
+      "phase_mae_deg": 4.459863872131198
+    },
+    {
+      "noise_std": 0.5,
+      "window": 1024,
+      "overlap": 0.5,
+      "reliable_bins": 35,
+      "gain_mae_db": 0.36627418942231865,
+      "phase_mae_deg": 2.9763675560237726
+    },
+    {
+      "noise_std": 0.5,
+      "window": 1024,
+      "overlap": 0.75,
+      "reliable_bins": 35,
+      "gain_mae_db": 0.334024519160903,
+      "phase_mae_deg": 2.695766863442877
+    }
+  ],
+  "scope": "仿真系统核对，不是采集设备实测"
+}

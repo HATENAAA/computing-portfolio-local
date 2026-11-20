@@ -1,0 +1,33 @@
+{
+  "title": "Bathymetry Dataset for Coral Reef Derived from ICESat-2 and Sentinel-2 Imagery",
+  "creator": "Li, Fengyu",
+  "doi": "10.5281/zenodo.19937366",
+  "source": "https://zenodo.org/records/19937366",
+  "license": "CC BY 4.0",
+  "rows": 33688,
+  "raw_rows": 36536,
+  "omitted_empty_rows": 2848,
+  "beams": {
+    "gt1r": 5477,
+    "gt3r": 10364,
+    "gt2l": 6062,
+    "gt1l": 3799,
+    "gt3l": 6174,
+    "gt2r": 1812
+  },
+  "latitude_range": [
+    16.92630713,
+    16.99637436
+  ],
+  "longitude_range": [
+    112.2054351,
+    112.3353053
+  ],
+  "msl_height_range_m": [
+    -33.24173775,
+    2.318573476
+  ],
+  "input_note": "Downloaded photon observations; MSL height is not relabelled as non-negative water depth. No matched B2/B3/B4/B8 observations are supplied by this CSV.",
+  "archived_version": "1.0",
+  "subsequent_release": "https://zenodo.org/records/19942496"
+}

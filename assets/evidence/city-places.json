@@ -1,0 +1,489 @@
+{
+  "crs": "WGS84",
+  "sources": {
+    "registry": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+    "sites": "https://lhsr.sh.gov.cn/srgl/20210419/4ef1d4e4-d652-4445-af9d-3bb729faade3.html",
+    "archive": "https://www.shda.gov.cn/dawh/dacq/202607/t20260701_76593.html",
+    "citytour": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+    "huangpu": "https://www.shanghai.gov.cn/huangpu/index.html",
+    "jingan": "https://www.shanghai.gov.cn/jingan/index.html",
+    "hongkou": "https://www.shanghai.gov.cn/nw17239/20250520/f1caabc5e1384c4693d5d8ff863cbbcb.html",
+    "bookstore": "https://www.shanghai.gov.cn/nw17239/20260910/66b3822f98ae4da5ab5d80d00b333ecc.html",
+    "resources": "https://www.shanghai.gov.cn/cmsres/08/089d4613a7744d3496f035cf340b4408/88b87b4f24414aa2fd56316720a936d1.pdf",
+    "cemetery": "https://www.shanghai.gov.cn/hsly/20260625/41366204b48040d89fcbafa0e880f3b6.html",
+    "firstCongressMuseum": "https://www.shanghai.gov.cn/hsly/20260625/10d0e931417d4614b0d8bbbbd03495c1.html"
+  },
+  "places": [
+    {
+      "id": "dorm",
+      "name": "博文女校 · 中共一大代表宿舍旧址",
+      "en": "Bowen Girls’ School · delegates’ quarters",
+      "address": "黄浦区太仓路127号",
+      "address_en": "127 Taicang Rd, Huangpu",
+      "position": [
+        31.223563,
+        121.471217
+      ],
+      "source": "https://lhsr.sh.gov.cn/srgl/20210419/4ef1d4e4-d652-4445-af9d-3bb729faade3.html",
+      "osm": "https://www.openstreetmap.org/node/10763850644",
+      "walkNode": 25583,
+      "walkAccessMeters": 13
+    },
+    {
+      "id": "first",
+      "name": "中共一大会址",
+      "en": "Site of the First CPC Congress",
+      "address": "黄浦区兴业路76号",
+      "address_en": "76 Xingye Rd, Huangpu",
+      "position": [
+        31.222063,
+        121.470693
+      ],
+      "source": "https://www.shda.gov.cn/dawh/dacq/202607/t20260701_76593.html",
+      "osm": "https://www.openstreetmap.org/way/372180467",
+      "walkNode": 25584,
+      "walkAccessMeters": 18
+    },
+    {
+      "id": "second",
+      "name": "中共二大会址纪念馆",
+      "en": "Memorial of the Second CPC Congress",
+      "address": "静安区老成都北路7弄30号",
+      "address_en": "30, Lane 7, Lao Chengdu North Rd, Jing’an",
+      "position": [
+        31.226235,
+        121.462137
+      ],
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/way/485211224",
+      "walkNode": 25585,
+      "walkAccessMeters": 12
+    },
+    {
+      "id": "new",
+      "name": "《新青年》编辑部旧址",
+      "en": "Former New Youth editorial office",
+      "address": "黄浦区南昌路100弄2号",
+      "address_en": "2, Lane 100, Nanchang Rd, Huangpu",
+      "position": [
+        31.221416,
+        121.464293
+      ],
+      "source": "https://lhsr.sh.gov.cn/srgl/20210419/4ef1d4e4-d652-4445-af9d-3bb729faade3.html",
+      "osm": "https://www.openstreetmap.org/way/693448183",
+      "walkNode": 25586,
+      "walkAccessMeters": 34
+    },
+    {
+      "id": "youth",
+      "name": "中国社会主义青年团中央机关旧址纪念馆",
+      "en": "Socialist Youth League memorial",
+      "address": "黄浦区淮海中路567弄1–6号",
+      "address_en": "1–6, Lane 567, Huaihai Middle Rd, Huangpu",
+      "position": [
+        31.221981,
+        121.463816
+      ],
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/node/4823869418",
+      "walkNode": 25587,
+      "walkAccessMeters": 61
+    },
+    {
+      "id": "sun",
+      "name": "上海孙中山故居纪念馆",
+      "en": "Former residence of Sun Yat-sen",
+      "address": "黄浦区香山路7号",
+      "address_en": "7 Xiangshan Rd, Huangpu",
+      "position": [
+        31.217977,
+        121.463171
+      ],
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/way/206603275",
+      "walkNode": 25588,
+      "walkAccessMeters": 44
+    },
+    {
+      "id": "tao",
+      "name": "上海韬奋纪念馆",
+      "en": "Zou Taofen Memorial",
+      "address": "黄浦区重庆南路205弄53–54号",
+      "address_en": "53–54, Lane 205, Chongqing South Rd, Huangpu",
+      "position": [
+        31.216323,
+        121.466667
+      ],
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/node/8095275563",
+      "walkNode": 25589,
+      "walkAccessMeters": 49
+    },
+    {
+      "id": "museum1",
+      "name": "中共一大纪念馆",
+      "en": "Memorial of the First CPC Congress",
+      "address": "黄浦区黄陂南路374号",
+      "address_en": "374 Huangpi South Rd, Huangpu",
+      "source": "https://www.shanghai.gov.cn/hsly/20260625/10d0e931417d4614b0d8bbbbd03495c1.html",
+      "osm": "https://www.openstreetmap.org/way/435452367",
+      "position": [
+        31.221742,
+        121.471323
+      ],
+      "walkNode": 25590,
+      "walkAccessMeters": 17
+    },
+    {
+      "id": "zhou",
+      "name": "周公馆",
+      "en": "Former residence of Zhou Enlai",
+      "address": "黄浦区思南路71、73号",
+      "address_en": "71 and 73 Sinan Rd, Huangpu",
+      "source": "https://www.shanghai.gov.cn/huangpu/index.html",
+      "osm": "https://www.openstreetmap.org/way/206601791",
+      "position": [
+        31.216118,
+        121.463839
+      ],
+      "walkNode": 25591,
+      "walkAccessMeters": 18
+    },
+    {
+      "id": "mao",
+      "name": "上海毛泽东旧居陈列馆",
+      "en": "Mao Zedong Former Residence Exhibition",
+      "address": "静安区茂名北路120弄",
+      "address_en": "Lane 120, Maoming North Rd, Jing’an",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/node/12074779376",
+      "position": [
+        31.22829,
+        121.455942
+      ],
+      "walkNode": 25592,
+      "walkAccessMeters": 21
+    },
+    {
+      "id": "liu",
+      "name": "中共上海地下组织斗争史陈列馆暨刘长胜故居",
+      "en": "Liu Changsheng’s Former Residence",
+      "address": "静安区愚园路81号",
+      "address_en": "81 Yuyuan Rd, Jing’an",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/node/4810772278",
+      "position": [
+        31.226608,
+        121.441761
+      ],
+      "walkNode": 25593,
+      "walkAccessMeters": 12
+    },
+    {
+      "id": "central",
+      "name": "中共中央上海局机关旧址",
+      "en": "Former CPC Shanghai Bureau Office",
+      "address": "长宁区江苏路389号",
+      "address_en": "389 Jiangsu Rd, Changning",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/node/8359232441",
+      "position": [
+        31.220834,
+        121.427332
+      ],
+      "walkNode": 25594,
+      "walkAccessMeters": 74
+    },
+    {
+      "id": "union",
+      "name": "中国劳动组合书记部旧址陈列馆",
+      "en": "Former Chinese Labour Secretariat",
+      "address": "静安区成都北路893弄3、5、7号",
+      "address_en": "3, 5 and 7, Lane 893, Chengdu North Rd, Jing’an",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/node/13339589514",
+      "position": [
+        31.239775,
+        121.459237
+      ],
+      "walkNode": 25595,
+      "walkAccessMeters": 27
+    },
+    {
+      "id": "history",
+      "name": "上海市历史博物馆（上海革命历史博物馆）",
+      "en": "Shanghai History Museum",
+      "address": "黄浦区南京西路325号",
+      "address_en": "325 Nanjing West Rd, Huangpu",
+      "source": "https://www.shanghai.gov.cn/huangpu/index.html",
+      "osm": "https://www.openstreetmap.org/node/5530017322",
+      "position": [
+        31.232617,
+        121.46662
+      ],
+      "walkNode": 25596,
+      "walkAccessMeters": 37
+    },
+    {
+      "id": "may30",
+      "name": "五卅运动纪念碑",
+      "en": "May Thirtieth Movement Monument",
+      "address": "黄浦区人民公园",
+      "address_en": "People’s Park, Huangpu",
+      "source": "https://www.shanghai.gov.cn/cmsres/08/089d4613a7744d3496f035cf340b4408/88b87b4f24414aa2fd56316720a936d1.pdf",
+      "osm": "https://www.openstreetmap.org/node/5436983736",
+      "position": [
+        31.235693,
+        121.468554
+      ],
+      "walkNode": 25597,
+      "walkAccessMeters": 22
+    },
+    {
+      "id": "warehouse",
+      "name": "上海四行仓库抗战纪念馆",
+      "en": "Sihang Warehouse Memorial",
+      "address": "静安区光复路21号",
+      "address_en": "21 Guangfu Rd, Jing’an",
+      "source": "https://www.shanghai.gov.cn/jingan/index.html",
+      "osm": "https://www.openstreetmap.org/node/11205532011",
+      "position": [
+        31.242264,
+        121.466925
+      ],
+      "walkNode": 25598,
+      "walkAccessMeters": 13
+    },
+    {
+      "id": "politburo",
+      "name": "中共中央政治局机关旧址（1928–1931年）",
+      "en": "Former CPC Central Politburo Office",
+      "address": "黄浦区云南中路171–173号",
+      "address_en": "171–173 Yunnan Middle Rd, Huangpu",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/node/8095636856",
+      "position": [
+        31.233548,
+        121.473235
+      ],
+      "walkNode": 25599,
+      "walkAccessMeters": 11
+    },
+    {
+      "id": "fourth",
+      "name": "中共四大纪念馆",
+      "en": "Memorial of the Fourth CPC Congress",
+      "address": "虹口区四川北路1468号",
+      "address_en": "1468 Sichuan North Rd, Hongkou",
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/node/4211961753",
+      "position": [
+        31.257155,
+        121.480413
+      ],
+      "walkNode": 25600,
+      "walkAccessMeters": 13
+    },
+    {
+      "id": "book",
+      "name": "1927·鲁迅与内山纪念书局",
+      "en": "Lu Xun and Uchiyama Memorial Bookstore",
+      "address": "虹口区四川北路2056号",
+      "address_en": "2056 Sichuan North Rd, Hongkou",
+      "source": "https://www.shanghai.gov.cn/nw17239/20260910/66b3822f98ae4da5ab5d80d00b333ecc.html",
+      "osm": "https://www.openstreetmap.org/node/12585101766",
+      "position": [
+        31.266708,
+        121.479218
+      ],
+      "walkNode": 25601,
+      "walkAccessMeters": 11
+    },
+    {
+      "id": "luxun-home",
+      "name": "上海鲁迅故居",
+      "en": "Former residence of Lu Xun",
+      "address": "虹口区山阴路132弄9号",
+      "address_en": "9, Lane 132, Shanyin Rd, Hongkou",
+      "source": "https://www.shanghai.gov.cn/nw17239/20250520/f1caabc5e1384c4693d5d8ff863cbbcb.html",
+      "osm": "https://www.openstreetmap.org/node/9907365281",
+      "position": [
+        31.268231,
+        121.479929
+      ],
+      "walkNode": 25602,
+      "walkAccessMeters": 31
+    },
+    {
+      "id": "luxun-museum",
+      "name": "上海鲁迅纪念馆",
+      "en": "Shanghai Lu Xun Memorial",
+      "address": "虹口区甜爱路200号",
+      "address_en": "200 Tian’ai Rd, Hongkou",
+      "source": "https://whlyj.sh.gov.cn/bwg/20260106/265b828de4394054bdc2e61e1599ed4c.html",
+      "osm": "https://www.openstreetmap.org/way/404710124",
+      "position": [
+        31.271671,
+        121.479337
+      ],
+      "walkNode": 25603,
+      "walkAccessMeters": 40
+    },
+    {
+      "id": "luxun-grave",
+      "name": "鲁迅墓",
+      "en": "Lu Xun’s Tomb",
+      "address": "虹口区鲁迅公园内",
+      "address_en": "Lu Xun Park, Hongkou",
+      "source": "https://www.shanghai.gov.cn/nw17239/20250520/f1caabc5e1384c4693d5d8ff863cbbcb.html",
+      "osm": "https://www.openstreetmap.org/node/1871659442",
+      "position": [
+        31.274139,
+        121.478055
+      ],
+      "walkNode": 25604,
+      "walkAccessMeters": 25
+    },
+    {
+      "id": "soong",
+      "name": "上海宋庆龄故居纪念馆",
+      "en": "Soong Ching Ling Memorial Residence",
+      "address": "徐汇区淮海中路1843号",
+      "address_en": "1843 Huaihai Middle Rd, Xuhui",
+      "source": "https://www.shanghai.gov.cn/gwk/search/content/6116c0ab4bda41689cda69ce1a2b40c7",
+      "osm": "https://www.openstreetmap.org/way/490214455",
+      "position": [
+        31.205903,
+        121.434303
+      ],
+      "walkNode": 25605,
+      "walkAccessMeters": 9
+    },
+    {
+      "id": "longhua-museum",
+      "name": "龙华烈士纪念馆",
+      "en": "Longhua Martyrs Memorial Museum",
+      "address": "徐汇区龙华西路180号·龙华烈士陵园",
+      "address_en": "Longhua Martyrs’ Cemetery, 180 Longhua West Rd, Xuhui",
+      "source": "https://www.shanghai.gov.cn/hsly/20260625/41366204b48040d89fcbafa0e880f3b6.html",
+      "osm": "https://www.openstreetmap.org/way/298135193",
+      "position": [
+        31.178603,
+        121.444392
+      ],
+      "walkNode": 25606,
+      "walkAccessMeters": 35
+    },
+    {
+      "id": "longhua-site",
+      "name": "龙华警备司令部旧址",
+      "en": "Former Longhua Garrison Command",
+      "address": "徐汇区龙华烈士陵园内",
+      "address_en": "Longhua Martyrs’ Cemetery, Xuhui",
+      "source": "https://www.shanghai.gov.cn/cmsres/08/089d4613a7744d3496f035cf340b4408/88b87b4f24414aa2fd56316720a936d1.pdf",
+      "osm": "https://www.openstreetmap.org/way/577243784",
+      "position": [
+        31.179181,
+        121.447651
+      ],
+      "walkNode": 25607,
+      "walkAccessMeters": 4
+    },
+    {
+      "id": "longhua-memorial",
+      "name": "龙华烈士陵园纪念堂",
+      "en": "Longhua Martyrs’ Memorial Hall",
+      "address": "徐汇区龙华烈士陵园内",
+      "address_en": "Longhua Martyrs’ Cemetery, Xuhui",
+      "source": "https://www.shanghai.gov.cn/hsly/20260625/41366204b48040d89fcbafa0e880f3b6.html",
+      "osm": "https://www.openstreetmap.org/way/455891659",
+      "position": [
+        31.17864,
+        121.443112
+      ],
+      "walkNode": 25608,
+      "walkAccessMeters": 30
+    }
+  ],
+  "routes": [
+    {
+      "id": "congress",
+      "name": "一大与二大会址",
+      "en": "First and Second Congress sites",
+      "stops": [
+        "museum1",
+        "first",
+        "dorm",
+        "second"
+      ]
+    },
+    {
+      "id": "streets",
+      "name": "淮海中路与复兴公园",
+      "en": "Huaihai Road and Fuxing Park",
+      "stops": [
+        "youth",
+        "new",
+        "sun",
+        "zhou",
+        "tao"
+      ]
+    },
+    {
+      "id": "jingan",
+      "name": "静安街巷与地下工作",
+      "en": "Jing’an and the underground network",
+      "stops": [
+        "central",
+        "liu",
+        "mao",
+        "second",
+        "union"
+      ]
+    },
+    {
+      "id": "suzhou",
+      "name": "人民广场与苏州河",
+      "en": "People’s Square and Suzhou Creek",
+      "stops": [
+        "politburo",
+        "history",
+        "may30",
+        "warehouse"
+      ]
+    },
+    {
+      "id": "hongkou",
+      "name": "四川北路与鲁迅故居",
+      "en": "Sichuan North Road and Lu Xun",
+      "stops": [
+        "fourth",
+        "book",
+        "luxun-home",
+        "luxun-museum",
+        "luxun-grave"
+      ]
+    },
+    {
+      "id": "xuhui",
+      "name": "名人故居寻访",
+      "en": "Historic residences in Xuhui and Huangpu",
+      "stops": [
+        "soong",
+        "zhou",
+        "sun",
+        "tao"
+      ]
+    },
+    {
+      "id": "longhua",
+      "name": "龙华烈士陵园",
+      "en": "Longhua Martyrs’ Cemetery",
+      "stops": [
+        "longhua-site",
+        "longhua-museum",
+        "longhua-memorial"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>上海红色文化地图</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="leaflet.css">
+  <link rel="stylesheet" href="atlas.css">
+  <script defer src="leaflet.js"></script>
+  <script defer src="streets.js"></script>
+  <script defer src="places.js?v=b533c47b852a"></script>
+  <script defer src="walking-data.js"></script>
+  <script defer src="walking.js"></script>
+  <script defer src="atlas.js"></script>
+</head>
+<body>
+<main>
+  <section class="canvas">
+    <div id="map" aria-label="上海历史场址步行地图" data-label="Walking map of Shanghai historic sites"></div>
+    <div class="map-actions">
+      <button id="fit" type="button" data-en="Fit route">路线全览</button>
+      <button id="fit-sites" type="button" data-en="All sites">全部场址</button>
+    </div>
+  </section>
+  <aside>
+    <header class="map-heading"><h1 data-en="Shanghai historic sites">上海红色文化地图</h1><span id="coverage"></span></header>
+    <div class="modes" role="group" aria-label="路线模式" data-label="Route mode">
+      <button id="preset-mode" type="button" aria-pressed="true" data-en="Themed walks">主题路线</button>
+      <button id="custom-mode" type="button" aria-pressed="false" data-en="My walk">自选路线</button>
+    </div>
+    <label id="preset-picker"><span data-en="Choose a walk">选择路线</span><select id="route"></select></label>
+    <div id="custom-picker" hidden>
+      <label><span data-en="Add a stop">添加站点</span><select id="custom-stop"></select></label>
+      <div class="actions"><button id="add-stop" type="button" data-en="Add">加入路线</button><button id="optimize" type="button" data-en="Minimize walking distance">缩短步行距离</button></div>
+      <p id="custom-status" class="note" role="status"></p>
+    </div>
+    <section class="route-block">
+      <p id="route-summary" aria-live="polite"></p>
+      <label id="lines-label" class="inline"><input type="checkbox" id="lines" checked><span data-en="Show walk on map">在地图上显示路线</span></label>
+      <ol id="stops"></ol>
+    </section>
+    <section class="record" aria-live="polite">
+      <h2 id="name"></h2>
+      <p id="address"></p>
+      <div class="references">
+        <a id="source" target="_blank" rel="noopener" data-en="Venue information ↗">场址资料 ↗</a>
+        <a id="coordinate" target="_blank" rel="noopener" data-en="Map feature ↗">地图要素 ↗</a>
+        <button id="save" type="button"></button>
+      </div>
+    </section>
+    <section class="directions">
+      <h2 data-en="Walk between two sites">两点步行路线</h2>
+      <label><span data-en="Start">起点</span><select id="from"></select></label>
+      <label><span data-en="Destination">终点</span><select id="to"></select></label>
+      <div class="actions"><button id="direction-fit" type="button" disabled data-en="Show walking route">查看步行路线</button><button id="direction-clear" type="button" hidden data-en="Clear">清除</button></div>
+      <output id="distance" aria-live="polite"></output>
+    </section>
+    <details class="directory">
+      <summary data-en="Search and saved places">地点检索与收藏</summary>
+      <label><span data-en="Place or address">地点或地址</span><input type="search" id="query"></label>
+      <label><span data-en="District">行政区</span><select id="district"></select></label>
+      <label class="inline"><input type="checkbox" id="saved"><span data-en="Saved only">只看收藏</span></label>
+      <label class="inline"><input type="checkbox" id="near"><span data-en="Sort by walking distance">按步行距离排列</span></label>
+      <div id="matches"></div>
+      <button id="export" type="button" data-en="Export saved places">导出收藏</button>
+    </details>
+    <p class="note" data-en="Walking estimates use 4.5 km/h. Dashes show the connection from the street network to a site.">步行时长按 4.5 公里／小时估算。虚线连接路网与场址。</p>
+  </aside>
+</main>
+</body>
+</html>

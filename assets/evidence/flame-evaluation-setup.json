@@ -1,0 +1,43 @@
+{
+  "videos": [
+    {
+      "id": "Car1",
+      "split": "validation",
+      "scene": "vehicle-fire",
+      "duration": 21.02102102102102,
+      "truth": [
+        {
+          "start": 0.0,
+          "end": 21.02102102102102
+        }
+      ]
+    },
+    {
+      "id": "non_fire_patrolbot_onboard",
+      "split": "validation",
+      "scene": "patrol-negative",
+      "duration": 11.378044711378045,
+      "truth": []
+    },
+    {
+      "id": "house6",
+      "split": "test",
+      "scene": "house-fire",
+      "duration": 29.996663329996665,
+      "truth": [
+        {
+          "start": 0.0,
+          "end": 29.996663329996665
+        }
+      ]
+    },
+    {
+      "id": "cleaner",
+      "split": "test",
+      "scene": "cleaner-negative",
+      "duration": 119.51951951951952,
+      "truth": []
+    }
+  ],
+  "matching": "one-to-one temporal IoU"
+}

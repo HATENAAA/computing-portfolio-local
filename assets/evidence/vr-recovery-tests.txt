@@ -1,0 +1,62 @@
+vrfitai/tests/recovery.test.js
+
+test("refresh restores elapsed time and hits in paused state without counting time away", () => {
+  let time = 0;
+  const a = new TrainingSession(() => time);
+  a.start(60);
+  time = 7500;
+  a.hit();
+  const b = new TrainingSession(() => time + 100000);
+  b.restore(a.snapshot());
+  assert.equal(b.state, "paused");
+  assert.equal(b.milliseconds(), 7500);
+  assert.equal(b.hits, 1);
+  b.resume();
+  time = 10000;
+  assert.equal(b.finish().activeSeconds, 10);
+});
+test("invalid durations and corrupt session checkpoints are rejected", () => {
+  for (const d of [0, -1, NaN, Infinity, 1.5, 3601])
+    assert.throws(() => new TrainingSession().start(d));
+  for (const change of [
+    { elapsedMs: -1 },
+    { elapsedMs: 60001 },
+    { hits: -1 },
+    { hits: 1.5 },
+    { durationSeconds: 0 },
+    { startedAt: "bad" },
+  ])
+    assert.throws(() =>
+      new TrainingSession().restore({ ...draft().session, ...change }),
+    );
+});
+
+vrfitai/tests/recovery.test.js
+
+test("unacknowledged save keeps the same UUID and payload across refresh and retry", () => {
+  const storage = memory(),
+    a = new RecoveryStore(storage, () => 1000);
+  a.write({ pending: pending() });
+  const b = new RecoveryStore(storage, () => 2000);
+  assert.deepEqual(b.read().value.pending, pending());
+  b.write({ pending: b.read().value.pending });
+  assert.equal(b.read().value.pending.id, pending().id);
+  b.write({});
+  assert.equal(b.read().value, null);
+});
+
+vrfitai/tests/api.test.js
+
+test("session save, retry, history and CSV work end to end", async (t) => {
+  const s = await service(t);
+  const row = record();
+  assert.equal((await s.post("/api/sessions", row)).status, 201);
+  assert.equal((await s.post("/api/sessions", row)).status, 200);
+  const history = await (await s.get("/api/sessions")).json();
+  assert.equal(history.length, 1);
+  assert.equal(history[0].seconds, 30);
+  assert.equal(history[0].hits, 5);
+  const csv = await s.get("/api/sessions/export");
+  assert.match(await csv.text(), /自由训练/);
+  assert.match(csv.headers.get("content-disposition"), /attachment/);
+});

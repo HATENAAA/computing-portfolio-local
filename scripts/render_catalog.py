@@ -85,18 +85,18 @@ def card(item, featured):
 
 
 def render(dest=ROOT):
-    projects = json.loads((ROOT / 'assets/projects.json').read_text())
+    projects = json.loads((ROOT / 'assets/projects.json').read_text(encoding='utf-8'))
     cards = '\n'.join(card(item, featured=index < 2) for index, item in enumerate(projects))
-    template = (ROOT / 'scripts/catalog.template.html').read_text()
+    template = (ROOT / 'scripts/catalog.template.html').read_text(encoding='utf-8')
     dest.mkdir(parents=True, exist_ok=True)
     count = len(projects)
     count_label = bilingual(f'{count} projects', f'{count} 个项目')
     text = (template.replace('{{PROJECT_CARDS}}', cards)
             .replace('{{PROJECT_COUNT}}', count_label)
             .replace('{{LOCAL_LAUNCHERS}}', launch_directory(projects)))
-    (dest / 'index.html').write_text(text)
+    (dest / 'index.html').write_bytes(text.encode('utf-8'))
     if dest.resolve() == ROOT:
-        (dest / 'local.html').write_text(text)
+        (dest / 'local.html').write_bytes(text.encode('utf-8'))
 
 
 if __name__ == '__main__':

@@ -9,8 +9,8 @@ import medical_exhibit
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'assets/evidence'
-PROJECTS={p['id']:p for p in json.loads((ROOT/'assets/projects.json').read_text())}
-def read(name): return json.loads((ROOT/name).read_text())
+PROJECTS={p['id']:p for p in json.loads((ROOT/'assets/projects.json').read_text(encoding='utf-8'))}
+def read(name): return json.loads((ROOT/name).read_text(encoding='utf-8'))
 def rows(cells):
     return ''.join('<tr>'+''.join(f'<td>{escape(str(v))}</td>' for v in row)+'</tr>' for row in cells)
 def table(headers,values):
@@ -212,7 +212,7 @@ class Page:
         out.parent.mkdir(parents=True,exist_ok=True)
         medical_script=(f'<script defer src="{self.url("assets/medical-demo.js")}"></script>'
                         if k=='medical' else '')
-        out.write_text(f'''<!doctype html>
+        out.write_bytes(f'''<!doctype html>
 <html lang="{'en' if self.lang=='en' else 'zh-CN'}">
 <head>
   <meta charset="utf-8">
@@ -229,7 +229,7 @@ class Page:
   <footer class="foot"><nav aria-label="{t('Project navigation','项目导航')}">{prev_link} {nav} {next_link}</nav></footer>
 </body>
 </html>
-''')
+'''.encode('utf-8'))
 
 def prepare_evidence():
     import atlas_data
@@ -238,7 +238,7 @@ def prepare_evidence():
         shutil.copyfile(ROOT/'hsi-sr-lab/evidence'/src,DATA/target)
     shutil.copyfile(ROOT/'firewatch/app/static/research-report.json',DATA/'flame-results.json')
     def excerpt(name,start,end):
-        content=(ROOT/name).read_text().split(start,1)[1].split(end,1)[0]
+        content=(ROOT/name).read_text(encoding='utf-8').split(start,1)[1].split(end,1)[0]
         return name+'\n\n'+start+content.rstrip()+'\n'
     workflow='manufacturing-platform/backend/src/test/java/com/hystu/springboot_/WorkflowTests.java'
     (DATA/'inventory-test.txt').write_text(excerpt(workflow,'@Test void reconciliationChecksAllLedgerRowsAndActiveReservations','@Test void reconciliationEnforces'))
@@ -253,7 +253,7 @@ def write_medical_demo(dest, lang):
     title = t('Health screening appointments and reports', '体检预约与报告')
     out = dest / 'case-studies' / 'medical' / filename
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(f'''<!doctype html>
+    out.write_bytes(f'''<!doctype html>
 <html lang="{t('en','zh-CN')}">
 <head>
   <meta charset="utf-8">
@@ -280,7 +280,7 @@ def write_medical_demo(dest, lang):
   </article>
 </main>
 </body>
-</html>''')
+</html>'''.encode('utf-8'))
 
 
 def render(dest=ROOT):

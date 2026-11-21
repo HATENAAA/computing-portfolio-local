@@ -31,10 +31,18 @@ class RuntimeSetupTests(unittest.TestCase):
         with patch.object(runtime, 'candidates', return_value=iter(['/broken', '/old', '/good'])), patch.object(runtime.subprocess, 'run', side_effect=results):
             self.assertEqual(runtime.find_existing(Path('/unused')), '/good')
 
+    @unittest.skipIf(os.name == 'nt', 'Uses the Unix Python bootstrap')
     def test_download_is_validated_before_reporting_success(self):
         with tempfile.TemporaryDirectory() as temp, patch.object(runtime, 'find_existing', side_effect=[None, '/downloaded/python3.12']), patch.object(runtime, 'bootstrap') as download:
             self.assertEqual(runtime.ensure_python312(Path(temp), True), '/downloaded/python3.12')
             download.assert_called_once()
+
+    @unittest.skipUnless(os.name == 'nt', 'Uses the Windows Python launcher')
+    def test_missing_windows_python_requests_native_installation(self):
+        with tempfile.TemporaryDirectory() as temp, patch.object(runtime, 'find_existing', return_value=None), patch.object(runtime, 'bootstrap') as download:
+            with self.assertRaisesRegex(RuntimeError, 'Install Python 3.12 for Windows'):
+                runtime.ensure_python312(Path(temp), True)
+            download.assert_not_called()
 
     def test_process_timeout_stops_wait_and_keeps_diagnostics(self):
         with tempfile.TemporaryDirectory() as temp:

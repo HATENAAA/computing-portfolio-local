@@ -55,7 +55,7 @@ def export(destination):
         raise ValueError('Export to a new or empty folder.')
     render_catalog.render(destination)
     render_review.render(destination)
-    records = json.loads((ROOT / 'assets/projects.json').read_text())
+    records = json.loads((ROOT / 'assets/projects.json').read_text(encoding='utf-8'))
     previews = [f'preview/{project["image"]}' for project in records]
     thesis_images = [path.relative_to(ROOT).as_posix()
                      for path in sorted((ROOT / 'hsi-sr-lab' / 'thesis-final' / 'images').glob('*/*.png'))]

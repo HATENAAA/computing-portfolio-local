@@ -35,7 +35,7 @@ class PublicExportTests(unittest.TestCase):
                 self.assertEqual(case.read_bytes(), (ROOT/case.relative_to(site)).read_bytes())
             for page in site.rglob('*.html'):
                 links = LocalLinks()
-                links.feed(page.read_text())
+                links.feed(page.read_text(encoding='utf-8'))
                 for path in links.paths:
                     with self.subTest(page=page.relative_to(site), path=path):
                         target = (page.parent/path).resolve()

@@ -51,7 +51,10 @@ jobs:
           $snapshot = Join-Path $env:RUNNER_TEMP 'portfolio-release'
           git worktree add --detach "$snapshot" HEAD
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          Copy-Item -LiteralPath 'firewatch/.native' -Destination "$snapshot/firewatch/.native" -Recurse -ErrorAction Stop
+          $native = Join-Path $snapshot 'firewatch/.native'
+          New-Item -Path $native -ItemType Directory -Force | Out-Null
+          Get-ChildItem -LiteralPath 'firewatch/.native' -Filter '*.dll' -File -Force |
+            Copy-Item -Destination $native -ErrorAction Stop
           python -B "$snapshot/scripts/package_local.py" windows-x64 "$env:GITHUB_WORKSPACE/release/portfolio-windows-x64.zip"
       - uses: actions/upload-artifact@v4
         with:

@@ -59,6 +59,9 @@ def smoke():
             assert set(ports) == set(INDEX) and all(ports.values()), ports
             for name, port in ports.items():
                 assert request(port, '/'), name
+            case = request(hub, '/projects/review/medical-en.html')
+            assert b'src="../../assets/local-apps.js"' in case
+            assert request(hub, '/assets/local-apps.js')
             print('Eight project home pages loaded; portfolio selected an alternate port.')
 
             assert request(ports['vrfitai'], '/api/programs')

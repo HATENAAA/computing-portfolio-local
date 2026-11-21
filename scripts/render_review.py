@@ -1,7 +1,7 @@
 """Build standalone evidence pages from the same archives as the local workbenches."""
-import csv, json, os, shutil
+import csv, json, posixpath, shutil
 from html import escape
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from urllib.parse import quote
 from review_cases import ACTION_ANCHORS, CASES, ENTRY_ANCHORS, FUNCTIONS, RESULT_TITLES
 import walkthroughs
@@ -24,7 +24,7 @@ class Page:
             return f'projects/review/{case}-{lang}.html'
         return f'index.html?lang={lang}#top'
     def t(self,en,zh):return zh if self.lang=='zh' else en
-    def url(self,target):return os.path.relpath(target,Path(self.path).parent)
+    def url(self,target):return posixpath.relpath(target, PurePosixPath(self.path).parent)
     def link(self,target,label,css=''):
         return f'<a class="{css}" href="{self.url(target)}">{label}</a>'
     def img(self,target,label):

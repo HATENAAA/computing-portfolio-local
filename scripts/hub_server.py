@@ -67,7 +67,7 @@ class Hub(SimpleHTTPRequestHandler):
             file = ROOT / 'index.html' if path == '/' else target
             if not file.is_file():
                 return self.send_error(404)
-            asset = relpath(ROOT / 'assets/local-apps.js', file.parent)
+            asset = Path(relpath(ROOT / 'assets/local-apps.js', file.parent)).as_posix()
             body = file.read_bytes().replace(b'<html ', b'<html data-local-hub ', 1)
             source = f'<script defer src="{asset}"></script>'.encode()
             body = body.replace(b'</head>', source + b'</head>', 1)

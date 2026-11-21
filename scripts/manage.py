@@ -156,7 +156,7 @@ def main():
   for name in names:
    if name=='hub':continue
    print('\n安装 '+name,flush=True);install(name)
-  print('\n安装完成。请双击“启动作品.command”选择项目。')
+  print('\n安装完成。请双击“Launch Project.command”选择项目。')
  else:
   serve(a.project)
 if __name__=='__main__':

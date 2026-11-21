@@ -8,4 +8,4 @@
 
 本地工作台还提供 32 张 FURG 标注帧的检测框评测，使用空间 IoU。视频事件评测使用时间 IoU。
 
-根目录运行“启动完整作品集.command”，或通过“启动作品.command”单独启动。应用地址：http://127.0.0.1:8765/。
+根目录运行“Launch Portfolio.command”，或通过“Launch Project.command”单独启动。应用地址：http://127.0.0.1:8765/。

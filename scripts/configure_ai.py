@@ -31,7 +31,7 @@ def save_key(path, key):
 
 def main():
     if not sys.stdin.isatty():
-        raise SystemExit('请双击“配置AI助手.command”，在终端中填写API Key。')
+        raise SystemExit('请双击“Configure AI Assistant.command”，在终端中填写API Key。')
     print('VRFitAI · DeepSeek助手配置\n')
     print('请在 https://platform.deepseek.com/api_keys 创建API Key。')
     print('输入时不会显示字符；Key仅保存到本机vrfitai/.env。')

@@ -8,6 +8,6 @@ XR交互负责人，网站主要开发者。
 
 通过客户端生成ID和幂等保存处理重复提交，结合服务端事件重放重建训练记录；提供用户确认的检查点恢复，并从有效训练时长中扣除中断时间。
 
-根目录运行“启动完整作品集.command”，或通过“启动作品.command”单独启动。应用地址：http://127.0.0.1:8780/。
+根目录运行“Launch Portfolio.command”，或通过“Launch Project.command”单独启动。应用地址：http://127.0.0.1:8780/。
 
 获上海市大学生创新创业训练计划市级立项。运行npm ci、npm run build、npm start；测试npm test。AI凭据在服务端.env配置。第三方归属说明见reference/NOTICE.md。

@@ -163,7 +163,7 @@ def ensure_python312(root, download=False):
     if existing:
         return existing
     if not download:
-        raise RuntimeError('尚未找到可用的 Python 3.12。请运行“修复Python环境.command”；也可安装 Python 3.12 后重试。')
+        raise RuntimeError('尚未找到可用的 Python 3.12。请安装 Python 3.12 后重试，或在仓库根目录运行 python3 scripts/manage.py prepare-python。')
     print('本机尚无可用 Python 3.12，开始准备；每个步骤均有超时和日志。', flush=True)
     bootstrap(root)
     existing = find_existing(root)

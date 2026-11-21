@@ -20,6 +20,6 @@ Pavia Centre ×4／×8下，三类MCArb模型的PSNR、SSIM和CC均优于对应�
 
 MCArb-SSPSR相较SSPSR-b，在两数据集及两个尺度的六项指标均改善，PSNR提升0.21–0.36 dB。
 
-根目录运行“启动完整作品集.command”，或通过“启动作品.command”单独启动。应用地址：http://127.0.0.1:8782/。
+根目录运行“Launch Portfolio.command”，或通过“Launch Project.command”单独启动。应用地址：http://127.0.0.1:8782/。
 
 最终毕设代码、重建图像和指标口径见thesis-final/README.md。MCArb原方法引用与许可见UPSTREAM_README.md和LICENSE。

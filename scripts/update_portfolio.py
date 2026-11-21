@@ -100,9 +100,9 @@ def main():
     if result.get('backup'):print('原文件备份：'+result['backup'])
     if result['dependency_projects']:
         print('以下项目的依赖清单发生变化，请只安装这些项目：')
-        print('、'.join(result['dependency_projects'])+'。双击“补装变化依赖.command”即可，无需安装全部项目。')
+        print('、'.join(result['dependency_projects'])+'。在仓库根目录运行 python3 scripts/update_portfolio.py --install-changed 即可，无需安装全部项目。')
     else: print('依赖清单未变；已安装的依赖无需重装，直接运行启动脚本。')
-    print('如果此目录尚未安装过依赖，首次仍需运行“安装全部依赖.command”。')
+    print('如果此目录尚未安装过依赖，首次仍需运行“Install Dependencies.command”。')
 
 if __name__=='__main__':
     try:main()

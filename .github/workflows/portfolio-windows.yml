@@ -45,8 +45,14 @@ jobs:
           $unitResult = $LASTEXITCODE
           python -B scripts/smoke_local.py
           if ($unitResult -or $LASTEXITCODE) { exit 1 }
-      - name: Package the verified Windows build
-        run: python -B scripts/package_local.py windows-x64 release/portfolio-windows-x64.zip
+      - name: Package the committed files with the verified Windows DLL
+        shell: pwsh
+        run: |
+          $snapshot = Join-Path $env:RUNNER_TEMP 'portfolio-release'
+          git worktree add --detach "$snapshot" HEAD
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item -LiteralPath 'firewatch/.native' -Destination "$snapshot/firewatch/.native" -Recurse -ErrorAction Stop
+          python -B "$snapshot/scripts/package_local.py" windows-x64 "$env:GITHUB_WORKSPACE/release/portfolio-windows-x64.zip"
       - uses: actions/upload-artifact@v4
         with:
           name: portfolio-windows-x64

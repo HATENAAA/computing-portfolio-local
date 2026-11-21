@@ -1,0 +1,54 @@
+name: Windows portfolio verification
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: x64
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Locate Visual Studio C++ tools
+        shell: pwsh
+        run: |
+          $locator = Join-Path ([Environment]::GetFolderPath('ProgramFilesX86')) 'Microsoft Visual Studio\Installer\vswhere.exe'
+          $studio = & $locator -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $studio) { throw 'Visual Studio C++ tools were not found' }
+          "PORTFOLIO_VS=$studio" >> $env:GITHUB_ENV
+      - name: Install all projects and build the x64 detector
+        shell: cmd
+        run: |
+          call "%PORTFOLIO_VS%\VC\Auxiliary\Build\vcvars64.bat" || exit /b 1
+          py -3.12 scripts\manage.py install all
+      - name: Run native Windows checks
+        shell: pwsh
+        run: |
+          python -B -m unittest discover -s scripts/tests -q
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python -B scripts/smoke_local.py
+      - name: Package the verified Windows build
+        run: python -B scripts/package_local.py windows-x64 release/portfolio-windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-windows-x64
+          path: release/portfolio-windows-x64.zip
+          compression-level: 0
+          if-no-files-found: error

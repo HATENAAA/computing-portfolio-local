@@ -8,3 +8,6 @@
 medical-platform/backend/data/
 medical-platform/backend/target/
 case-studies/medical/source/node_modules/
+
+.native/
+/release/

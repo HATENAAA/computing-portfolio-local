@@ -5,7 +5,8 @@ from urllib.request import urlopen
 from pathlib import Path
 from python_runtime import ensure_python312
 import local_services as services
-import fcntl,tempfile
+from contextlib import contextmanager
+import errno,tempfile
 ROOT=Path(__file__).resolve().parents[1]
 PROJECTS={'vrfitai':('node','vrfitai',None),'firewatch':('python','firewatch','requirements.txt'),'manufacturing':('manufacturing','manufacturing-platform',None),'hsi':('python','hsi-sr-lab','requirements-eval.txt'),'signal':('python','signal-lab','requirements.txt'),'city':('node','city-explorer',None),'bathymetry':('python','bathymetry-lab','requirements.txt'),'medical':('medical','medical-platform',None)}
 def execute(args,cwd=ROOT,env=None):
@@ -82,14 +83,32 @@ def jobs_for(name):
   folder=ROOT/PROJECTS[name][1];port={'hsi':8782,'signal':8783,'bathymetry':8784}[name]
   return [([require_file(python_env(folder)),'workbench.py','--port',str(port)],folder)],[port],'http://127.0.0.1:'+str(port)
  raise RuntimeError('未知网页项目')
+@contextmanager
+def launch_lock(path):
+    with path.open('a+b') as gate:
+        if os.name == 'nt':
+            import msvcrt
+            gate.seek(0)
+            while True:
+                try:
+                    msvcrt.locking(gate.fileno(), msvcrt.LK_NBLCK, 1)
+                    break
+                except OSError as error:
+                    if error.errno not in (errno.EACCES, errno.EAGAIN, errno.EDEADLK):
+                        raise
+                    time.sleep(.15)
+        else:
+            import fcntl
+            fcntl.flock(gate, fcntl.LOCK_EX)
+        yield  # Closing the handle releases the lock on either platform.
+
 def serve(name):
  jobs,defaults,_=jobs_for(name)
  names={port:key for key,port in services.DEFAULTS.items()}
  chosen={};children=[];starting={}
  lock=Path(tempfile.gettempdir())/('portfolio-'+services.INSTANCE+'.lock')
  try:
-  with lock.open('a') as gate:
-   fcntl.flock(gate,fcntl.LOCK_EX)
+  with launch_lock(lock):
    for (args,cwd),default in zip(jobs,defaults):
     key=names[default]
     live=services.active_port(key,cwd)
@@ -156,9 +175,13 @@ def main():
   for name in names:
    if name=='hub':continue
    print('\n安装 '+name,flush=True);install(name)
-  print('\n安装完成。请双击“Launch Project.command”选择项目。')
+  suffix = 'cmd' if os.name == 'nt' else 'command'
+  print(f'\n安装完成。请双击“Launch Project.{suffix}”选择项目。')
  else:
   serve(a.project)
 if __name__=='__main__':
+ if os.name=='nt':
+  os.environ.setdefault('PYTHONUTF8','1')
+  signal.signal(signal.SIGBREAK,signal.default_int_handler)
  try:main()
  except (RuntimeError,subprocess.CalledProcessError) as e:print('\n操作未完成：'+str(e),file=sys.stderr);sys.exit(1)

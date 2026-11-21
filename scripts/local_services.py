@@ -1,6 +1,7 @@
 """Local service discovery shared by the launcher and the catalogue."""
 import hashlib
 import json
+import os
 import socket
 import subprocess
 from pathlib import Path
@@ -27,7 +28,8 @@ def listening(port):
 
 def available(port):
     with socket.socket() as sock:
-        sock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+        option = socket.SO_EXCLUSIVEADDRUSE if os.name == "nt" else socket.SO_REUSEADDR
+        sock.setsockopt(socket.SOL_SOCKET, option, 1)
         try:sock.bind(('127.0.0.1',port))
         except OSError:return False
         return True

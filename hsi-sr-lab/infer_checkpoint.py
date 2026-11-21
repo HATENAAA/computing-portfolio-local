@@ -1,7 +1,35 @@
 """CPU inference for the archived fixed-x4 ERCSR baseline, distinct from MCArb."""
 from pathlib import Path
-import argparse,json,time,hashlib,resource
+import argparse,json,time,hashlib,sys
 import numpy as np
+
+def peak_resident_bytes():
+    if sys.platform == 'win32':
+        import ctypes
+        from ctypes import wintypes
+
+        class ProcessMemoryCounters(ctypes.Structure):
+            _fields_ = [('size', wintypes.DWORD), ('page_faults', wintypes.DWORD),
+                        ('peak_working_set', ctypes.c_size_t), ('working_set', ctypes.c_size_t),
+                        ('peak_paged_pool', ctypes.c_size_t), ('paged_pool', ctypes.c_size_t),
+                        ('peak_nonpaged_pool', ctypes.c_size_t), ('nonpaged_pool', ctypes.c_size_t),
+                        ('pagefile', ctypes.c_size_t), ('peak_pagefile', ctypes.c_size_t)]
+
+        current_process = ctypes.windll.kernel32.GetCurrentProcess
+        current_process.restype = wintypes.HANDLE
+        get_memory = ctypes.windll.psapi.GetProcessMemoryInfo
+        get_memory.argtypes = [wintypes.HANDLE, ctypes.POINTER(ProcessMemoryCounters), wintypes.DWORD]
+        get_memory.restype = wintypes.BOOL
+        memory = ProcessMemoryCounters()
+        memory.size = ctypes.sizeof(memory)
+        if get_memory(current_process(), ctypes.byref(memory), memory.size):
+            return memory.peak_working_set
+        return None
+
+    import resource
+    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    return peak if sys.platform == 'darwin' else peak * 1024
+
 
 def infer(input_path,checkpoint,output):
  import torch
@@ -15,7 +43,7 @@ def infer(input_path,checkpoint,output):
  if p.exists():raise ValueError('Preserve existing evidence; use new output')
  p.mkdir(parents=True);np.save(p/'prediction.npy',y[0].numpy().transpose(1,2,0))
  sha=lambda f:hashlib.sha256(Path(f).read_bytes()).hexdigest()
- r=dict(method='archived-fixed-x4-ERCSR-baseline',checkpoint_sha256=sha(checkpoint),input_sha256=sha(input_path),prediction_sha256=sha(p/'prediction.npy'),input_shape=list(x.shape),output_shape=list(y[0].shape[1:])+[int(y.shape[1])],inference_seconds=seconds,device='CPU',cpu_peak_process_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,gpu_peak_memory_bytes=None,scope='本次CPU前向；原历史固定倍率ERCSR基线，不是MCArb元上采样模型。耗时包含首轮初始化效应，进程峰值不是模型独占内存。')
+ r=dict(method='archived-fixed-x4-ERCSR-baseline',checkpoint_sha256=sha(checkpoint),input_sha256=sha(input_path),prediction_sha256=sha(p/'prediction.npy'),input_shape=list(x.shape),output_shape=list(y[0].shape[1:])+[int(y.shape[1])],inference_seconds=seconds,device='CPU',cpu_peak_process_rss_bytes=peak_resident_bytes(),gpu_peak_memory_bytes=None,scope='本次CPU前向；原历史固定倍率ERCSR基线，不是MCArb元上采样模型。耗时包含首轮初始化效应，进程峰值不是模型独占内存。')
  (p/'inference.json').write_text(json.dumps(r,ensure_ascii=False,indent=2));return r
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('input');a.add_argument('checkpoint');a.add_argument('--out',required=True);v=a.parse_args();infer(v.input,v.checkpoint,v.out)

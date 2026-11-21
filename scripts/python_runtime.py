@@ -162,6 +162,8 @@ def ensure_python312(root, download=False):
     existing = find_existing(root)
     if existing:
         return existing
+    if os.name == 'nt':
+        raise RuntimeError('Install Python 3.12 for Windows with the Python launcher, then open Install Dependencies.cmd.')
     if not download:
         raise RuntimeError('尚未找到可用的 Python 3.12。请安装 Python 3.12 后重试，或在仓库根目录运行 python3 scripts/manage.py prepare-python。')
     print('本机尚无可用 Python 3.12，开始准备；每个步骤均有超时和日志。', flush=True)

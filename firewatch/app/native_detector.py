@@ -1,23 +1,48 @@
 """C++ pixel classification, components and temporal region features; Python I/O adapter."""
 from pathlib import Path
 import ctypes as C,hashlib,json,os,platform,shutil,subprocess,threading,time
+from tempfile import TemporaryDirectory
 import cv2,numpy as np
 from .detector import Config
 ROOT=Path(__file__).resolve().parents[1];_lock=threading.Lock();_lib=None
 class Region(C.Structure):
     _fields_=[(k,C.c_int) for k in ('x','y','width','height','pixels')]+[(k,C.c_double) for k in ('motion','texture','warm_fraction')]
 def build():
-    source=ROOT/'native/fire_core.cpp';digest=hashlib.sha256(source.read_bytes()).hexdigest();ext='.dylib' if platform.system()=='Darwin' else '.so';folder=ROOT/'.native';folder.mkdir(exist_ok=True);target=folder/('fire-'+platform.machine()+'-'+digest[:16]+ext)
-    if not target.is_file():
-        compiler=shutil.which('c++') or shutil.which('clang++') or shutil.which('g++')
-        if not compiler:raise RuntimeError('C++ 检测内核尚未编译。macOS 请安装 Xcode Command Line Tools，再运行 native/build.py。')
-        temporary=target.with_suffix(ext+'.'+str(os.getpid())+'.tmp')
+    source = ROOT / 'native/fire_core.cpp'
+    digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    system = platform.system()
+    extension = {'Darwin': '.dylib', 'Windows': '.dll'}.get(system, '.so')
+    folder = ROOT / '.native'
+    folder.mkdir(exist_ok=True)
+    target = folder / f'fire-{platform.machine()}-{digest[:16]}{extension}'
+    if target.is_file():
+        return target, digest
+
+    if system == 'Windows':
+        compiler = shutil.which('cl.exe')
+        if not compiler:
+            raise RuntimeError('Use the Windows release ZIP or open the x64 Native Tools Command Prompt for Visual Studio, then retry installation.')
+    else:
+        compiler = shutil.which('c++') or shutil.which('clang++') or shutil.which('g++')
+        if not compiler:
+            raise RuntimeError('Install a C++17 compiler, then retry installation.')
+
+    with TemporaryDirectory(prefix='fire-build-', dir=folder) as build_folder:
+        temporary = Path(build_folder) / target.name
+        if system == 'Windows':
+            args = [compiler, '/nologo', '/std:c++17', '/EHsc', '/O2', '/MT', '/LD',
+                    str(source), '/link', '/OUT:' + str(temporary)]
+        else:
+            args = [compiler, '-std=c++17', '-O3', '-shared', '-fPIC', str(source), '-o', str(temporary)]
+        result = subprocess.run(args, cwd=build_folder, capture_output=True, text=True, errors='replace', timeout=120)
+        if result.returncode:
+            raise RuntimeError('C++ detector build failed:\n' + (result.stdout + result.stderr)[-2000:])
         try:
-            result=subprocess.run([compiler,'-std=c++17','-O3','-shared','-fPIC',str(source),'-o',str(temporary)],capture_output=True,text=True,timeout=120)
-            if result.returncode:raise RuntimeError('C++ 内核编译失败：'+result.stderr[-1600:])
-            os.replace(temporary,target)
-        finally:temporary.unlink(missing_ok=True)
-    return target,digest
+            os.replace(temporary, target)
+        except PermissionError:
+            if not target.is_file():
+                raise
+    return target, digest
 
 def library():
     global _lib

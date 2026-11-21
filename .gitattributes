@@ -1,0 +1,2 @@
+# Preserve file bytes for the published SHA256SUMS.txt on every OS.
+* -text

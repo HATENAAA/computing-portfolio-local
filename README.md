@@ -6,6 +6,15 @@ Eight projects you can run locally, covering computational imaging, interactive 
 
 [查看中文作品集](https://hatenaaa.github.io/computing-portfolio-local/?lang=zh) · [View the English portfolio](https://hatenaaa.github.io/computing-portfolio-local/?lang=en)
 
+## 下载 / Downloads
+
+[Windows x64 ZIP](https://github.com/HATENAAA/computing-portfolio-local/releases/latest/download/portfolio-windows-x64.zip) · [macOS ZIP](https://github.com/HATENAAA/computing-portfolio-local/releases/latest/download/portfolio-macos.zip)
+
+解压后双击 `index.html` 即可浏览中英文静态作品集。要运行完整应用，按下面对应系统的步骤安装依赖并启动。
+
+After extracting either ZIP, double-click `index.html` to browse the bilingual portfolio. Follow the instructions for your operating system to run the full applications.
+
+
 ## 项目 / Projects
 
 | 中文项目 | English project |
@@ -21,7 +30,7 @@ Eight projects you can run locally, covering computational imaging, interactive 
 
 ## 在 macOS 上本地运行
 
-1. 下载仓库 ZIP 并解压，或克隆仓库。准备 Python 3.12、Node.js 22.13 或更新版本、JDK 17 或更新版本，以及 Maven。
+1. 下载仓库 ZIP 并解压，或克隆仓库。准备 Python 3.12、Node.js 22.13 或更新版本、JDK 17 或更新版本，以及 Maven。火焰检测需要可用的 C++ 编译器，可通过 Xcode Command Line Tools 安装。
 2. 首次运行时，双击仓库根目录的 `Install Dependencies.command`。
 3. 双击 `Launch Portfolio.command`，待浏览器打开首页后选择项目。也可双击 `Launch Project.command` 单独启动一个项目。
 
@@ -29,81 +38,27 @@ VRFitAI 的可选 AI 助手可用 `Configure AI Assistant.command` 配置。示�
 
 ## Run locally on macOS
 
-1. Download and extract the repository ZIP, or clone the repository. You need Python 3.12, Node.js 22.13 or newer, JDK 17 or newer, and Maven.
+1. Download and extract the repository ZIP, or clone the repository. You need Python 3.12, Node.js 22.13 or newer, JDK 17 or newer, and Maven. Flame detection needs a C++ compiler, available through Xcode Command Line Tools.
 2. For first-time setup, double-click `Install Dependencies.command` in the repository root to install the dependencies.
 3. Double-click `Launch Portfolio.command` to launch the portfolio, then choose a project in the browser. Use `Launch Project.command` to start a single project.
 
 Use `Configure AI Assistant.command` to configure the optional VRFitAI assistant. See the [English setup guide](https://hatenaaa.github.io/computing-portfolio-local/projects/guide-en.html) for demo accounts and troubleshooting.
 
-## 在 Windows 上本地运行（WSL 2）
+## 在 Windows 上原生运行（x64）
 
-在 WSL 2 的 Ubuntu 24.04 中安装依赖和启动项目，然后用 Windows 浏览器访问。
+1. 下载 **Windows x64 ZIP** 并完整解压。在 Windows 中安装 Python 3.12 x64（含 Python Launcher）、Node.js 22.13 或更新版本（含 npm）、JDK 17 或更新版本，以及 Maven。将 Node.js、Java 和 Maven 加到 PATH，并将 JAVA_HOME 指向 JDK。
+2. 首次运行时双击 `Install Dependencies.cmd`。Windows ZIP 内含火焰检测的 x64 DLL。若从源码克隆，则在安装了 C++ 工具的 Visual Studio x64 Native Tools Command Prompt 中运行该脚本以编译 DLL。
+3. 双击 `Launch Portfolio.cmd` 启动八个项目，或用 `Launch Project.cmd` 选择单个项目。浏览器默认打开 `http://127.0.0.1:8790/`。按 `Ctrl+C` 停止本次启动的服务。
 
-1. 在管理员 PowerShell 中安装 Ubuntu。
+可用 `Configure AI Assistant.cmd` 配置 VRFitAI 的可选 AI 助手。
 
-   ~~~powershell
-   wsl --install -d Ubuntu-24.04
-   ~~~
+## Run natively on Windows (x64)
 
-   按提示重启，打开 Ubuntu 24.04 完成首次设置。回到 PowerShell 运行 `wsl -l -v`，确认 Ubuntu 的 `VERSION` 为 `2`。 [Microsoft WSL 安装指南](https://learn.microsoft.com/zh-cn/windows/wsl/install)
+1. Download and fully extract the **Windows x64 ZIP**. On Windows, install Python 3.12 x64 with the Python Launcher, Node.js 22.13 or newer with npm, JDK 17 or newer, and Maven. Add Node.js, Java and Maven to PATH and set JAVA_HOME to the JDK.
+2. Double-click `Install Dependencies.cmd` on the first run. The Windows ZIP includes the x64 DLL for flame detection. For a source checkout, run the installer from Visual Studio's x64 Native Tools Command Prompt with the C++ build tools installed.
+3. Double-click `Launch Portfolio.cmd` to start all eight projects, or `Launch Project.cmd` to select one project. The browser opens `http://127.0.0.1:8790/` by default. Press `Ctrl+C` to stop the services launched in that session.
 
-2. 在 Ubuntu 终端中安装 Python 3.12、Java、Maven 和 C++ 构建工具。
-
-   ~~~bash
-   sudo apt update
-   sudo apt install -y python3 python3-venv openjdk-17-jdk maven build-essential git curl ca-certificates lsof
-   ~~~
-
-   在同一个 Ubuntu 环境中安装 Node.js 22.13 或更高版本及 npm。按教程装好 nvm 后，运行 `nvm install 22`。 [Microsoft 的 WSL Node.js 指南](https://learn.microsoft.com/zh-cn/windows/dev-environment/javascript/nodejs-on-wsl)
-
-3. 在 Ubuntu 的主目录克隆仓库，首次运行时安装项目依赖，然后启动完整作品集。
-
-   ~~~bash
-   cd ~
-   git clone https://github.com/HATENAAA/computing-portfolio-local.git
-   cd computing-portfolio-local
-   python3 scripts/manage.py install all
-   PORTFOLIO_NO_BROWSER=1 python3 scripts/manage.py run all
-   ~~~
-
-4. 终端显示「已就绪」后，在 Windows 浏览器中打开显示的网址。默认是 `http://127.0.0.1:8790/`。保持 Ubuntu 终端运行，按 `Ctrl+C` 停止本次启动的服务。
-
-如需单独启动一个项目，可运行 `PORTFOLIO_NO_BROWSER=1 python3 scripts/manage.py run medical`，并将 `medical` 替换为所需的项目 ID。运行 `python3 scripts/manage.py --help` 可查看可用 ID。
-
-## Run locally on Windows (WSL 2)
-
-Install dependencies and run the projects in Ubuntu 24.04 on WSL 2. Open the portfolio in your Windows browser.
-
-1. Install Ubuntu from an administrator PowerShell.
-
-   ~~~powershell
-   wsl --install -d Ubuntu-24.04
-   ~~~
-
-   Restart if prompted, then open Ubuntu 24.04 to complete first-time setup. In PowerShell, run `wsl -l -v` and check that Ubuntu shows `2` under `VERSION`. [Microsoft WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install)
-
-2. In the Ubuntu terminal, install Python 3.12, Java, Maven and the C++ build tools.
-
-   ~~~bash
-   sudo apt update
-   sudo apt install -y python3 python3-venv openjdk-17-jdk maven build-essential git curl ca-certificates lsof
-   ~~~
-
-   Install Node.js 22.13 or newer and npm inside Ubuntu. If you follow the guide to install nvm, run `nvm install 22` afterwards. [Microsoft guide to Node.js on WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl)
-
-3. Clone the repository in your Ubuntu home directory. Install the project dependencies on the first run, then start the portfolio.
-
-   ~~~bash
-   cd ~
-   git clone https://github.com/HATENAAA/computing-portfolio-local.git
-   cd computing-portfolio-local
-   python3 scripts/manage.py install all
-   PORTFOLIO_NO_BROWSER=1 python3 scripts/manage.py run all
-   ~~~
-
-4. When the launcher reports that the services are ready, open the printed URL in your Windows browser. The default is `http://127.0.0.1:8790/`. Keep the Ubuntu terminal open and press `Ctrl+C` to stop the services started by that session.
-
-To run a single project, use `PORTFOLIO_NO_BROWSER=1 python3 scripts/manage.py run medical` in the repository root and replace `medical` with the project ID you need. Run `python3 scripts/manage.py --help` to see the available IDs.
+Use `Configure AI Assistant.cmd` to configure the optional VRFitAI assistant.
 
 ## 方法与资料 / Methods and sources
 

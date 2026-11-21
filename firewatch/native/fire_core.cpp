@@ -4,7 +4,11 @@
 #include <cstdint>
 #include <vector>
 struct Region {int x,y,width,height,pixels;double motion,texture,warm_fraction;};
-extern "C" int fw_regions(const uint8_t* bgr,const uint8_t* previous,int w,int h,int brightness,int min_pixels,uint8_t* output,Region* boxes,int capacity,double* scene_motion){
+extern "C"
+#if defined(_WIN32)
+__declspec(dllexport)
+#endif
+int fw_regions(const uint8_t* bgr,const uint8_t* previous,int w,int h,int brightness,int min_pixels,uint8_t* output,Region* boxes,int capacity,double* scene_motion){
  try{
   if(!bgr||!output||!boxes||!scene_motion||w<1||h<1||int64_t(w)*h>12000000||capacity<1)return -1;
   const int n=w*h;std::vector<uint8_t> seed(n),mask(n),gray(n),old(n);double sum=0,old_sum=0;

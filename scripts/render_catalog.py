@@ -43,11 +43,6 @@ def app_link(project, contents, style, hidden=''):
             f'target="_blank" rel="noopener">{contents}</a>')
 
 
-def medical_demo(contents, style):
-    return (f'<a class="{style}" href="case-studies/medical/demo.html" '
-            f'data-static-only data-en-href="case-studies/medical/demo-en.html" target="_blank" rel="noopener">{contents}</a>')
-
-
 def launch_directory(projects):
     links = []
     for item in projects:
@@ -69,13 +64,8 @@ def card(item, featured):
     role = bilingual(en_role, zh_role, 'p', ' class="project-role"')
     terms = e(' '.join((en_title, zh_title, item['title'], item['stack'], item['categoryLabel'],
                         CATEGORIES[item['category']], SEARCH_ALIASES[project])))
-    if project == 'medical':
-        secondary = medical_demo(bilingual('Try appointment demo', '体验预约演示'), 'launch-app')
-        secondary += app_link(project, bilingual('Run full system', '运行完整系统'), 'launch-app', 'hidden data-local-only ')
-
-    else:
-        label = bilingual('Open local app', '运行本地应用')
-        secondary = app_link(project, label, 'launch-app', 'hidden data-local-only ')
+    local_label = ('Run full system', '运行完整系统') if project == 'medical' else ('Open local app', '运行本地应用')
+    secondary = app_link(project, bilingual(*local_label), 'launch-app', 'hidden data-local-only ')
     award = bilingual('Outstanding Project · Summer Practicum', item['award'],
                       attributes=' class="project-award"') if item.get('award') else ''
     loading = 'loading="eager"' if featured else 'loading="lazy"'
